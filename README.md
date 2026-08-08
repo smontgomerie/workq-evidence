@@ -1,31 +1,24 @@
 # workq-evidence
 
 Public mirror of [workq](https://github.com/skatamatic/workq) blob evidence
-(screenshots / files) so pull-request markdown can embed
-`raw.githubusercontent.com` URLs without committing binaries into product PRs.
+(screenshots / files) so pull-request markdown can embed images via
+`raw.githubusercontent.com` without auth.
 
-## How it works
-
-The workq server publishes asynchronously after `$EV add` writes a local blob:
+## Layout
 
 ```text
 {itemId}/{evidenceId}/{filename}
-→ https://raw.githubusercontent.com/smontgomerie/workq-evidence/main/…
 ```
 
-Agents and humans should **not** clone this repo or open PRs here for product work.
+Written by the workq server (`WORKQ_EVIDENCE_REPO`), not by agents. Do not put
+product source here.
 
 ## Retention
 
-Evidence here may be public and long-lived. Treat contents as review artifacts;
-do not store secrets. Operators may prune old paths as needed.
-
-## Operators
-
-Set on the workq server:
+Terminal work items older than ~30 days can have their trees removed with:
 
 ```bash
-WORKQ_EVIDENCE_REPO=smontgomerie/workq-evidence
-WORKQ_EVIDENCE_REPO_TOKEN=…   # fine-grained contents:write, or reuse WORKQ_GITHUB_TOKEN
-WORKQ_EVIDENCE_REPO_BRANCH=main
+npx workq-server evidence-gc --older-than 30d --status done,rejected --apply
 ```
+
+Local dashboard blobs remain under `WORKQ_EVIDENCE_DIR` independently of this repo.
