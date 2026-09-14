@@ -1,0 +1,26 @@
+PR #2082 Jenkins citest failure — unrelated to W0.1 e2e isolation diff
+PR: https://bitbucket.org/flatironssolutions/data-manager/pull-requests/2082
+Job: https://build.flatirons.cloud/job/rd/job/data-manager/job/PR-2082/1/
+
+Root error:
+  ERROR: Playwright does not support chromium on ubuntu20.04-x64
+  Failed to resolve Playwright Chromium: npx playwright install chromium
+  Failed: package-datamanager-client / npm run citest (Karma PlaywrightChrome)
+
+Proven pre-existing on campaign base (not introduced by this PR):
+  cursor/pinpoint-7069-angular-migration build #2 — same error
+  https://build.flatirons.cloud/job/rd/job/data-manager/job/cursor%252Fpinpoint-7069-angular-migration/2/
+  Sibling PR-2080 build #2 — same error
+  https://build.flatirons.cloud/job/rd/job/data-manager/job/PR-2080/2/
+
+This PR diff vs campaign base: only client/src/test/e2e-playwright/** (7 files).
+No package.json / karma / playwright version changes.
+
+Cause on base: MOD-12195 "Run Karma unit tests on Playwright Chromium like ACM"
+while Jenkins agents remain ubuntu20.04 (Playwright dropped that host OS).
+
+Out of scope for W0.1 (publish-history + repository isolation).
+Unblock options for a human/campaign owner:
+  1) Move Jenkins agents to ubuntu22.04+
+  2) Pin Playwright to a version that still supports ubuntu20.04 for Karma
+  3) Fall Karma CI back to Firefox/Chrome until agents upgrade
