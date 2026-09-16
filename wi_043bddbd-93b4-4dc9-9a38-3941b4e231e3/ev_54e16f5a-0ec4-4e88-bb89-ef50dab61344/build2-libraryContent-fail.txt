@@ -1,0 +1,41 @@
+
+  1) [parallel] › src/test/e2e-playwright/libraryContent/libraryContent.spec.ts:96:7 › Library content › should not show anything in list before something is imported 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('table.table-hover tr[ng-repeat="publication in vm.publicationsInLibrary"]')
+    Expected: 0
+    Received: 1
+    Timeout:  30000ms
+
+    Call log:
+      - Expect "toHaveCount" with timeout 30000ms
+      - waiting for locator('table.table-hover tr[ng-repeat="publication in vm.publicationsInLibrary"]')
+        64 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+       95 |
+       96 |   test('should not show anything in list before something is imported', async () => {
+    >  97 |     await expect(libraryContent.publicationList).toHaveCount(0);
+          |                                                  ^
+       98 |     await expect(libraryContent.emptyLibraryMessage).toBeVisible();
+       99 |   });
+      100 |
+        at /home/jenkins/agent/workspace/rd_data-manager_PR-2098/client/src/test/e2e-playwright/libraryContent/libraryContent.spec.ts:97:50
+
+    Error Context: test-results/libraryContent-libraryCont-cf6de-efore-something-is-imported-parallel/error-context.md
+
+    Error Context: test-results/libraryContent-libraryCont-cf6de-efore-something-is-imported-parallel/error-context.md
+
+  1 failed
+    [parallel] › src/test/e2e-playwright/libraryContent/libraryContent.spec.ts:96:7 › Library content › should not show anything in list before something is imported 
+  2 skipped
+  14 did not run
+  145 passed (5.1m)
+ Container dmcontainer  Stopping
+ Container testbuilder1  Stopping
+ Container testbuilder2  Stopping
+ Container dmcontainer  Stopped
+ Container dmcontainer  Removing
+ Container dmcontainer  Removed
