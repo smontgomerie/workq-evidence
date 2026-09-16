@@ -1,0 +1,16 @@
+PR-2098 Jenkins CI — revision pass 2 analysis
+PR diff vs cursor/pinpoint-7069-angular-migration: docs-only
+  .cursor/plans/pinpoint-7069-schema-form-spike.md (new)
+  .cursor/plans/pinpoint-7069-migration-dag.md (4-line DAG touch)
+
+Build #1 (commit f3270432f): 2 failed E2E
+  - hybridBoot/hybridBoot.spec.ts:9 Hybrid ngUpgrade boot
+  - repository/repository.move.spec.ts:115 move pdf to root
+  Worker response: empty-commit retrigger (c81a4c85f)
+
+Build #2 (commit c81a4c85f): 1 failed E2E (145 passed)
+  - libraryContent/libraryContent.spec.ts:96 should not show anything in list before something is imported
+    Expected publicationList count 0, Received 1 (30s timeout) — isolation/flake
+  - hybridBoot PASSED this run; repository.move mostly PASS
+
+Conclusion: unrelated Jenkins E2E flakes on docs-only spike. Local required gates Unit+Build already green on prior pass. No product code in PR to fix. Second empty-commit retrigger would burn pass 3 without addressing root flake.
