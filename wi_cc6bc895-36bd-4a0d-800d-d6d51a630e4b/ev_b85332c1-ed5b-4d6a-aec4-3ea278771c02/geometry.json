@@ -1,0 +1,15 @@
+{
+  "viewport": {"width": 1920, "height": 1080},
+  "targets": {"tree": {"w": 573, "h": 711}, "main": {"w": 1339, "h": 1016}, "progress": {"w": 573, "h": 297}, "leftover": 8},
+  "candidateCaptureRootBoxes": {
+    "folder-content": {"w": 1339, "h": 1016},
+    "publication-details": {"w": 1339, "h": 1016},
+    "progress": {"w": 573, "h": 297}
+  },
+  "independentMeasureWithAssetRoot": {
+    "left": {"w": 573, "h": 1016},
+    "tree": {"w": 573, "h": 711},
+    "progress": {"w": 573, "h": 297},
+    "main": {"w": 1339, "h": 1016}
+  }
+}
