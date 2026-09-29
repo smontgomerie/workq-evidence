@@ -1,0 +1,162 @@
+{
+  "runId": "run-1790677531085",
+  "timestamp": 1790677775959,
+  "tests": [
+    {
+      "testName": "OutpaintStepExecutor - Single Dimension Extension",
+      "inputImages": [
+        "/api/uploads/test-runs/run-1790677531085/images/base-scene-single-dimension.png"
+      ],
+      "outputImages": [
+        "/api/uploads/test-runs/run-1790677531085/images/scene_1_outpaint_1790677702209.png"
+      ],
+      "verification": {
+        "accomplished": true,
+        "reason": "The original room is preserved exactly (bed, window, rug, suitcase, shelf, door, walls, floor, and lighting all match pixel‑for‑pixel where they overlap), and the image is extended to the right, revealing more of the floor and right wall. The extension uses the same lighting direction (sunlight from the window casting to the right), same color palette, shading, and rendering style, with no visible seams or discontinuities. Outpainting direction and amount match the instruction and look natural.",
+        "score": 10,
+        "detailedScores": {
+          "subjectVerification": 1,
+          "propObjectAccuracy": 1,
+          "spatialRelationalAccuracy": 1,
+          "overallSceneCoherence": 1,
+          "relativeScale": 1
+        },
+        "feasibilityNote": null
+      },
+      "metadata": {
+        "step": {
+          "kind": "outpaint",
+          "prompt": "Extend the background horizontally to show more of the environment, maintaining the same lighting and style",
+          "retries": 1,
+          "padding": {
+            "left": 0,
+            "top": 0,
+            "right": 256,
+            "bottom": 0
+          },
+          "description": "Extend right side of scene"
+        },
+        "judgeModel": "strong",
+        "usedFallback": true,
+        "judgeSamples": [
+          10,
+          10,
+          10
+        ],
+        "padding": {
+          "left": 0,
+          "top": 0,
+          "right": 256,
+          "bottom": 0
+        }
+      },
+      "timestamp": 1790677718562
+    },
+    {
+      "testName": "OutpaintStepExecutor - Multiple Dimensions Extension",
+      "inputImages": [
+        "/api/uploads/test-runs/run-1790677531085/images/base-scene-multiple-dimensions.png"
+      ],
+      "outputImages": [
+        "/api/uploads/test-runs/run-1790677531085/images/scene_1_outpaint_1790677728091.png"
+      ],
+      "verification": {
+        "accomplished": true,
+        "reason": "The original bedroom scene is preserved exactly in the result image (bed, rug, suitcase, shelf, window, door, and floor all match in position, lighting, and detail). The canvas is extended to the left to reveal more wall with framed pictures, and to the right to show additional wall space with star stickers, as well as slightly more ceiling and upper wall area. Lighting direction, shadows, color palette, and rendering style remain fully consistent, and the added areas blend seamlessly without visible seams or distortions.",
+        "score": 10,
+        "detailedScores": {
+          "subjectVerification": 1,
+          "propObjectAccuracy": 1,
+          "spatialRelationalAccuracy": 1,
+          "overallSceneCoherence": 1,
+          "relativeScale": 1
+        },
+        "feasibilityNote": null
+      },
+      "metadata": {
+        "step": {
+          "kind": "outpaint",
+          "prompt": "Extend the background both horizontally and vertically, showing more of the environment on the left, right, and top sides while maintaining the same lighting and style",
+          "retries": 1,
+          "padding": {
+            "left": 256,
+            "top": 256,
+            "right": 256,
+            "bottom": 0
+          },
+          "description": "Extend left, right, and top sides of scene"
+        },
+        "judgeModel": "strong",
+        "usedFallback": true,
+        "judgeSamples": [
+          10,
+          10,
+          10
+        ],
+        "padding": {
+          "left": 256,
+          "top": 256,
+          "right": 256,
+          "bottom": 0
+        }
+      },
+      "timestamp": 1790677747219
+    },
+    {
+      "testName": "OutpaintStepExecutor - All Dimensions Extension",
+      "inputImages": [
+        "/api/uploads/test-runs/run-1790677531085/images/base-scene-all-dimensions.png"
+      ],
+      "outputImages": [
+        "/api/uploads/test-runs/run-1790677531085/images/scene_1_outpaint_1790677760849.png"
+      ],
+      "verification": {
+        "accomplished": true,
+        "reason": "The original bedroom scene is preserved exactly in the result image (bed, rug, suitcase, window, bookshelf, door all unchanged in position, lighting, and details). The frame is extended on all sides: more floor and wall are visible to the right of the door, additional wall with star decals is shown on the near right, more wall and framed pictures appear on the left, and extra ceiling and floor space are added top and bottom. Lighting direction, shadows, color palette, and overall 3D/cartoon style are consistent with no visible seams or artifacts, and the environment feels like a natural wider view of the same room.",
+        "score": 10,
+        "detailedScores": {
+          "subjectVerification": 1,
+          "propObjectAccuracy": 1,
+          "spatialRelationalAccuracy": 1,
+          "overallSceneCoherence": 1,
+          "relativeScale": 1
+        },
+        "feasibilityNote": null
+      },
+      "metadata": {
+        "step": {
+          "kind": "outpaint",
+          "prompt": "Extend the background in all directions, showing more of the environment on all sides while maintaining the same lighting and style",
+          "retries": 1,
+          "padding": {
+            "left": 256,
+            "top": 256,
+            "right": 256,
+            "bottom": 256
+          },
+          "description": "Extend all sides of scene",
+          "noiseSeed": 7
+        },
+        "judgeModel": "strong",
+        "usedFallback": true,
+        "judgeSamples": [
+          10,
+          10,
+          10
+        ],
+        "padding": {
+          "left": 256,
+          "top": 256,
+          "right": 256,
+          "bottom": 256
+        }
+      },
+      "timestamp": 1790677775941
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0
+  }
+}
