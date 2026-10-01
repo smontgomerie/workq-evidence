@@ -1,0 +1,191 @@
+[
+  {
+    "at": "2026-10-01T23:01:20.224Z",
+    "event": "submit-start",
+    "role": "canonical",
+    "attemptId": "9a238cf3-a7c4-4508-8527-15539e4813e0-canonical"
+  },
+  {
+    "at": "2026-10-01T23:01:21.456Z",
+    "event": "submitted",
+    "role": "canonical",
+    "attemptId": "9a238cf3-a7c4-4508-8527-15539e4813e0-canonical",
+    "promptId": "c778a713-2c0c-46d5-bd09-7dbb6ccd90d9"
+  },
+  {
+    "at": "2026-10-01T23:01:21.464Z",
+    "event": "collect",
+    "role": "canonical",
+    "attemptId": "9a238cf3-a7c4-4508-8527-15539e4813e0-canonical",
+    "promptId": "c778a713-2c0c-46d5-bd09-7dbb6ccd90d9"
+  },
+  {
+    "at": "2026-10-01T23:02:22.028Z",
+    "event": "collect",
+    "role": "canonical",
+    "attemptId": "9a238cf3-a7c4-4508-8527-15539e4813e0-canonical",
+    "promptId": "c778a713-2c0c-46d5-bd09-7dbb6ccd90d9"
+  },
+  {
+    "at": "2026-10-01T23:02:22.451Z",
+    "event": "submit-start",
+    "role": "front",
+    "attemptId": "1f19cadb-ab18-4625-a99e-3851b67baaf8"
+  },
+  {
+    "at": "2026-10-01T23:02:22.597Z",
+    "event": "submitted",
+    "role": "front",
+    "attemptId": "1f19cadb-ab18-4625-a99e-3851b67baaf8",
+    "promptId": "a58d5fc3-616c-4c26-9149-4907bf13a53b"
+  },
+  {
+    "at": "2026-10-01T23:02:22.604Z",
+    "event": "collect",
+    "role": "front",
+    "attemptId": "1f19cadb-ab18-4625-a99e-3851b67baaf8",
+    "promptId": "a58d5fc3-616c-4c26-9149-4907bf13a53b"
+  },
+  {
+    "at": "2026-10-01T23:02:39.749Z",
+    "event": "submit-start",
+    "role": "side",
+    "attemptId": "f9a9668f-588b-4f26-b0c4-cf1b3aad472a"
+  },
+  {
+    "at": "2026-10-01T23:02:39.842Z",
+    "event": "submitted",
+    "role": "side",
+    "attemptId": "f9a9668f-588b-4f26-b0c4-cf1b3aad472a",
+    "promptId": "e3ab544d-5ec9-4293-8e57-1998ba1dca6c"
+  },
+  {
+    "at": "2026-10-01T23:02:39.849Z",
+    "event": "collect",
+    "role": "side",
+    "attemptId": "f9a9668f-588b-4f26-b0c4-cf1b3aad472a",
+    "promptId": "e3ab544d-5ec9-4293-8e57-1998ba1dca6c"
+  },
+  {
+    "at": "2026-10-01T23:02:56.973Z",
+    "event": "submit-start",
+    "role": "back",
+    "attemptId": "698a06df-cdcf-4404-b536-b6be09632a52"
+  },
+  {
+    "at": "2026-10-01T23:02:57.062Z",
+    "event": "submitted",
+    "role": "back",
+    "attemptId": "698a06df-cdcf-4404-b536-b6be09632a52",
+    "promptId": "e1513608-9723-4254-90e9-dd5470421943"
+  },
+  {
+    "at": "2026-10-01T23:02:57.070Z",
+    "event": "collect",
+    "role": "back",
+    "attemptId": "698a06df-cdcf-4404-b536-b6be09632a52",
+    "promptId": "e1513608-9723-4254-90e9-dd5470421943"
+  },
+  {
+    "at": "2026-10-01T23:03:19.287Z",
+    "event": "submit-start",
+    "role": "bust",
+    "attemptId": "a53b2977-61d9-4eed-a20e-5851c621ac0c"
+  },
+  {
+    "at": "2026-10-01T23:03:19.398Z",
+    "event": "submitted",
+    "role": "bust",
+    "attemptId": "a53b2977-61d9-4eed-a20e-5851c621ac0c",
+    "promptId": "4a4be0a3-04fd-48f1-af39-981fc8bec07f"
+  },
+  {
+    "at": "2026-10-01T23:03:19.407Z",
+    "event": "collect",
+    "role": "bust",
+    "attemptId": "a53b2977-61d9-4eed-a20e-5851c621ac0c",
+    "promptId": "4a4be0a3-04fd-48f1-af39-981fc8bec07f"
+  },
+  {
+    "at": "2026-10-01T23:03:37.097Z",
+    "event": "mock-safety"
+  },
+  {
+    "at": "2026-10-01T23:03:37.105Z",
+    "event": "mock-appearance-start"
+  },
+  {
+    "at": "2026-10-01T23:03:42.667Z",
+    "event": "mock-safety"
+  },
+  {
+    "at": "2026-10-01T23:03:42.676Z",
+    "event": "mock-appearance-start"
+  },
+  {
+    "at": "2026-10-01T23:03:54.679Z",
+    "event": "mock-appearance-done"
+  },
+  {
+    "at": "2026-10-01T23:03:54.853Z",
+    "event": "avatar-workflow-start",
+    "variant": "avatar"
+  },
+  {
+    "at": "2026-10-01T23:03:55.295Z",
+    "event": "avatar-workflow-done",
+    "variant": "avatar",
+    "promptId": "960cee3f-4baf-4554-ba2c-fb941eef77d4"
+  },
+  {
+    "at": "2026-10-01T23:04:20.747Z",
+    "event": "avatar-workflow-start",
+    "variant": "avatar_white"
+  },
+  {
+    "at": "2026-10-01T23:04:23.410Z",
+    "event": "avatar-workflow-done",
+    "variant": "avatar_white",
+    "promptId": "712c24f8-1f09-42b1-8d92-4d4844f34036"
+  },
+  {
+    "at": "2026-10-01T23:04:49.980Z",
+    "event": "submit-start",
+    "role": "back",
+    "attemptId": "025f263d-0c23-47b8-9cad-85bc317793ec"
+  },
+  {
+    "at": "2026-10-01T23:04:50.203Z",
+    "event": "submitted",
+    "role": "back",
+    "attemptId": "025f263d-0c23-47b8-9cad-85bc317793ec",
+    "promptId": "6bb75d2f-d89d-4aae-8eaf-8dbf26fbdc85"
+  },
+  {
+    "at": "2026-10-01T23:04:50.212Z",
+    "event": "collect",
+    "role": "back",
+    "attemptId": "025f263d-0c23-47b8-9cad-85bc317793ec",
+    "promptId": "6bb75d2f-d89d-4aae-8eaf-8dbf26fbdc85"
+  },
+  {
+    "at": "2026-10-01T23:05:08.786Z",
+    "event": "mock-edit-start"
+  },
+  {
+    "at": "2026-10-01T23:05:16.795Z",
+    "event": "mock-edit-done"
+  },
+  {
+    "at": "2026-10-01T23:05:17.198Z",
+    "event": "mock-edit-start"
+  },
+  {
+    "at": "2026-10-01T23:06:21.577Z",
+    "event": "mock-edit-start"
+  },
+  {
+    "at": "2026-10-01T23:06:29.585Z",
+    "event": "mock-edit-done"
+  }
+]
