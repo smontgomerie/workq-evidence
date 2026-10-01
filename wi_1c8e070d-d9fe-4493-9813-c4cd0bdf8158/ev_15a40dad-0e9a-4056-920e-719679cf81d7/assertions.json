@@ -1,0 +1,22 @@
+{
+  "authenticatedOwner": true,
+  "anonymousRefused": true,
+  "captures": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "reload": true
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "reload": true
+    }
+  ],
+  "browserErrors": [],
+  "backend": "real disposable auth/API/MySQL",
+  "privateImages": "Screenshots contain local personal images; never publish publicly.",
+  "hostedAnalysis": "MOCKED in prior live run"
+}
