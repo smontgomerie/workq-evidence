@@ -1,0 +1,4 @@
+Successfully connected to Redis
+Killed test worker after prompt confirmation; restarting to verify collection without resubmission.
+Canonical recovered and ready; approval remains pending.
+Live local integration passed. Evidence: /home/scott/.workq-pool/bases/storybookmagic/worktrees/workq_wi_1c8e070d-d9fe-4493-9813-c4cd0bdf8158/tmp/local-character-integration/evidence.json
