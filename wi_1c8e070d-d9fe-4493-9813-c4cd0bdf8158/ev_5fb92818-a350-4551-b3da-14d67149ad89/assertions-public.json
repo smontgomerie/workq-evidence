@@ -1,0 +1,31 @@
+{
+  "completedAt": "2026-10-01T23:06:29.837Z",
+  "database": "disposable local_character_check",
+  "redisPort": 16387,
+  "gpuRouter": "http://127.0.0.1:8188",
+  "checks": {
+    "migrationPreservesExistingRow": true,
+    "realAuthAndUpload": true,
+    "ownershipGate": true,
+    "paymentGate": true,
+    "approvalGate": true,
+    "duplicateRequest": true,
+    "workerRestartNoResubmission": true,
+    "fourViewSourcesMatchApprovedCanonical": true,
+    "sheet1536Square": true,
+    "sheetAcceptGate": true,
+    "publicationInFlightConflict": true,
+    "publicationIdempotentRetry": true,
+    "interruptedPublicationNoReplay": true,
+    "publicationAtomicSwitch": true,
+    "republishedSheetNoOp": true,
+    "targetedFeedbackRerender": true,
+    "selectiveRepairPreservation": true,
+    "interruptedEditNoReplay": true,
+    "canonicalReapproval": true,
+    "staleRevisionConflicts": true,
+    "downstreamAssetReuse": true,
+    "candidatePublishedFieldsUnchanged": true
+  },
+  "visualVerdict": "pending"
+}
