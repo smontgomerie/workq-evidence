@@ -1,0 +1,28 @@
+{
+  "specialty": "architecture",
+  "summary": "Combined DM\u2192Pinpoint observe-not-reupload wiring and fake release\u2192import/content/search lifecycle fit the intended cross-module shape. The material risk is ExpectedOutput remaining a single unscoped array while DM and Pinpoint invent incompatible silent filters, with interface docs still describing the old fail/refuse semantics.",
+  "findings": [
+    {
+      "path": "src/contracts/fixtures.ts",
+      "line": 21,
+      "severity": "medium",
+      "confidence": "high",
+      "specialty": "architecture",
+      "kind": "inline",
+      "summary": "Shared expectedOutputs has no stage affinity; adapters silently drop different assertion types.",
+      "rationale": "One fixture array now drives three policies: DM verifyOutputPackage omits search-finds when deferSearchFinds (dm-release only); Pinpoint verifyRevision strips document-count before unverifiableOutputs; direct Pinpoint prepare still refuses document-count. Deferred/skipped rows vanish from that stage\u2019s AssertionResult list rather than being recorded as skipped, so combined fixtures (e.g. s1kd-contract-pipeline) encode cross-product intent only in ad-hoc call-site filters. content-contains is also evaluated twice on the combined path (DM zip entries vs Pinpoint HTML refkeys) under the same schema type with different match rules. Without fixture- or schema-level stage scoping, the next workflow or assertion type will likely add a third filter rather than a shared contract.",
+      "dedupeKey": "architecture-expectedOutputs-unscoped-stage-filters"
+    },
+    {
+      "path": "docs/framework-interfaces.md",
+      "line": 297,
+      "severity": "medium",
+      "confidence": "high",
+      "specialty": "architecture",
+      "kind": "inline",
+      "summary": "Published LTF-004/005 and fake-surface docs still contradict the new split-verify contract.",
+      "rationale": "LTF-004 still states search-finds fails on DM with an explicit missing-phase detail, but dm-release now defers those rows. LTF-005 still lists document-count as refused before upload with no note that verifyRevision silently skips it for dm-publish-to-pinpoint. docs/load-testing-framework.md still claims Pinpoint content/search are not modelled and that content visibility can only be checked on real Pinpoint. The new mock section around the fake content/search routes was updated, so the shared interface docs now disagree with each other and with the adapters\u2014classic data-contract drift for anyone wiring fixtures or reading LTF-004/005 as authority.",
+      "dedupeKey": "architecture-docs-assert-contract-drift"
+    }
+  ]
+}
