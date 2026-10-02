@@ -1,0 +1,21 @@
+{
+  "assertions": [
+    "Owner adds an eighth person and uploads two synthetic private sources through real REST routes; classic remains default",
+    "Real durable generation iterates canonical and four views; mocked hosted edit is compared in integrated owner review; UI saves human feedback and eval case",
+    "Formal admin judge displays mocked advisory results; human saving calls no judge",
+    "Unapproved and anonymous actors cannot read beta API/private output; revocation blocks read/write with no persisted mutations"
+  ],
+  "syntheticOnly": true,
+  "gpuCalls": 0,
+  "paidCalls": 0,
+  "contentScreening": "mocked",
+  "judge": "mocked advisory",
+  "publication": "not requested",
+  "screenshots": [
+    "beta-desktop-before.png",
+    "beta-mobile-before.png",
+    "beta-desktop-after.png",
+    "beta-mobile-after.png",
+    "beta-mocked-advisory-judge.png"
+  ]
+}
