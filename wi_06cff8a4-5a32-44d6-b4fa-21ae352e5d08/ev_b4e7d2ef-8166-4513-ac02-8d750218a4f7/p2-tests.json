@@ -1,0 +1,16 @@
+{
+  "specialty": "tests",
+  "summary": "P1 test gaps pinned; dropNextResponse on release and unique-text numFound still untested.",
+  "findings": [
+    {
+      "path": "src/adapters/fake/data-manager.ts",
+      "severity": "medium",
+      "summary": "dropNextResponse on DM release untested"
+    },
+    {
+      "path": "src/adapters/fake/pinpoint.ts",
+      "severity": "medium",
+      "summary": "unique-text numFound untested"
+    }
+  ]
+}
