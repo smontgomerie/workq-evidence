@@ -1,0 +1,39 @@
+{
+  "specialty": "correctness",
+  "summary": "Combined Pinpoint content verification is not revision-scoped on the engine handoff path, so import-finished and content-contains can disagree about which revision was checked. The fake search surface also collapses multi-document matches into a single per-import hit count.",
+  "findings": [
+    {
+      "path": "src/scheduler/engine.ts",
+      "line": 1188,
+      "severity": "medium",
+      "confidence": "high",
+      "specialty": "correctness",
+      "kind": "inline",
+      "summary": "Combined handoff omits revisionNumber, so new content-contains checks are not tied to the revision whose import just finished.",
+      "rationale": "`#revisionTarget` returns only `{ libraryId, publicationId, revisionId }`. `verifyRevision` \u2192 `contentContains` therefore omits `?revisionNumber=\u2026`. Import status is keyed by revisionId, but the fake content handler (and real content API without a revision filter) can serve another COMPLETED revision of the same publication (`candidates.at(-1)`). This change makes content/search assertions load-bearing on that path; adapter unit tests pass `revisionNumber: 1` manually, but the engine never does.",
+      "dedupeKey": "correctness/combined-content-missing-revisionNumber"
+    },
+    {
+      "path": "src/adapters/fake/pinpoint.ts",
+      "line": 317,
+      "severity": "medium",
+      "confidence": "high",
+      "specialty": "correctness",
+      "kind": "inline",
+      "summary": "Fake ftsSearch numFound counts matching imports, not matching documents.",
+      "rationale": "A job contributes at most `+1` when any document text includes the keyword, even if several documents match. Adapter `search-finds` compares `minHits` to `numFound`, so expectations like `minHits: 2` against one multi-document package can never pass on the fake while still looking like a green orchestration proof for `minHits: 1`. That collapses document-level hit cardinality into publication/import presence.",
+      "dedupeKey": "correctness/fake-search-numFound-per-import"
+    },
+    {
+      "path": "src/adapters/data-manager/verify.ts",
+      "line": 110,
+      "severity": "low",
+      "confidence": "high",
+      "specialty": "correctness",
+      "kind": "inline",
+      "summary": "Deferring every expectedOutput as search-finds reports success as \u201cno expectedOutputs\u201d.",
+      "rationale": "With `deferSearchFinds` and a fixture that only has `search-finds`, `checkable` is empty and the function returns a passing `output-package` assertion claiming there were no expectations. Deferred is collapsed into absent; consumers of the assertion list cannot tell search was intentionally skipped for Pinpoint.",
+      "dedupeKey": "correctness/defer-search-empty-checkable-placeholder"
+    }
+  ]
+}
