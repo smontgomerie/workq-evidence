@@ -1,0 +1,50 @@
+{
+  "specialty": "tests",
+  "summary": "Ticket-facing coverage is largely present: fake HTTP tests cover release\u2192import, content/search, delay, wrong ids, reset, revision cleanup, and controls; real adapters get a combined happy path plus import-FAILED. Remaining gaps are the verifyRevision document-count filter (only implicit), content-control failures never driven through the Pinpoint adapter against the fake, and a thin combined failure matrix beyond import FAILED.",
+  "findings": [
+    {
+      "path": "src/adapters/pinpoint/adapter.ts",
+      "line": 595,
+      "severity": "medium",
+      "confidence": "high",
+      "specialty": "tests",
+      "kind": "inline",
+      "summary": "verifyRevision\u2019s new document-count filter has no focused unit test.",
+      "rationale": "Combined fixtures now carry document-count plus Pinpoint content/search; verifyRevision strips document-count so it no longer throws. Existing Pinpoint unit tests still only assert prepare refuses document-count for direct import, and observation-only stubs never pass a mixed fixture through verifyRevision. The untracked combined pipeline is the sole proof \u2014 a regression that re-rejects document-count here would stay green in pinpoint/adapter.test.ts.",
+      "dedupeKey": "tests/verifyRevision-skips-document-count"
+    },
+    {
+      "path": "test/unit/adapters/fake/server.test.ts",
+      "line": 885,
+      "severity": "medium",
+      "confidence": "high",
+      "specialty": "tests",
+      "kind": "inline",
+      "summary": "failNextContent/corruptNextContent are never exercised through the Pinpoint adapter against the fake.",
+      "rationale": "The new one-shot controls are asserted only via raw fetch (status/body). Stub-based verify tests cover similar missing/wrong-publication failures, and adapter+fake happy paths cover success, but nothing shows createPinpointAdapter.verify or verifyRevision failing when the fake injects ERR4004 or a mismatched publication.id \u2014 the seam the ticket\u2019s missing/corrupt-content cases were meant to harden.",
+      "dedupeKey": "tests/fake-content-controls-via-adapter"
+    },
+    {
+      "path": "test/unit/adapters/combined-fake-pipeline.test.ts",
+      "line": 146,
+      "severity": "medium",
+      "confidence": "medium",
+      "specialty": "tests",
+      "kind": "inline",
+      "summary": "Real-adapter combined suite only covers happy path and import FAILED.",
+      "rationale": "Ticket asked for missing/corrupt content, delayed search, wrong publication/revision, interrupted/reset, and cleanup, plus integration with actual adapters. Those failure modes live in fake/server.test.ts (HTTP), while combined-fake-pipeline.test.ts only runs success and failNextImport. RunEngine + both adapters never see COMPLETED-then-verify-fails, searchVisibilityDelayMs vs adapter polling, or cleanup of a release-driven import.",
+      "dedupeKey": "tests/combined-pipeline-thin-failure-matrix"
+    },
+    {
+      "path": "src/adapters/fake/data-manager.ts",
+      "line": 38,
+      "severity": "low",
+      "confidence": "high",
+      "specialty": "tests",
+      "kind": "inline",
+      "summary": "Publication DELETE cleanup of release-driven imports is untested.",
+      "rationale": "New imports.delete in deletePublication mirrors the tested revision-DELETE path, but no case deletes the publication and asserts the import/content surface is gone. A miss here could leave completed imports serving content after publication teardown.",
+      "dedupeKey": "tests/publication-delete-clears-imports"
+    }
+  ]
+}
