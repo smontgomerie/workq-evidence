@@ -1,0 +1,39 @@
+{
+  "specialty": "pattern-conformance",
+  "summary": "Release\u2192import and content/search largely reuse startImport\u2019s generation guard, consumeControl, and reset/abort lifecycle, matching startBuildJob. The main divergence is that release now starts async work but still skips the sibling respondUnlessDropped / dropNextResponse arm used by every other work-starting submission.",
+  "findings": [
+    {
+      "path": "src/adapters/fake/data-manager.ts",
+      "line": 337,
+      "severity": "medium",
+      "confidence": "high",
+      "specialty": "pattern-conformance",
+      "kind": "inline",
+      "summary": "Release now starts an import but still answers with bare sendStatus instead of respondUnlessDropped.",
+      "rationale": "Sibling work-starting submissions \u2014 builder PUT, DM upload (may queue build), DM `/build`, and Pinpoint package upload \u2014 all call respondUnlessDropped after recording work so dropNextResponse models accepted-but-response-lost. Release previously only flipped isReleased (and was omitted from the FakeControls dropNextResponse docstring). It now calls startReleaseDrivenImport (same async family as startImport/startBuildJob) then sendStatus(res, 200) directly, so the one-shot drop arm cannot cover this new submission even though DM verify retries release when isReleased is false.",
+      "dedupeKey": "fake-dm-release-missing-respondUnlessDropped"
+    },
+    {
+      "path": "src/adapters/fake/pinpoint.ts",
+      "line": 66,
+      "severity": "low",
+      "confidence": "medium",
+      "specialty": "pattern-conformance",
+      "kind": "inline",
+      "summary": "Missing publication.parentId silently no-ops release-driven import after isReleased is already set.",
+      "rationale": "startReleaseDrivenImport returns without starting work when parentId is undefined. The call site in handleDataManager has already set revision.isReleased = true, so the HTTP release succeeds with no import record. Direct /import/pinpointPackage fails closed with ERR6003 when neither importInformation.json nor query ids yield a target. Publications may be created without parentId; the new release\u2192import path has no equivalent refused/absent arm and leaves a released revision that combined observe/verify cannot satisfy.",
+      "dedupeKey": "fake-release-import-silent-missing-parentId"
+    },
+    {
+      "path": "src/adapters/fake/pinpoint.ts",
+      "line": 21,
+      "severity": "low",
+      "confidence": "medium",
+      "specialty": "pattern-conformance",
+      "kind": "inline",
+      "summary": "Unreadable package bytes become an empty document map and COMPLETED, unlike DM upload\u2019s isZip failure arm.",
+      "rationale": "documentsFromPackage uses listZipEntries(pkg) ?? [] then startImport marks COMPLETED. DM upload refuses non-zip packages (FAILED) before startBuildJob; builder corruptNextOutput intentionally yields a non-zip that release will still import to COMPLETED with no documents. Import\u2019s only failure one-shot remains failNextImport \u2014 there is no corrupt/unreadable-package failure sibling on the new release-driven path, so corrupt build output looks like a successful empty import rather than a failed one.",
+      "dedupeKey": "fake-import-unreadable-zip-completes-empty"
+    }
+  ]
+}
