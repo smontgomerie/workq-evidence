@@ -1,0 +1,5 @@
+{
+  "specialty": "security",
+  "summary": "New Pinpoint content GET and ftsSearch POST both call requireBearer before path/body work; DM release-driven import stays behind the existing Data Manager bearer gate. Request bodies reuse maxBodyBytes-capped readRequestJson/readRequestBody, path params follow the same decodeURIComponent pattern as sibling routes, and the fake still defaults to 127.0.0.1 with no new secret handling.",
+  "findings": []
+}
