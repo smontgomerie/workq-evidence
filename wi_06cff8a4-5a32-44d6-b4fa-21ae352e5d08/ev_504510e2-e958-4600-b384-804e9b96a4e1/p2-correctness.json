@@ -1,0 +1,11 @@
+{
+  "specialty": "correctness",
+  "summary": "P1 fixes complete; remaining gap is ftsSearch unioning every COMPLETED import for a publication.",
+  "findings": [
+    {
+      "path": "src/adapters/fake/pinpoint.ts",
+      "severity": "medium",
+      "summary": "ftsSearch counts hits from every COMPLETED import for a publication"
+    }
+  ]
+}
