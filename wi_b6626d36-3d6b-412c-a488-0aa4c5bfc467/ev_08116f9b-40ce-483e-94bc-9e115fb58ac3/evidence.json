@@ -1,0 +1,45 @@
+{
+  "evidence": [
+    {
+      "name": "desktop-compare-before",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scrollWidth": 1440,
+      "brokenImages": 0,
+      "overflow": []
+    },
+    {
+      "name": "desktop-compare-after",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scrollWidth": 1440,
+      "brokenImages": 0,
+      "overflow": []
+    },
+    {
+      "name": "desktop-compare-judge",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scrollWidth": 1440,
+      "brokenImages": 0,
+      "overflow": []
+    },
+    {
+      "name": "mobile-compare",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scrollWidth": 390,
+      "brokenImages": 0,
+      "overflow": []
+    }
+  ],
+  "browserErrors": []
+}
