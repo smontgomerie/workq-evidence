@@ -1,0 +1,13 @@
+{
+  "specialty": "correctness",
+  "reviewedBase": "ad34974370261ca5a30461f373afe4ead3de605e",
+  "reviewedHead": "79699645",
+  "mode": "self-review",
+  "topology": "in-run, nested transcripts unavailable",
+  "summary": "High: mutation retries create fresh request IDs, suite switches retain old authoring state and late mutation callbacks, and cancel invalidates a different in-flight start while leaving starting=true. Medium: unchecked cases disappear and retryability is taken from the first child.",
+  "findings": [
+    "Stable mutation replay",
+    "Selection and mutation fences",
+    "Experiment selection and child navigation"
+  ]
+}
