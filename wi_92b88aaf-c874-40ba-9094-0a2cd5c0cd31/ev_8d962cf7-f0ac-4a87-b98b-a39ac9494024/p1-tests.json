@@ -1,0 +1,11 @@
+{
+  "specialty": "tests",
+  "reviewedBase": "ad34974370261ca5a30461f373afe4ead3de605e",
+  "reviewedHead": "79699645",
+  "mode": "self-review",
+  "topology": "in-run, nested transcripts unavailable",
+  "summary": "Medium: created:false mocks do not prove retry identity; the cancel test suppresses a newly created different experiment; partial-batch test manually recreates lost selections. Missing suite switch/unmount and run-rating races. Added real deferred-result tests and full fixture flow assertions.",
+  "findings": [
+    "Meaningful race and workflow proof"
+  ]
+}
