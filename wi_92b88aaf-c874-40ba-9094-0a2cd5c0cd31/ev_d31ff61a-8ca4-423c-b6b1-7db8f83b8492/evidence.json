@@ -1,0 +1,104 @@
+{
+  "evidence": [
+    {
+      "name": "desktop-evaluations-default",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sectionPresent": true,
+      "scrollWidth": 1440,
+      "brokenImages": 0,
+      "overflow": []
+    },
+    {
+      "name": "desktop-dataset-added",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sectionPresent": true,
+      "scrollWidth": 1440,
+      "brokenImages": 0,
+      "overflow": []
+    },
+    {
+      "name": "desktop-dataset-promoted",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sectionPresent": true,
+      "scrollWidth": 1440,
+      "brokenImages": 0,
+      "overflow": []
+    },
+    {
+      "name": "desktop-baselines",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sectionPresent": true,
+      "scrollWidth": 1440,
+      "brokenImages": 0,
+      "overflow": []
+    },
+    {
+      "name": "desktop-experiment-awaiting",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sectionPresent": true,
+      "scrollWidth": 1440,
+      "brokenImages": 0,
+      "overflow": []
+    },
+    {
+      "name": "desktop-experiment-cancelled",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sectionPresent": true,
+      "scrollWidth": 1440,
+      "brokenImages": 0,
+      "overflow": []
+    },
+    {
+      "name": "desktop-dataset-multi-person-photos",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sectionPresent": true,
+      "scrollWidth": 1440,
+      "brokenImages": 0,
+      "overflow": []
+    },
+    {
+      "name": "desktop-refused-actor",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "sectionPresent": true,
+      "scrollWidth": 1440,
+      "brokenImages": 0,
+      "overflow": []
+    },
+    {
+      "name": "mobile-evaluations",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "sectionPresent": true,
+      "scrollWidth": 390,
+      "brokenImages": 0,
+      "overflow": []
+    }
+  ],
+  "browserErrors": []
+}
