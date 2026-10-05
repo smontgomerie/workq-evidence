@@ -1,0 +1,12 @@
+{
+  "specialty": "ux-ui-redux-react",
+  "reviewedBase": "ad34974370261ca5a30461f373afe4ead3de605e",
+  "reviewedHead": "79699645",
+  "mode": "self-review",
+  "topology": "in-run, nested transcripts unavailable",
+  "summary": "Medium: missing photo-authoring return path, frozen images/reviewer/check evidence and selectable unchecked cases. High: no child review/approval navigation. Retired suite detail does not refresh. Fixed through existing AddPersonPanel/RunPanel and preserved workspace state.",
+  "findings": [
+    "Dataset authoring and frozen evidence",
+    "Experiment selection and child navigation"
+  ]
+}
