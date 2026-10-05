@@ -1,0 +1,11 @@
+{
+  "specialty": "security",
+  "reviewedBase": "ad34974370261ca5a30461f373afe4ead3de605e",
+  "reviewedHead": "79699645",
+  "mode": "self-review",
+  "topology": "in-run, nested transcripts unavailable",
+  "summary": "Medium: directly rendering EvaluationWorkspace with isAdmin=false still executes admin resource reads before returning null, and its test only asserts absent DOM. Fixed guards and asserts no resource calls. Fixture routes are loopback-only, development fixture is excluded by .dockerignore, no live calls or secret data added.",
+  "findings": [
+    "Selection and mutation fences"
+  ]
+}
