@@ -1,0 +1,13 @@
+{
+  "specialty": "architecture",
+  "reviewedBase": "ad34974370261ca5a30461f373afe4ead3de605e",
+  "reviewedHead": "79699645",
+  "mode": "self-review",
+  "topology": "in-run, nested transcripts unavailable",
+  "summary": "High: client-owned random IDs prevent replaying the settled E2/E4 contracts. Missing child-run context severs the initial generate/review loop; frozen snapshot bindings do not expose ratings. Existing comparison and workflow ownership remains untouched. Reused existing authoring and run components with additive initialRunId navigation.",
+  "findings": [
+    "Stable mutation replay",
+    "Dataset authoring and frozen evidence",
+    "Experiment selection and child navigation"
+  ]
+}
