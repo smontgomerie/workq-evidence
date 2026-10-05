@@ -1,0 +1,12 @@
+{
+  "specialty": "pattern-conformance",
+  "reviewedBase": "ad34974370261ca5a30461f373afe4ead3de605e",
+  "reviewedHead": "79699645",
+  "mode": "self-review",
+  "topology": "in-run, nested transcripts unavailable",
+  "summary": "Medium: new mutation clients omit the caller-owned request identity used by createPerson/createRevision and AddPersonPanel. New rating fetch lacks the live cleanup used by neighbouring person fetch. Partial batch loses the retry payload. Applied signature-bound identities and per-request selection fences; no scheduling/import workarounds.",
+  "findings": [
+    "Stable mutation replay",
+    "Selection and mutation fences"
+  ]
+}
