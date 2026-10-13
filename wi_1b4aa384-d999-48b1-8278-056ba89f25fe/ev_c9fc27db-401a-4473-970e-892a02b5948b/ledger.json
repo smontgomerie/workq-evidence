@@ -1,0 +1,203 @@
+{
+  "syntheticInputs": true,
+  "sourcePhotos": false,
+  "hostedJudgeDispatched": false,
+  "expansionStarted": false,
+  "renders": [
+    {
+      "arm": "klein9b",
+      "references": 1,
+      "seed": 0,
+      "promptId": "edecd894-1cdd-4c73-94f8-3f64298976c9",
+      "graphSha256": "7f596d8be448c21fb376057d3dd8f9e973964bbc0743afd72bfb1238dbf328d5",
+      "outputSha256": "fb6145ff15f1950133479b7632d31fd4f7873131f8e9be4f4ae54dad4994b591",
+      "width": 1024,
+      "height": 1024,
+      "executionMs": 13280,
+      "modelPins": {
+        "flux-2-klein-9b-fp8.safetensors": "865ba09f5b4c3cbd3468a4bd3acb9fcb2f8740c54317482f0bcd4ed1d3655cee",
+        "qwen_3_8b_fp8mixed.safetensors": "abad16806e0cbabc54e0325d6565847443fe396d5f0be38bb3cd3fe75a1201d6",
+        "flux2-vae.safetensors": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3"
+      },
+      "sample": "/home/scott/.workq-pool/bases/storybookmagic/worktrees/workq_wi_1b4aa384-d999-48b1-8278-056ba89f25fe/tmp/blind-scene-c6/samples/klein9b.png"
+    },
+    {
+      "arm": "klein9b",
+      "references": 2,
+      "seed": 42,
+      "promptId": "6fcfc96f-d8e2-4dac-9ed6-41f7c4c6b1cb",
+      "graphSha256": "0ea26b9aea8604d217a005a6ec65d66a2248c80c997939cd8215e637b16f2ed3",
+      "outputSha256": "cf7d37566c690edc4244c7342c537b96ae2862b86e17ef8ea4400cda1749232d",
+      "width": 1024,
+      "height": 1024,
+      "executionMs": 11665,
+      "modelPins": {
+        "flux-2-klein-9b-fp8.safetensors": "865ba09f5b4c3cbd3468a4bd3acb9fcb2f8740c54317482f0bcd4ed1d3655cee",
+        "qwen_3_8b_fp8mixed.safetensors": "abad16806e0cbabc54e0325d6565847443fe396d5f0be38bb3cd3fe75a1201d6",
+        "flux2-vae.safetensors": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3"
+      }
+    },
+    {
+      "arm": "klein9b",
+      "references": 3,
+      "seed": 0,
+      "promptId": "e0ae061c-c4a9-4900-a0f6-f4f84c6d6bf1",
+      "graphSha256": "acacb3489f79a3ad121c31b019e5b036da590c3586058755574af69a3270021c",
+      "outputSha256": "4b0eea7ca38faf7c65526c2eff4f247579ec11ce539eb2f180287f8e10541e1b",
+      "width": 1024,
+      "height": 1024,
+      "executionMs": 14201,
+      "modelPins": {
+        "flux-2-klein-9b-fp8.safetensors": "865ba09f5b4c3cbd3468a4bd3acb9fcb2f8740c54317482f0bcd4ed1d3655cee",
+        "qwen_3_8b_fp8mixed.safetensors": "abad16806e0cbabc54e0325d6565847443fe396d5f0be38bb3cd3fe75a1201d6",
+        "flux2-vae.safetensors": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3"
+      }
+    },
+    {
+      "arm": "krea2turbo",
+      "references": 1,
+      "seed": 0,
+      "promptId": "937f7e61-6e45-4a1a-aa88-b047edb6a637",
+      "graphSha256": "7d272fe8f1a62d7d4b815af096e1911955f2493e4e9293a6e3a4cea57f775805",
+      "outputSha256": "bc1604e903390d64c12ad0a66f71333237bda19ed1548908739d7fa3f866a67a",
+      "width": 1024,
+      "height": 1024,
+      "executionMs": 29187,
+      "modelPins": {
+        "krea2_turbo_int8_convrot.safetensors": "8e4eeda70dd5037ab1ba2bef6b417f9f901e26093117cf397f741fc1fdaaf3f1",
+        "qwen3vl_4b_fp8_scaled.safetensors": "54bd5144df0bbc25dd6ccadfcb826b521445a1b06ae5a42570bdd2974ca87094",
+        "qwen_image_vae.safetensors": "a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f",
+        "krea2_style_reference.safetensors": "f50df5a9e62e4be8aa926a63dd5bb1a64770c4004f763c1208007ae13daa82b8"
+      },
+      "sample": "/home/scott/.workq-pool/bases/storybookmagic/worktrees/workq_wi_1b4aa384-d999-48b1-8278-056ba89f25fe/tmp/blind-scene-c6/samples/krea2turbo.png"
+    },
+    {
+      "arm": "krea2turbo",
+      "references": 2,
+      "seed": 42,
+      "promptId": "4a84865a-d5e7-4c4c-923c-09c8aa777e0a",
+      "graphSha256": "98f147d624b66891253102b8cffc92c3ab18d616e7b1e5b8af776a9d0b87585c",
+      "outputSha256": "e6449f0362e19fe5c2466ad8b0a0c324de04496fa46a3d21c7b0a0a30a6b39a8",
+      "width": 1024,
+      "height": 1024,
+      "executionMs": 29161,
+      "modelPins": {
+        "krea2_turbo_int8_convrot.safetensors": "8e4eeda70dd5037ab1ba2bef6b417f9f901e26093117cf397f741fc1fdaaf3f1",
+        "qwen3vl_4b_fp8_scaled.safetensors": "54bd5144df0bbc25dd6ccadfcb826b521445a1b06ae5a42570bdd2974ca87094",
+        "qwen_image_vae.safetensors": "a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f",
+        "krea2_style_reference.safetensors": "f50df5a9e62e4be8aa926a63dd5bb1a64770c4004f763c1208007ae13daa82b8"
+      }
+    },
+    {
+      "arm": "krea2turbo",
+      "references": 3,
+      "seed": 0,
+      "promptId": "a850f7e0-8cf8-470e-a92a-fe6ab6ca6862",
+      "graphSha256": "8b98af9e316be88bbc68345f5822d82fb3846109004c8dce8c6dcb1f51ff47c8",
+      "outputSha256": "f2188ae00ffcc391233008b280da90fc8636dbe7e175a2421dab3787319c5968",
+      "width": 1024,
+      "height": 1024,
+      "executionMs": 28913,
+      "modelPins": {
+        "krea2_turbo_int8_convrot.safetensors": "8e4eeda70dd5037ab1ba2bef6b417f9f901e26093117cf397f741fc1fdaaf3f1",
+        "qwen3vl_4b_fp8_scaled.safetensors": "54bd5144df0bbc25dd6ccadfcb826b521445a1b06ae5a42570bdd2974ca87094",
+        "qwen_image_vae.safetensors": "a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f",
+        "krea2_style_reference.safetensors": "f50df5a9e62e4be8aa926a63dd5bb1a64770c4004f763c1208007ae13daa82b8"
+      }
+    },
+    {
+      "arm": "qwen21",
+      "references": 1,
+      "seed": 0,
+      "promptId": "a1ab6622-4a7c-4e4b-b13f-d1faaca73695",
+      "graphSha256": "506e121108f3ee0a1ae32f88acfe6430314f557d56601d7de762d6c3c82bc65d",
+      "outputSha256": "ab28b4490f6f0a8fdeb47453d3728ffcb8cf77eb4df94f626119046fb9cd7ff9",
+      "width": 1024,
+      "height": 1024,
+      "executionMs": 24227,
+      "modelPins": {
+        "qwen_image_2.1_int8_convrot.safetensors": "cb74113cb03faecd79611b01fd7fd642f0aa60d6f0b95086abee214d75eaa57d",
+        "qwen3vl_8b_int8_convrot.safetensors": "8bfd0f6e12abf2d2d697ecc888e5e90b0d6741d6708f05799f53afa560452e8f",
+        "qwen_image_2.1_vae_bf16.safetensors": "bb21f7473051e1ac368515dd3f2e15cd44d7a11748ee8823e1ddca3e4876b7c9"
+      },
+      "sample": "/home/scott/.workq-pool/bases/storybookmagic/worktrees/workq_wi_1b4aa384-d999-48b1-8278-056ba89f25fe/tmp/blind-scene-c6/samples/qwen21.png"
+    },
+    {
+      "arm": "qwen21",
+      "references": 2,
+      "seed": 42,
+      "promptId": "070857c4-cb35-4411-928b-bb1308e0368b",
+      "graphSha256": "1ce539eaabcafafe4adce560b63213f1432109c9ac22dbba50b0f09953652e77",
+      "outputSha256": "9b16a1ffeaefd6ffa4f4bcd78c58faa03e650ebde3a146fc5581669ec35592ef",
+      "width": 1024,
+      "height": 1024,
+      "executionMs": 73502,
+      "modelPins": {
+        "qwen_image_2.1_int8_convrot.safetensors": "cb74113cb03faecd79611b01fd7fd642f0aa60d6f0b95086abee214d75eaa57d",
+        "qwen3vl_8b_int8_convrot.safetensors": "8bfd0f6e12abf2d2d697ecc888e5e90b0d6741d6708f05799f53afa560452e8f",
+        "qwen_image_2.1_vae_bf16.safetensors": "bb21f7473051e1ac368515dd3f2e15cd44d7a11748ee8823e1ddca3e4876b7c9"
+      }
+    },
+    {
+      "arm": "qwen21",
+      "references": 3,
+      "seed": 0,
+      "promptId": "0e0e4ed4-11f3-473e-8379-1faa112bb7a0",
+      "graphSha256": "a63b3536fb44066821ad123944fd4ff81a98d6f9729b63e03582657b514f0a15",
+      "outputSha256": "ecb6369aa910aa53d8dea7c7cef404bffca266343346955037a11f9df5856302",
+      "width": 1024,
+      "height": 1024,
+      "executionMs": 98325,
+      "modelPins": {
+        "qwen_image_2.1_int8_convrot.safetensors": "cb74113cb03faecd79611b01fd7fd642f0aa60d6f0b95086abee214d75eaa57d",
+        "qwen3vl_8b_int8_convrot.safetensors": "8bfd0f6e12abf2d2d697ecc888e5e90b0d6741d6708f05799f53afa560452e8f",
+        "qwen_image_2.1_vae_bf16.safetensors": "bb21f7473051e1ac368515dd3f2e15cd44d7a11748ee8823e1ddca3e4876b7c9"
+      }
+    },
+    {
+      "arm": "klein9b",
+      "references": 1,
+      "seed": 0,
+      "promptId": "cf12b77f-35b2-45c7-96c6-901f267ce7b2",
+      "graphSha256": "7f596d8be448c21fb376057d3dd8f9e973964bbc0743afd72bfb1238dbf328d5",
+      "outputSha256": "fb6145ff15f1950133479b7632d31fd4f7873131f8e9be4f4ae54dad4994b591",
+      "width": 1024,
+      "height": 1024,
+      "executionMs": 9825,
+      "modelPins": {
+        "flux-2-klein-9b-fp8.safetensors": "865ba09f5b4c3cbd3468a4bd3acb9fcb2f8740c54317482f0bcd4ed1d3655cee",
+        "qwen_3_8b_fp8mixed.safetensors": "abad16806e0cbabc54e0325d6565847443fe396d5f0be38bb3cd3fe75a1201d6",
+        "flux2-vae.safetensors": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3"
+      }
+    },
+    {
+      "track": "sequential",
+      "order": "forward",
+      "promptIds": [
+        "cf12b77f-35b2-45c7-96c6-901f267ce7b2",
+        "7a6b9da7-5c4b-4d19-8220-5a524dca6f91"
+      ],
+      "outputSha256": [
+        "fb6145ff15f1950133479b7632d31fd4f7873131f8e9be4f4ae54dad4994b591",
+        "1bef6f2660faadf72f41a78ba203f2620371ee77eebbe9d8fd6c76eef6b7f752"
+      ]
+    },
+    {
+      "track": "cancel-unsent",
+      "outcome": "cancelled",
+      "attempt": 1,
+      "occupiedPromptId": "9236daea-8d69-44a7-bb69-ba6975254240",
+      "cancelledPromptId": "1554d952-2f8c-4b96-8d37-c633d98b0f77",
+      "deleteAccepted": true,
+      "removedFromQueue": true,
+      "absentFromHistory": true
+    },
+    {
+      "track": "prompt-id-recovery",
+      "promptId": "7c4dbb4b-8265-492e-a345-142fe3e1ebf7",
+      "submissions": 14,
+      "resubmitted": false,
+      "outputSha256": "e6337f2f6c9ebac755c2c9ed5ee8549ed6170381dafe5f70c20cc7892bfd871d"
+    }
+  ]
+}
