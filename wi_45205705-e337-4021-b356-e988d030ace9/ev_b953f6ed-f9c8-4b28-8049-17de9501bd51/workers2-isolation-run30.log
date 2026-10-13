@@ -1,0 +1,615 @@
+START=1791922932 RUN=run30 ARTIFACT_ROOT=/tmp/workers2-e2e-artifacts
+Docker Compose version v5.4.0
+Staged E2E Docker context: /Users/scott/.workq-pool/bases/data-manager/cow-clones/workq_wi_45205705-e337-4021-b356-e988d030ace9/dev-container/target/e2e
+Artifact provenance: /Users/scott/.workq-pool/bases/data-manager/cow-clones/workq_wi_45205705-e337-4021-b356-e988d030ace9/dev-container/target/e2e/artifact-provenance.txt
+ Image dm-e2e-501-95288-dm:local Building 
+ Image dm-e2e-501-95288-db-initializer Building 
+ Image dm-e2e-501-95288-mock-builder:local Building 
+ Image dm-e2e-501-95288-ldap:local Building 
+ Image dm-e2e-501-95288-mock-builder:local Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 3.45kB done
+#1 DONE 0.0s
+
+#2 [db-initializer internal] load build definition from Dockerfile.init_db
+#2 transferring dockerfile: 500B 0.0s done
+#2 DONE 0.0s
+
+#3 [testbuilder2 internal] load build definition from Dockerfile
+#3 transferring dockerfile: 232B done
+#3 DONE 0.1s
+
+#4 [dm-image internal] load build definition from Dockerfile
+#4 transferring dockerfile: 1.88kB done
+#4 DONE 0.1s
+
+#5 [ldap internal] load build definition from Dockerfile.init_ldap
+#5 transferring dockerfile: 393B done
+#5 DONE 0.1s
+
+#6 [db-initializer internal] load metadata for docker.io/library/postgres:16.3
+#6 DONE 0.1s
+
+#7 [testbuilder2 internal] load metadata for docker.io/library/node:22-alpine
+#7 ...
+
+#8 [db-initializer internal] load .dockerignore
+#8 transferring context: 2B done
+#8 DONE 0.0s
+
+#9 [db-initializer 1/5] FROM docker.io/library/postgres:16.3@sha256:d0f363f8366fbc3f52d172c6e76bc27151c3d643b870e1062b4e8bfe65baf609
+#9 resolve docker.io/library/postgres:16.3@sha256:d0f363f8366fbc3f52d172c6e76bc27151c3d643b870e1062b4e8bfe65baf609 0.0s done
+#9 DONE 0.0s
+
+#10 [db-initializer internal] load build context
+#10 transferring context: 18.01kB 0.0s done
+#10 DONE 0.0s
+
+#11 [db-initializer 2/5] COPY ./dbscript/init_db.sh /init_db.sh
+#11 CACHED
+
+#12 [db-initializer 3/5] COPY ./dbscript/insert_acm_values.sql /dbscript/insert_acm_values.sql
+#12 CACHED
+
+#13 [db-initializer 4/5] RUN sed -i 's/\r$//' /init_db.sh
+#13 CACHED
+
+#14 [db-initializer 5/5] RUN chmod 755 /init_db.sh
+#14 CACHED
+
+#15 [db-initializer] exporting to image
+#15 exporting layers 0.0s done
+#15 exporting manifest sha256:5f2c54f414209e93a569844fd4d84acc0cf6b5a0698e14a870030a2932684508 0.0s done
+#15 exporting config sha256:ed58a2dfdc480e2945c54f74ebb039e1bda05707c4cbf71be4df3a5ae10e5fdc
+#15 exporting config sha256:ed58a2dfdc480e2945c54f74ebb039e1bda05707c4cbf71be4df3a5ae10e5fdc 0.0s done
+#15 exporting attestation manifest sha256:9b774ffc187146ff61f9aa7bd8faba26ee4455dcd3fdd852409eddb93973c81c 0.0s done
+#15 exporting manifest list sha256:fac9382dc6423c138b6fe4fae5b0cc6e2135637d4a57c149818b21c5f66ac996 0.1s done
+#15 naming to docker.io/library/dm-e2e-501-95288-db-initializer:latest
+#15 naming to docker.io/library/dm-e2e-501-95288-db-initializer:latest done
+#15 unpacking to docker.io/library/dm-e2e-501-95288-db-initializer:latest 0.0s done
+#15 DONE 0.3s
+
+#16 [ldap internal] load metadata for docker.io/osixia/openldap:1.5.0
+#16 ...
+
+#17 [db-initializer] resolving provenance for metadata file
+#17 DONE 0.1s
+
+#16 [ldap internal] load metadata for docker.io/osixia/openldap:1.5.0
+#16 DONE 1.5s
+
+#18 [dm-image internal] load metadata for hub.flatirons.cloud/docker/linuxetcd-java-tomcat:tomcat11.0.26-etcd-temu21.8-rocky9.8-root
+#18 ...
+
+#8 [ldap internal] load .dockerignore
+#8 CACHED
+
+#7 [testbuilder2 internal] load metadata for docker.io/library/node:22-alpine
+#7 DONE 1.5s
+
+#19 [testbuilder2 internal] load .dockerignore
+#19 transferring context: 2B done
+#19 DONE 0.1s
+
+#20 [ldap internal] load build context
+#20 transferring context: 1.72kB 0.0s done
+#20 DONE 0.1s
+
+#21 [ldap 1/3] FROM docker.io/osixia/openldap:1.5.0@sha256:18742e9c449c9c1afe129d3f2f3ee15fb34cc43e5f940a20f3399728f41d7c28
+#21 resolve docker.io/osixia/openldap:1.5.0@sha256:18742e9c449c9c1afe129d3f2f3ee15fb34cc43e5f940a20f3399728f41d7c28 0.1s done
+#21 DONE 0.1s
+
+#22 [ldap 2/3] COPY ldap/flatirons.ldif /container/service/slapd/assets/config/bootstrap/ldif/custom/50-bootstrap.ldif
+#22 CACHED
+
+#23 [ldap 3/3] COPY ldap/acl.ldif /container/service/slapd/assets/config/bootstrap/ldif/03-acl.ldif
+#23 CACHED
+
+#24 [testbuilder1 internal] load build context
+#24 transferring context: 150B 0.0s done
+#24 DONE 0.1s
+
+#25 [ldap] exporting to image
+#25 exporting layers 0.1s done
+#25 exporting manifest sha256:8ace2ff124269ed31a04e4b06da9d5a517c7602e4ac9ce69eea36d0bd90bd7c6
+#25 ...
+
+#26 [testbuilder2 1/5] FROM docker.io/library/node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402
+#26 resolve docker.io/library/node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402 0.1s done
+#26 DONE 0.1s
+
+#27 [testbuilder2 2/5] RUN apk add --no-cache unzip zip
+#27 CACHED
+
+#28 [testbuilder2 3/5] WORKDIR /app
+#28 CACHED
+
+#29 [testbuilder2 4/5] COPY server.mjs ./server.mjs
+#29 CACHED
+
+#30 [testbuilder2 5/5] COPY fixtures ./fixtures
+#30 CACHED
+
+#25 [ldap] exporting to image
+#25 exporting manifest sha256:8ace2ff124269ed31a04e4b06da9d5a517c7602e4ac9ce69eea36d0bd90bd7c6 0.1s done
+#25 exporting config sha256:99d7f1aaff03b77f3aac6c88c931ab8c7ac5913c731944ca1263dfb5319734b5
+#25 exporting config sha256:99d7f1aaff03b77f3aac6c88c931ab8c7ac5913c731944ca1263dfb5319734b5 0.2s done
+#25 ...
+
+#18 [dm-image internal] load metadata for hub.flatirons.cloud/docker/linuxetcd-java-tomcat:tomcat11.0.26-etcd-temu21.8-rocky9.8-root
+#18 DONE 2.0s
+
+#31 [dm-image internal] load .dockerignore
+#31 transferring context: 2B 0.0s done
+#31 DONE 0.0s
+
+#25 [ldap] exporting to image
+#25 exporting attestation manifest sha256:ae83a41b7cca64e369b957ee88f76f21c8ff2c7a6c9566efc0f177d25492ae1c
+#25 ...
+
+#32 [dm-image internal] load build context
+#32 DONE 0.0s
+
+#25 [ldap] exporting to image
+#25 exporting attestation manifest sha256:ae83a41b7cca64e369b957ee88f76f21c8ff2c7a6c9566efc0f177d25492ae1c 0.2s done
+#25 exporting manifest list sha256:d279e9ec2557878109b80f8040d8502d33d222180030adc9278eb978d755d95c
+#25 ...
+
+#33 [dm-image  1/13] FROM hub.flatirons.cloud/docker/linuxetcd-java-tomcat:tomcat11.0.26-etcd-temu21.8-rocky9.8-root@sha256:2398d253d0397a31e2848eea0ced1fef108c4541ee971eb9a1379be1e837d69b
+#33 resolve hub.flatirons.cloud/docker/linuxetcd-java-tomcat:tomcat11.0.26-etcd-temu21.8-rocky9.8-root@sha256:2398d253d0397a31e2848eea0ced1fef108c4541ee971eb9a1379be1e837d69b 0.1s done
+#33 DONE 0.1s
+
+#25 [ldap] exporting to image
+#25 exporting manifest list sha256:d279e9ec2557878109b80f8040d8502d33d222180030adc9278eb978d755d95c 0.0s done
+#25 naming to docker.io/library/dm-e2e-501-95288-ldap:local 0.1s done
+#25 unpacking to docker.io/library/dm-e2e-501-95288-ldap:local
+#25 unpacking to docker.io/library/dm-e2e-501-95288-ldap:local 0.1s done
+#25 ...
+
+#34 [testbuilder1] exporting to image
+#34 exporting layers 0.0s done
+#34 exporting manifest sha256:5c68909ad2755dd3d1cfd0952a71e13ad28273106af813b41dc8db587e5354a5 0.1s done
+#34 exporting config sha256:77f439e3c316a29b41445ac01a2ba8ce1ecd15f0ccd57fe6798957488618abc1 0.1s done
+#34 exporting attestation manifest sha256:e81983dbc681129a45e44e16dc87f32c77652f0cfb451f8285f096dfc62b7bd3 0.1s done
+#34 exporting manifest list sha256:4d773b3b861c2aead43ab7117d79877bd0cb1676ccccf13f0b1e4920b9cf9831 0.1s done
+#34 naming to docker.io/library/dm-e2e-501-95288-mock-builder:local 0.1s done
+#34 unpacking to docker.io/library/dm-e2e-501-95288-mock-builder:local 0.1s done
+#34 DONE 0.9s
+
+#25 [ldap] exporting to image
+#25 DONE 1.1s
+
+#32 [dm-image internal] load build context
+#32 ...
+
+#35 [testbuilder2] exporting to image
+#35 exporting layers 0.0s done
+#35 exporting manifest sha256:2bd4dad86fba4d88dc1c8bf4613ed9da33bfde968580093e3cea3e64363cb85c 0.1s done
+#35 exporting config sha256:e70a1b1eab0dfd943399618e941721844e51e31733a2ffc9ac683712a6310802 0.1s done
+#35 exporting attestation manifest sha256:8f29ab9669193508b48534dd82b54621c1e5ad765e1aa77faec397e7cc82884b 0.1s done
+#35 exporting manifest list sha256:b1cac6acd42daa876412df865ca841c0dcfdccbeac5dabf738577d1ce9198ff5 0.1s done
+#35 naming to docker.io/library/dm-e2e-501-95288-mock-builder:local 0.1s done
+#35 unpacking to docker.io/library/dm-e2e-501-95288-mock-builder:local 0.1s done
+#35 DONE 1.1s
+
+#32 [dm-image internal] load build context
+#32 ...
+
+#36 [testbuilder1] resolving provenance for metadata file
+#36 DONE 0.2s
+
+#32 [dm-image internal] load build context
+#32 ...
+
+#37 [ldap] resolving provenance for metadata file
+#37 DONE 0.2s
+
+#32 [dm-image internal] load build context
+#32 ...
+
+#38 [testbuilder2] resolving provenance for metadata file
+#38 DONE 0.1s
+
+#32 [dm-image internal] load build context
+#32 transferring context: 71.92MB 4.8s
+#32 transferring context: 227.94MB 9.9s
+#32 transferring context: 395.59MB 14.4s done
+#32 DONE 14.4s
+
+#39 [dm-image  3/13] COPY ./rootfs/opt/ /opt/
+#39 CACHED
+
+#40 [dm-image  4/13] COPY ./config /opt/tomcat/configdir
+#40 CACHED
+
+#41 [dm-image  6/13] COPY ./target/easycopy-binaries-lin64-*.zip /tmp/easycopy.zip
+#41 CACHED
+
+#42 [dm-image 11/13] COPY ./target/package-datamanager-spring-*.war /opt/tomcat/webapps/dmgrserver.war
+#42 CACHED
+
+#43 [dm-image  9/13] COPY ./script/start.sh /start.sh
+#43 CACHED
+
+#44 [dm-image  2/13] RUN dnf install -y dos2unix
+#44 CACHED
+
+#45 [dm-image  8/13] COPY ./script/setenv.sh /opt/tomcat/bin/setenv.sh
+#45 CACHED
+
+#46 [dm-image 12/13] COPY ./jar/*.jar /opt/tomcat/lib/
+#46 CACHED
+
+#47 [dm-image  5/13] COPY ./target/imagemagick-binaries-lin64-el67-*.zip /tmp/imagemagick.zip
+#47 CACHED
+
+#48 [dm-image  7/13] RUN mkdir -p /opt/tomcat/configdir/custom /opt/bin /opt/tomcat/configdir/audit /opt/tomcat/configdir/bulkPublishSchemas     && unzip /tmp/imagemagick.zip -d /opt/bin/imagemagick     && unzip /tmp/easycopy.zip -d /opt/bin/easycopy     && rm -f /tmp/imagemagick.zip /tmp/easycopy.zip
+#48 CACHED
+
+#49 [dm-image 10/13] COPY ./target/package-datamanager-client-*.war /opt/tomcat/webapps/dmgrclient.war
+#49 CACHED
+
+#50 [dm-image 13/13] RUN find /opt/tomcat -type f ( -name "*.sh" -o -name "*.properties" -o -name "*.xml" -o -name "*.conf" ) -exec dos2unix {} ; &&     find /etc/services.d -type f -exec dos2unix {} ; 2>/dev/null &&     find /etc/confd -type f -exec dos2unix {} ; 2>/dev/null &&     find /etc/cont-init.d -type f -exec dos2unix {} ; 2>/dev/null &&     dos2unix /start.sh &&     chmod -R +x /opt/tomcat/configdir/custom &&     chmod 755 /opt/tomcat/bin/setenv.sh &&     chmod 755 /start.sh
+#50 CACHED
+
+#51 [dm-image] exporting to image
+#51 exporting layers done
+#51 exporting manifest sha256:d31597de4c34524332a2d19a759f70553ed770a4b13f66d9ee8db4bf69ad1e9f 0.0s done
+#51 exporting config sha256:f73fd786a0153bb5c78c7d599c0a4c0bf3fb48210c0599bb824003007a1635e8 0.0s done
+#51 exporting attestation manifest sha256:ee409b043c07868b783f5fc610cbecd88250fe0eeacd910da31cd7af034240e8
+#51 exporting attestation manifest sha256:ee409b043c07868b783f5fc610cbecd88250fe0eeacd910da31cd7af034240e8 0.0s done
+#51 exporting manifest list sha256:2ca06ede9e233227d6442e56d72a79980b8895cef3a7efafa0f834829a431a4c 0.0s done
+#51 naming to docker.io/library/dm-e2e-501-95288-dm:local done
+#51 unpacking to docker.io/library/dm-e2e-501-95288-dm:local 0.0s done
+#51 DONE 0.2s
+
+#52 [dm-image] resolving provenance for metadata file
+#52 DONE 0.0s
+ Image dm-e2e-501-95288-ldap:local Built 
+ Image dm-e2e-501-95288-db-initializer Built 
+ Image dm-e2e-501-95288-dm:local Built 
+ Image dm-e2e-501-95288-mock-builder:local Built 
+ Image dm-e2e-501-95288-mock-builder:local Built 
+ Network dm-e2e-501-95288_DevOpsNetwork Creating 
+ Network dm-e2e-501-95288_DevOpsNetwork Creating 
+ Volume dm-e2e-501-95288_etcd_e2e_data Creating 
+ Volume dm-e2e-501-95288_etcd_e2e_data Creating 
+ Volume dm-e2e-501-95288_etcd_e2e_data Created 
+ Volume dm-e2e-501-95288_etcd_e2e_data Created 
+ Network dm-e2e-501-95288_DevOpsNetwork Created 
+ Network dm-e2e-501-95288_DevOpsNetwork Created 
+ Container dm-e2e-501-95288-etcd-1 Creating 
+ Container dm-e2e-501-95288-etcd-1 Created 
+ Container dm-e2e-501-95288-etcd-1 Starting 
+ Container dm-e2e-501-95288-etcd-1 Started 
+Waiting for etcd service in dm-e2e-501-95288 ...
+etcd ready (attempt 1).
+Seeding ACM confd keys for local compose E2E under /environments/e2e ...
+  put /environments/e2e/acm/app/acm-config/jdbc/host
+  put /environments/e2e/acm/app/acm-config/jdbc/port
+  put /environments/e2e/acm/app/acm-config/jdbc/database
+  put /environments/e2e/acm/app/acm-config/jdbc/schema
+  put /environments/e2e/acm/app/acm-config/jdbc/username
+  put /environments/e2e/acm/app/acm-config/jdbc/password
+  put /environments/e2e/acm/app/acm-config/jdbc/driverClassName
+  put /environments/e2e/acm/app/acm-config/jdbc/maxPoolSize
+  put /environments/e2e/acm/app/acm-config/jdbc/minIdle
+  put /environments/e2e/acm/app/acm-config/jdbc/connectionTimeout
+  put /environments/e2e/acm/app/acm-config/jdbc/idleTimeout
+  put /environments/e2e/acm/app/acm-config/jdbc/maxLifetime
+  put /environments/e2e/acm/app/acm-config/hibernate/dialect
+  put /environments/e2e/acm/app/acm-config/hibernate/format_sql
+  put /environments/e2e/acm/app/acm-config/hibernate/show_sql
+  put /environments/e2e/acm/app/acm-config/acm/username
+  put /environments/e2e/acm/app/acm-config/acm/password
+  put /environments/e2e/acm/app/acm-config/acm/server/url
+  put /environments/e2e/acm/app/acm-config/authenticationprovider
+  put /environments/e2e/acm/app/acm-config/default/acm/groupname
+  put /environments/e2e/acm/app/acm-config/default/acm/username
+  put /environments/e2e/acm/app/acm-config/default/organizationNcage
+  put /environments/e2e/acm/app/acm-config/user/claims/acm-admin
+  put /environments/e2e/acm/app/local-users/localuserdata
+  put /environments/e2e/acm/app/acm-config/scheme/map/acm
+  put /environments/e2e/acm/app/acm-config/scheme/map/am
+  put /environments/e2e/acm/app/acm-config/scheme/map/dm
+  put /environments/e2e/acm/app/acm-config/scheme/map/pp
+  put /environments/e2e/acm/app/acm-config/audit/enabled
+  put /environments/e2e/acm/app/acm-config/audit/sourceApplication
+  put /environments/e2e/acm/app/acm-config/audit/routingKey
+  put /environments/e2e/acm/app/acm-config/audit/exchangeName
+  put /environments/e2e/acm/app/acm-config/audit/rabbitmq/host
+  put /environments/e2e/acm/app/acm-config/audit/rabbitmq/port
+  put /environments/e2e/acm/app/acm-config/audit/rabbitmq/fallback/username
+  put /environments/e2e/acm/app/acm-config/audit/rabbitmq/fallback/password
+  put /environments/e2e/acm/app/acm-config/management/health/mail/enabled
+  put /environments/e2e/acm/app/acm-config/management/health/rabbit/enabled
+  put /environments/e2e/acm/app/acm-config/vendor/audit/scheduler/active
+  put /environments/e2e/acm/app/acm-config/cors/enabled
+  put /environments/e2e/acm/app/acm-config/redirect/validation/enabled
+  put /environments/e2e/acm/app/ldapconfig/server/name/fqdn
+  put /environments/e2e/acm/app/ldapconfig/server/port
+  put /environments/e2e/acm/app/ldapconfig/server/authtype
+  put /environments/e2e/acm/app/ldapconfig/secure/ldap
+  put /environments/e2e/acm/app/ldapconfig/admin/dn
+  put /environments/e2e/acm/app/ldapconfig/username
+  put /environments/e2e/acm/app/ldapconfig/password
+  put /environments/e2e/acm/app/ldapconfig/ldapsynch/basedn
+  put /environments/e2e/acm/app/ldapconfig/ldapsynch/group/prefix
+  put /environments/e2e/acm/app/ldapconfig/ldapsynch/schememap/class
+  put /environments/e2e/acm/app/ldapconfig/ldapsynch/synchtime/interval
+  put /environments/e2e/acm/app/ldapconfig/ldapsynch/synchtime/startdate
+  put /environments/e2e/acm/app/ldapconfig/ldapsynch/synchtime/starttime
+  put /environments/e2e/acm/app/ldapconfig/ldap/context/factory
+  put /environments/e2e/acm/app/ldapconfig/ldap/synch/disabled
+  put /environments/e2e/acm/app/ldapconfig/ldap/key/department
+  put /environments/e2e/acm/app/ldapconfig/ldap/key/mail
+  put /environments/e2e/acm/app/ldapconfig/ncage/attribute/name
+  put /environments/e2e/acm/app/authconfig/validtime
+  put /environments/e2e/acm/app/authconfig/validity/timeout
+  put /environments/e2e/acm/app/authconfig/validity/username
+  put /environments/e2e/acm/app/envvars/java-opts
+ACM etcd seed complete.
+ Container dm-e2e-501-95288-etcd-1 Running 
+ Volume dm-e2e-501-95288_ldap-config Creating 
+ Container dm-e2e-501-95288-consul-1 Creating 
+ Volume dm-e2e-501-95288_ldap-config Creating 
+ Volume dm-e2e-501-95288_ldap-data Creating 
+ Volume dm-e2e-501-95288_ldap-data Creating 
+ Volume dm-e2e-501-95288_postgres_data Creating 
+ Volume dm-e2e-501-95288_postgres_data Creating 
+ Volume dm-e2e-501-95288_ldap-data Created 
+ Volume dm-e2e-501-95288_ldap-data Created 
+ Volume dm-e2e-501-95288_postgres_data Created 
+ Volume dm-e2e-501-95288_postgres_data Created 
+ Container dm-e2e-501-95288-postgres-1 Creating 
+ Volume dm-e2e-501-95288_ldap-config Created 
+ Volume dm-e2e-501-95288_ldap-config Created 
+ Container dm-e2e-501-95288-ldap-1 Creating 
+ Container dm-e2e-501-95288-consul-1 Created 
+ Container dm-e2e-501-95288-ldap-1 Created 
+ Container dm-e2e-501-95288-postgres-1 Created 
+ Container dm-e2e-501-95288-db-initializer-1 Creating 
+ Container dm-e2e-501-95288-db-initializer-1 Created 
+ Container dm-e2e-501-95288-acm-image-1 Creating 
+ acm-image The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ Container dm-e2e-501-95288-acm-image-1 Created 
+ Container dm-e2e-501-95288-postgres-1 Starting 
+ Container dm-e2e-501-95288-consul-1 Starting 
+ Container dm-e2e-501-95288-ldap-1 Starting 
+ Container dm-e2e-501-95288-consul-1 Started 
+ Container dm-e2e-501-95288-postgres-1 Started 
+ Container dm-e2e-501-95288-postgres-1 Waiting 
+ Container dm-e2e-501-95288-ldap-1 Started 
+ Container dm-e2e-501-95288-postgres-1 Healthy 
+ Container dm-e2e-501-95288-db-initializer-1 Starting 
+ Container dm-e2e-501-95288-db-initializer-1 Started 
+ Container dm-e2e-501-95288-etcd-1 Waiting 
+ Container dm-e2e-501-95288-postgres-1 Waiting 
+ Container dm-e2e-501-95288-db-initializer-1 Waiting 
+ Container dm-e2e-501-95288-etcd-1 Healthy 
+ Container dm-e2e-501-95288-postgres-1 Healthy 
+ Container dm-e2e-501-95288-db-initializer-1 Exited 
+ Container dm-e2e-501-95288-acm-image-1 Starting 
+ Container dm-e2e-501-95288-acm-image-1 Started 
+ Container dm-e2e-501-95288-postgres-1 Running 
+ Container dm-e2e-501-95288-ldap-1 Running 
+ Container dm-e2e-501-95288-consul-1 Running 
+ Container dm-e2e-501-95288-etcd-1 Running 
+ Container dm-e2e-501-95288-acm-image-1 Running 
+ Volume dm-e2e-501-95288_dm_e2e_data Creating 
+ Container dm-e2e-501-95288-testbuilder1-1 Creating 
+ Container dm-e2e-501-95288-testbuilder2-1 Creating 
+ Volume dm-e2e-501-95288_dm_e2e_data Creating 
+ Volume dm-e2e-501-95288_dm_e2e_data Created 
+ Volume dm-e2e-501-95288_dm_e2e_data Created 
+ Container dm-e2e-501-95288-testbuilder1-1 Created 
+ Container dm-e2e-501-95288-testbuilder2-1 Created 
+ Container dm-e2e-501-95288-dm-image-1 Creating 
+ dm-image The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 
+ Container dm-e2e-501-95288-dm-image-1 Created 
+ Container dm-e2e-501-95288-testbuilder2-1 Starting 
+ Container dm-e2e-501-95288-testbuilder1-1 Starting 
+ Container dm-e2e-501-95288-postgres-1 Waiting 
+ Container dm-e2e-501-95288-testbuilder1-1 Started 
+ Container dm-e2e-501-95288-testbuilder2-1 Started 
+ Container dm-e2e-501-95288-postgres-1 Healthy 
+ Container dm-e2e-501-95288-db-initializer-1 Starting 
+ Container dm-e2e-501-95288-db-initializer-1 Started 
+ Container dm-e2e-501-95288-etcd-1 Waiting 
+ Container dm-e2e-501-95288-postgres-1 Waiting 
+ Container dm-e2e-501-95288-db-initializer-1 Waiting 
+ Container dm-e2e-501-95288-etcd-1 Healthy 
+ Container dm-e2e-501-95288-postgres-1 Healthy 
+ Container dm-e2e-501-95288-db-initializer-1 Exited 
+ Container dm-e2e-501-95288-testbuilder1-1 Waiting 
+ Container dm-e2e-501-95288-testbuilder2-1 Waiting 
+ Container dm-e2e-501-95288-postgres-1 Waiting 
+ Container dm-e2e-501-95288-db-initializer-1 Waiting 
+ Container dm-e2e-501-95288-db-initializer-1 Exited 
+ Container dm-e2e-501-95288-postgres-1 Healthy 
+ Container dm-e2e-501-95288-testbuilder1-1 Healthy 
+ Container dm-e2e-501-95288-testbuilder2-1 Healthy 
+ Container dm-e2e-501-95288-dm-image-1 Starting 
+ Container dm-e2e-501-95288-dm-image-1 Started 
+E2E workers=2: running chromium-serial at workers=1, then chromium at workers=2.
+E2E privilege grant targeting ACM group ids: 1, 3, 2, 4, 5, 6, 7, 8
+E2E worker users ensured: e2e-w0, e2e-w1
+
+Running 19 tests using 1 worker
+
+(node:36300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-serial] › src/test/e2e-playwright/builders-progress/builders/C1263480.spec.ts:7:7 › C1263480 builders progress › C1263480: Data Manager (6.5s)
+  ✓   2 [chromium-serial] › src/test/e2e-playwright/builders-progress/builders/C1263481.spec.ts:19:7 › C1263481 builders progress › C1263481: Data Manager (27.9s)
+  ✓   3 [chromium-serial] › src/test/e2e-playwright/builders-progress/builders/C1263482.spec.ts:19:7 › C1263482 builders progress › C1263482: Data Manager (13.3s)
+  ✓   4 [chromium-serial] › src/test/e2e-playwright/builders-progress/builders/C1263483.spec.ts:19:7 › C1263483 builders progress › C1263483: Data Manager (52.4s)
+  ✓   5 [chromium-serial] › src/test/e2e-playwright/builders-progress/builders/C1263485.spec.ts:19:7 › C1263485 builders progress › C1263485: Data Manager (1.1m)
+  ✓   6 [chromium-serial] › src/test/e2e-playwright/builders-progress/builders/C1263486.spec.ts:19:7 › C1263486 builders progress › C1263486: Data Manager (54.2s)
+  ✓   7 [chromium-serial] › src/test/e2e-playwright/builders-progress/builders/C1263487.spec.ts:19:7 › C1263487 builders progress › C1263487: Data Manager (54.5s)
+  ✓   8 [chromium-serial] › src/test/e2e-playwright/builders-progress/builders/C1263488.spec.ts:19:7 › C1263488 builders progress › C1263488: Data Manager (54.3s)
+  ✓   9 [chromium-serial] › src/test/e2e-playwright/builders-progress/common-to-all-builders/C1263430.spec.ts:22:7 › C1263430 common to all builders › C1263430: Verify the save input source option (1.7m)
+  ✓  10 [chromium-serial] › src/test/e2e-playwright/builders-progress/common-to-all-builders/C1263499.spec.ts:22:7 › C1263499 common to all builders › C1263499: Verify an Admin can Save Input Source (47.6s)
+  ✓  11 [chromium-serial] › src/test/e2e-playwright/builders-progress/common-to-all-builders/C1263500.spec.ts:20:7 › C1263500 common to all builders › C1263500: Verify an Admin can add and see System Release Number and Airline Revision Number (14.7s)
+  ✓  12 [chromium-serial] › src/test/e2e-playwright/builders-progress/common-to-all-builders/C1263501.spec.ts:12:7 › C1263501 common to all builders › C1263501: Builders section overview (5.4s)
+  ✓  13 [chromium-serial] › src/test/e2e-playwright/builders-progress/common-to-all-builders/C1263502.spec.ts:7:7 › C1263502 common to all builders › C1263502: Add new Builder (48.8s)
+  ✓  14 [chromium-serial] › src/test/e2e-playwright/builders-progress/common-to-all-builders/C1263503.spec.ts:20:7 › C1263503 common to all builders › C1263503: Status of the Builder- Online (7.9s)
+  ✓  15 [chromium-serial] › src/test/e2e-playwright/builders-progress/common-to-all-builders/C1263505.spec.ts:12:7 › C1263505 common to all builders › C1263505: Builder name (47.1s)
+  ✓  16 [chromium-serial] › src/test/e2e-playwright/builders-progress/progress-section/C1281640.spec.ts:20:7 › C1281640 progress section › C1281640: Verify the build Upload details in the Progress section (17.1s)
+  ✓  17 [chromium-serial] › src/test/e2e-playwright/builders-progress/progress-section/C1281642.spec.ts:19:7 › C1281642 progress section › C1281642: Verify the progress bar and buttons in the Progress section of Data Manager (1.8m)
+  ✓  18 [chromium-serial] › src/test/e2e-playwright/builders-progress/progress-section/C1281643.spec.ts:20:7 › C1281643 progress section › C1281643: Verify an Admin can see view progress of a publish activity (1.1m)
+(node:15230) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  19 [chromium-serial] › src/test/e2e-playwright/publication-lifecycle/revision-management/C1306111.spec.ts:60:7 › C1306111 Single-flight publish › C1306111: Verify Only one user can run a publish at a time (5.2s)
+[e2e globalTeardown] API cleanup (phase=serial): libraries removed=0, remaining=0, builders deleted=0
+
+  19 passed (14.0m)
+E2E privilege grant targeting ACM group ids: 1, 3, 2, 4, 5, 6, 7, 8, 9
+E2E worker users ensured: e2e-w0, e2e-w1
+
+Running 81 tests using 2 workers
+
+(node:20520) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20519) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › src/test/e2e-playwright/configuration/builder/C1263434.spec.ts:8:5 › C1263434: Verify builders listing (4.6s)
+  ✓   2 [chromium] › src/test/e2e-playwright/configuration/builder/C1263433.spec.ts:19:5 › C1263433: Verify add builders and validate (5.3s)
+  ✓   3 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263449.spec.ts:20:5 › C1263449: Verify configure ECM in Configuration page (2.5s)
+  ✓   5 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263451.spec.ts:20:5 › C1263451: Verify create Export Control template with TEXT (1.8s)
+  ✓   6 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263452.spec.ts:20:5 › C1263452: Verify cancel in ECM template create (1.7s)
+  ✓   7 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263453.spec.ts:20:5 › C1263453: Verify cancel in ECM edit name (3.6s)
+  ✓   8 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263454.spec.ts:20:5 › C1263454: Verify cancel in ECM delete (2.0s)
+  ✓   9 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263455.spec.ts:20:5 › C1263455: Verify delete ECM template (1.9s)
+  ✓   4 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263450.spec.ts:20:5 › C1263450: Verify edit Export Control template message type (16.1s)
+  ✓  11 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263458.spec.ts:20:5 › C1263458: Verify cancel during ECM create (1.7s)
+  ✓  12 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263459.spec.ts:20:5 › C1263459: Verify cancel during edit message type HTML in ECM (3.2s)
+  ✓  13 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263460.spec.ts:20:5 › C1263460: Verify delete Export Control template (1.8s)
+  ✓  14 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263461.spec.ts:20:5 › C1263461: Verify create Export Control template (1.9s)
+  ✓  15 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263462.spec.ts:20:5 › C1263462: Verify edit Export Control template message type (2.8s)
+  ✓  16 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263464.spec.ts:31:5 › C1263464: Verify edit name for Export Control template linked to publication (18.7s)
+  ✓  17 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263465.spec.ts:20:5 › C1263465: Verify cancel for delete Export Control template (2.0s)
+  ✓  18 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263466.spec.ts:20:5 › C1263466: Verify select ECM during publication (8.7s)
+  ✓  19 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263467.spec.ts:21:5 › C1263467: Verify edit ECM during publication (14.1s)
+  ✓  20 [chromium] › src/test/e2e-playwright/configuration/email/C1263446.spec.ts:8:5 › C1263446: Verify user can delete email template (1.6s)
+E2E privilege grant targeting ACM group ids: 1, 3, 2, 4, 5, 6, 7, 8, 9
+E2E worker users ensured: e2e-w0, e2e-w1
+  ✓  21 [chromium] › src/test/e2e-playwright/foundation/foundation.spec.ts:5:5 › foundation: seeded authentication, Data Manager, and mock builders (9.1s)
+  ✓  10 [chromium] › src/test/e2e-playwright/configuration/ecm/C1263457.spec.ts:31:5 › C1263457: Verify edit ECM name propagates to publication details (1.2m)
+  ✓  22 [chromium] › src/test/e2e-playwright/identity-history/header-footer/C1263468.spec.ts:7:5 › C1263468: Data Manager (47.0s)
+  ✓  23 [chromium] › src/test/e2e-playwright/identity-history/header-footer/C1263470.spec.ts:6:5 › C1263470: Data Manager (46.9s)
+  ✓  24 [chromium] › src/test/e2e-playwright/identity-history/header-footer/C1263471.spec.ts:8:5 › C1263471: Data Manager (2.0s)
+  ✓  26 [chromium] › src/test/e2e-playwright/identity-history/login-logout/C1263438.spec.ts:5:5 › C1263438: Data Manager (1.8s)
+(node:49441) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+E2E privilege grant targeting ACM group ids: 1, 3, 2, 4, 5, 6, 7, 8, 9
+  ✓  27 [chromium] › src/test/e2e-playwright/metadata-relationships/audit-tracking/C1306248.spec.ts:31:7 › C1306248 Audit tracking › C1306248: Verify Audit Tracking (14.5s)
+  ✓  25 [chromium] › src/test/e2e-playwright/identity-history/header-footer/C1263474.spec.ts:5:5 › C1263474: Data Manager (47.1s)
+(node:55532) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  29 [chromium] › src/test/e2e-playwright/metadata-relationships/audit-tracking/C1306252.spec.ts:31:7 › C1306252 Audit tracking › C1306252: Verify Audit Tracking (5.0s)
+  ✓  28 [chromium] › src/test/e2e-playwright/metadata-relationships/audit-tracking/C1306249.spec.ts:31:7 › C1306249 Audit tracking › C1306249: Verify Audit Tracking (3.8s)
+  ✓  30 [chromium] › src/test/e2e-playwright/metadata-relationships/audit-tracking/C1306253.spec.ts:31:7 › C1306253 Audit tracking › C1306253: Verify Audit Tracking (6.8s)
+  ✓  31 [chromium] › src/test/e2e-playwright/metadata-relationships/front-matter/C1281638.spec.ts:58:7 › C1281638 Front matter iSpec legacy › C1281638: Verify user able to view and edit publication details (2.2s)
+  ✓  32 [chromium] › src/test/e2e-playwright/metadata-relationships/front-matter/C1281639.spec.ts:53:7 › C1281639 Front matter S1000D › C1281639: Verify user able to view and edit publication details (3.3s)
+  ✓  33 [chromium] › src/test/e2e-playwright/metadata-relationships/import-neutral-and-metadata/C1306095.spec.ts:65:7 › C1306095 Bulk update child metadata kit › C1306095: Verify an Admin can update the child publications with the updated metadata kit using the (8.3s)
+  ✓  34 [chromium] › src/test/e2e-playwright/metadata-relationships/import-neutral-and-metadata/C1306097.spec.ts:53:7 › C1306097 Add metadata kit to new publication › C1306097: Verify an Admin can Add Metadata Kit to a new Publication (5.6s)
+  ✓  35 [chromium] › src/test/e2e-playwright/metadata-relationships/manage-folder-structure/C1263490.spec.ts:65:7 › C1263490 Child publication with updated metadata kit › C1263490: Verify child publication with updated metadata kit (4.3s)
+  ✓  36 [chromium] › src/test/e2e-playwright/metadata-relationships/manage-folder-structure/C1263492.spec.ts:58:7 › C1263492 Bulk update metadata in library › C1263492: Verify user can bulk update metadata in library (4.4s)
+  ✓  37 [chromium] › src/test/e2e-playwright/metadata-relationships/symlink/C1281596.spec.ts:31:7 › C1281596 Symbolic link under library/folder › C1281596: Verify Symbolic Link Publications (6.5s)
+  ✓  38 [chromium] › src/test/e2e-playwright/metadata-relationships/symlink/C1281598.spec.ts:38:7 › C1281598 Symbolic link release status (DM portion) › C1281598: Verify Symbolic Link Publications (12.4s)
+  ✓  39 [chromium] › src/test/e2e-playwright/metadata-relationships/symlink/C1281608.spec.ts:31:7 › C1281608 Target vs symlink labels › C1281608: Verify Symbolic Link Publications (12.8s)
+  ✓  40 [chromium] › src/test/e2e-playwright/publication-lifecycle/auto-release/C1281627.spec.ts:60:7 › C1281627 Auto-release manual › C1281627: Verify Auto Release Manual (3.8s)
+  ✓  41 [chromium] › src/test/e2e-playwright/publication-lifecycle/auto-release/C1281628.spec.ts:60:7 › C1281628 Manual-release manual › C1281628: Verify Manual Release Manual (2.7s)
+  ✓  42 [chromium] › src/test/e2e-playwright/publication-lifecycle/auto-release/C1281629.spec.ts:60:7 › C1281629 Auto-release comments manual › C1281629: Verify Auto Release Comments Manual (3.0s)
+  ✓  43 [chromium] › src/test/e2e-playwright/publication-lifecycle/create-publication/C1263508.spec.ts:35:7 › C1263508 create publication under folder › C1263508: Verify that the user can create a new publication under the folder (4.1s)
+  ✓  44 [chromium] › src/test/e2e-playwright/publication-lifecycle/create-publication/C1263509.spec.ts:50:7 › C1263509 unique publication names › C1263509: Verify as a user the publication names are unique within a given folder in data manager (14.4s)
+  ✓  45 [chromium] › src/test/e2e-playwright/publication-lifecycle/create-publication/C1263510.spec.ts:39:7 › C1263510 special characters in title › C1263510: Verify that the user is able to create/rename a PDF Publication with special characters [excluding( / : * ? < > | (5.2s)
+  ✓  46 [chromium] › src/test/e2e-playwright/publication-lifecycle/create-publication/C1263511.spec.ts:35:7 › C1263511 cannot create under publication › C1263511: Verify that the user is not able to create a publication at the root (3.1s)
+  ✓  47 [chromium] › src/test/e2e-playwright/publication-lifecycle/create-publication/C1263513.spec.ts:42:7 › C1263513 max 128 char title › C1263513: Verify that the user is able to create a Publication Title with maximum 128 characters (3.8s)
+  ✓  48 [chromium] › src/test/e2e-playwright/publication-lifecycle/delete-publication/C1263533.spec.ts:41:7 › C1263533 delete publication via folder delete › C1263533: Verify that the user is able to delete a publication (5.0s)
+  ✓  49 [chromium] › src/test/e2e-playwright/publication-lifecycle/manage-publications/C1263493.spec.ts:37:7 › C1263493 admin delete publication › C1263493: Verify Admin can delete a publication in a library (11.0s)
+  ✓  50 [chromium] › src/test/e2e-playwright/publication-lifecycle/manage-publications/C1263494.spec.ts:40:7 › C1263494 admin rename publication › C1263494: Verify Admin can rename a publication in a library (6.5s)
+  ✓  51 [chromium] › src/test/e2e-playwright/publication-lifecycle/manage-publications/C1263496.spec.ts:43:7 › C1263496 view and edit publication details › C1263496: Verify user able to view and edit publication details (3.6s)
+  ✓  52 [chromium] › src/test/e2e-playwright/publication-lifecycle/manage-publications/C1263497.spec.ts:40:7 › C1263497 view revision details › C1263497: Verify user able to view revision details (8.6s)
+  ✓  53 [chromium] › src/test/e2e-playwright/publication-lifecycle/republish/C1281572.spec.ts:70:7 › C1281572 Republish tab › C1281572: Verify the Republish tab (8.6s)
+  ✓  54 [chromium] › src/test/e2e-playwright/publication-lifecycle/republish/C1281573.spec.ts:65:7 › C1281573 Multiple manuals republish › C1281573: Verify whether the selected/multiple manuals can be Republished under (24.3s)
+  ✓  55 [chromium] › src/test/e2e-playwright/publication-lifecycle/republish/C1281574.spec.ts:68:7 › C1281574 Republish progress › C1281574: Verify whether the republication progress is getting displayed in progress section (9.2s)
+  ✓  56 [chromium] › src/test/e2e-playwright/publication-lifecycle/republish/C1281575.spec.ts:69:7 › C1281575 Republish preserves draft state › C1281575: Verify whether the Draft state should remains in Draft after republishing (8.8s)
+  ✓  57 [chromium] › src/test/e2e-playwright/publication-lifecycle/republish/C1281576.spec.ts:69:7 › C1281576 Republish preserves auto-released state › C1281576: Verify whether the Auto released manuals should be auto released after republish (15.4s)
+  ✓  58 [chromium] › src/test/e2e-playwright/publication-lifecycle/republish/C1281577.spec.ts:70:7 › C1281577 Republish preserves draft permissions › C1281577: Verify whether the permission remains the same for republishing of drafted manuals (10.6s)
+  ✓  59 [chromium] › src/test/e2e-playwright/publication-lifecycle/republish/C1281578.spec.ts:70:7 › C1281578 Republish preserves auto-released permissions › C1281578: Verify whether the permission remains the same for republishing of auto released manuals (8.3s)
+  ✓  60 [chromium] › src/test/e2e-playwright/publication-lifecycle/revision-management/C1306102.spec.ts:64:7 › C1306102 Delete revisions › C1306102: Verify user is able to delete revisions (13.0s)
+  ✓  61 [chromium] › src/test/e2e-playwright/publication-lifecycle/revision-management/C1306112.spec.ts:61:7 › C1306112 Incremental publish › C1306112: Verify whether Incremental Publish process is successful in Data Manager (10.0s)
+  ✓  62 [chromium] › src/test/e2e-playwright/repository-content/edit-folder/C1263531.spec.ts:33:7 › C1263531 rename folder › C1263531: Verify the user is able to rename the Folder (3.6s)
+  ✓  63 [chromium] › src/test/e2e-playwright/repository-content/edit-folder/C1263532.spec.ts:31:7 › C1263532 folder names need not be unique › C1263532: Verify that the folder names created by the user need not be unique in Data Manager (3.0s)
+  ✓  64 [chromium] › src/test/e2e-playwright/repository-content/library-content/C1263506.spec.ts:30:7 › C1263506 library contents › C1263506: Verify the Library contents in Data Manager (4.7s)
+  ✓  65 [chromium] › src/test/e2e-playwright/repository-content/library-content/C1263507.spec.ts:43:7 › C1263507 pagination functionality › C1263507: Verify the pagination functionality in DM (11.4s)
+  ✓  66 [chromium] › src/test/e2e-playwright/repository-content/manage-folder-structure/C1263489.spec.ts:43:7 › C1263489 admin add/rename/delete folder with metadata publish › C1263489: Verify Admin can delete a publication in a library (8.4s)
+  ✓  67 [chromium] › src/test/e2e-playwright/repository-content/manage-folder-structure/C1263491.spec.ts:32:7 › C1263491 view content within a folder › C1263491: Verify User able ro view List of content within a folder (1.4s)
+  ✓  68 [chromium] › src/test/e2e-playwright/repository-content/repository/C1263514.spec.ts:25:7 › C1263514 repository tree listing › C1263514: Verify the user is able to view the repository tree listing (1.3s)
+  ✓  69 [chromium] › src/test/e2e-playwright/repository-content/repository/C1263515.spec.ts:31:7 › C1263515 context menu button available › C1263515: Verify that the context menu button is available for the user (5.6s)
+  ✓  70 [chromium] › src/test/e2e-playwright/repository-content/repository/C1263516.spec.ts:23:7 › C1263516 context menu tooltip › C1263516: Verify that the context menu button has a tool tip available for the user (302ms)
+  ✓  71 [chromium] › src/test/e2e-playwright/repository-content/repository/C1263519.spec.ts:32:7 › C1263519 repository tree sorting › C1263519: Verify the repository tree sorting for the user (3.4s)
+  ✓  72 [chromium] › src/test/e2e-playwright/repository-content/repository/C1263523.spec.ts:31:7 › C1263523 alphabetical folder listing after refresh › C1263523: Verify that the user is able to see the folders listed in Alphabetical (Case Sensitive) order after creation and browser refresh (3.2s)
+  ✓  73 [chromium] › src/test/e2e-playwright/repository-content/repository/C1263524.spec.ts:20:7 › C1263524 create folder fields › C1263524: Create Repo -> Folder (759ms)
+  ✓  74 [chromium] › src/test/e2e-playwright/repository-content/repository/C1263526.spec.ts:28:7 › C1263526 create folder with subfolder › C1263526: Create Repo -> Folder (1.6s)
+  ✓  75 [chromium] › src/test/e2e-playwright/repository-content/repository/C1263527.spec.ts:31:7 › C1263527 create/rename folder with special characters › C1263527: Create Repo -> Folder (4.1s)
+  ✓  76 [chromium] › src/test/e2e-playwright/repository-content/repository/C1263528.spec.ts:32:7 › C1263528 folder name character boundaries › C1263528: Create Repo -> Folder (1.9s)
+  ✓  77 [chromium] › src/test/e2e-playwright/repository-content/repository/C1263529.spec.ts:27:7 › C1263529 delete folder in repository › C1263529: Create Repo -> Folder (1.3s)
+  ✓  78 [chromium] › src/test/e2e-playwright/repository-content/search/C1263440.spec.ts:33:7 › C1263440 search for special characters › C1263440: Verify search for Special char (1.4s)
+  ✓  79 [chromium] › src/test/e2e-playwright/repository-content/search/C1263441.spec.ts:38:7 › C1263441 search inside a folder › C1263441: Verify search functionality inside a folder (696ms)
+  ✓  80 [chromium] › src/test/e2e-playwright/repository-content/search/C1263442.spec.ts:51:7 › C1263442 search results › C1263442: Verify the Search Results (1.8s)
+  ✓  81 [chromium] › src/test/e2e-playwright/repository-content/search/C1263443.spec.ts:34:7 › C1263443 search for location › C1263443: Verify Search for location (1.5s)
+[e2e globalTeardown] API cleanup (phase=parallel): libraries removed=1, remaining=0, builders deleted=2
+
+  81 passed (33.7m)
+Merged 2 Playwright JSON report(s) -> /Users/scott/.workq-pool/bases/data-manager/cow-clones/workq_wi_45205705-e337-4021-b356-e988d030ace9/client/target/testreports/playwright/results.json (100 top-level suites)
+ Container dm-e2e-501-95288-dm-image-1 Stopping 
+ Container dm-e2e-501-95288-dm-image-1 Stopped 
+ Container dm-e2e-501-95288-dm-image-1 Removing 
+ Container dm-e2e-501-95288-dm-image-1 Removed 
+ Container dm-e2e-501-95288-acm-image-1 Stopping 
+ Container dm-e2e-501-95288-testbuilder2-1 Stopping 
+ Container dm-e2e-501-95288-testbuilder1-1 Stopping 
+ Container dm-e2e-501-95288-acm-image-1 Stopped 
+ Container dm-e2e-501-95288-acm-image-1 Removing 
+ Container dm-e2e-501-95288-testbuilder2-1 Stopped 
+ Container dm-e2e-501-95288-testbuilder2-1 Removing 
+ Container dm-e2e-501-95288-testbuilder1-1 Stopped 
+ Container dm-e2e-501-95288-testbuilder1-1 Removing 
+ Container dm-e2e-501-95288-acm-image-1 Removed 
+ Container dm-e2e-501-95288-ldap-1 Stopping 
+ Container dm-e2e-501-95288-etcd-1 Stopping 
+ Container dm-e2e-501-95288-consul-1 Stopping 
+ Container dm-e2e-501-95288-db-initializer-1 Stopping 
+ Container dm-e2e-501-95288-db-initializer-1 Stopped 
+ Container dm-e2e-501-95288-db-initializer-1 Removing 
+ Container dm-e2e-501-95288-testbuilder2-1 Removed 
+ Container dm-e2e-501-95288-testbuilder1-1 Removed 
+ Container dm-e2e-501-95288-db-initializer-1 Removed 
+ Container dm-e2e-501-95288-postgres-1 Stopping 
+ Container dm-e2e-501-95288-consul-1 Stopped 
+ Container dm-e2e-501-95288-consul-1 Removing 
+ Container dm-e2e-501-95288-ldap-1 Stopped 
+ Container dm-e2e-501-95288-ldap-1 Removing 
+ Container dm-e2e-501-95288-etcd-1 Stopped 
+ Container dm-e2e-501-95288-etcd-1 Removing 
+ Container dm-e2e-501-95288-consul-1 Removed 
+ Container dm-e2e-501-95288-ldap-1 Removed 
+ Container dm-e2e-501-95288-etcd-1 Removed 
+ Container dm-e2e-501-95288-postgres-1 Stopped 
+ Container dm-e2e-501-95288-postgres-1 Removing 
+ Container dm-e2e-501-95288-postgres-1 Removed 
+ Volume dm-e2e-501-95288_etcd_e2e_data Removing 
+ Volume dm-e2e-501-95288_ldap-data Removing 
+ Volume dm-e2e-501-95288_postgres_data Removing 
+ Volume dm-e2e-501-95288_ldap-config Removing 
+ Volume dm-e2e-501-95288_dm_e2e_data Removing 
+ Network dm-e2e-501-95288_DevOpsNetwork Removing 
+ Volume dm-e2e-501-95288_etcd_e2e_data Removed 
+ Volume dm-e2e-501-95288_ldap-data Removed 
+ Volume dm-e2e-501-95288_ldap-config Removed 
+ Volume dm-e2e-501-95288_postgres_data Removed 
+ Volume dm-e2e-501-95288_dm_e2e_data Removed 
+ Network dm-e2e-501-95288_DevOpsNetwork Removed 
+EXIT=0 WALL_SEC=3094
