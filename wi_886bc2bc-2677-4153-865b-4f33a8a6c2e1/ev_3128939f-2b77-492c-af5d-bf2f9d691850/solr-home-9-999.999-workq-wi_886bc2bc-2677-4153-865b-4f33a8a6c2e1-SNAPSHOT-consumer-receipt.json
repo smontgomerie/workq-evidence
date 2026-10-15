@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "groupId": "com.flatirons.solr",
+  "artifactId": "solr-home-9",
+  "version": "999.999-workq-wi_886bc2bc-2677-4153-865b-4f33a8a6c2e1-SNAPSHOT",
+  "type": "zip",
+  "coordinate": "com.flatirons.solr:solr-home-9:999.999-workq-wi_886bc2bc-2677-4153-865b-4f33a8a6c2e1-SNAPSHOT:zip",
+  "repository": "https://hub.flatirons.cloud/artifactory/flatirons",
+  "zipFile": "solr-home-9-999.999-workq-wi_886bc2bc-2677-4153-865b-4f33a8a6c2e1-SNAPSHOT.zip",
+  "sha256": "d36ccad11d6733ffcd2a499f609e6d8ac14be5edebcee8eea6be6e62c2321b32",
+  "sha256File": "solr-home-9-999.999-workq-wi_886bc2bc-2677-4153-865b-4f33a8a6c2e1-SNAPSHOT.zip.sha256",
+  "receiptInZip": "configsets/pinpoint-configsets.json",
+  "predictiveDependency": "com.flatirons.pinpoint:pinpoint-predictivesearch-solr-home-9:999.999-codex-pinpoint-7520-b04-configsets-publish-SNAPSHOT:zip",
+  "predictiveDependencySha256": "66a404ca42b8463856e86be82596e737076d5c908f04a9291eee2a63c6e6195c",
+  "supportedImage": "solr:10.0.0",
+  "supportedSolrVersion": "9.6.1"
+}
