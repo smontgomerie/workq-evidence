@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "groupId": "com.flatirons.pinpoint",
+  "artifactId": "pinpoint-predictivesearch-solr-home-9",
+  "version": "999.999-codex-pinpoint-7520-b04-configsets-publish-SNAPSHOT",
+  "type": "zip",
+  "coordinate": "com.flatirons.pinpoint:pinpoint-predictivesearch-solr-home-9:999.999-codex-pinpoint-7520-b04-configsets-publish-SNAPSHOT:zip",
+  "immutableFile": "pinpoint-predictivesearch-solr-home-9-999.999-codex-pinpoint-7520-b04-configsets-publish-20261015.052358-2.zip",
+  "repository": "https://hub.flatirons.cloud/artifactory/flatirons",
+  "downloadUri": "https://hub.flatirons.cloud/artifactory/flatirons/com/flatirons/pinpoint/pinpoint-predictivesearch-solr-home-9/999.999-codex-pinpoint-7520-b04-configsets-publish-SNAPSHOT/pinpoint-predictivesearch-solr-home-9-999.999-codex-pinpoint-7520-b04-configsets-publish-20261015.052358-2.zip",
+  "sha256": "66a404ca42b8463856e86be82596e737076d5c908f04a9291eee2a63c6e6195c",
+  "supportedSolrVersion": "9.5.0",
+  "receiptInZip": "configsets/predictive-search-configsets.json",
+  "createIsolatedCoreUsesEcho": true,
+  "sourceBranch": "codex/pinpoint-7520-b04-configsets-publish"
+}
