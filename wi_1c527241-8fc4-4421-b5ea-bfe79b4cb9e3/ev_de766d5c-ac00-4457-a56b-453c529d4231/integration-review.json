@@ -1,0 +1,19 @@
+{
+  "mode": "integration-review",
+  "baseSha": "ff6c21b9e46331a81d47b33224d9332a4881e01b",
+  "reviewedHead": "f7ab800ec91ee0624914bb0a2b9cdecf548b2fc1",
+  "range": "origin/master...origin/codex/multi-tenancy",
+  "lensesRan": ["correctness", "architecture", "tests", "pattern-conformance"],
+  "findings": [],
+  "completeness": "The accumulated B04 packaging scope is complete: four named configsets in both Solr-home modules, unchanged template contents, private product-core conf copies, filtered versioned receipts, checksum generation, package validation, and fail-closed schema-isolation tooling. Published-artifact evidence was accepted on member PR132; B32 cross-repository acceptance is recorded on tenant-manager PR22.",
+  "overreach": "No material overreach. No tenant routing, product runtime version changes, auth endpoint additions, customer migrations, or unrelated search logic in the accumulated range.",
+  "settledMemberFindings": "PR132 schema lookup fail-open, unresolved version, escaped newline recipe, curl failures and malformed fields-list fixes remain resolved. Whitespace-only name grammar was deliberately dismissed by captain; no new evidence to reopen.",
+  "evidenceLimits": [
+    "Current Unit tests and Build both fail before project loading: maven-git-versioning-extension/JGit reports Bare Repository has neither a working tree nor an index.",
+    "Docker daemon socket is unavailable; isolation was not rerun in this session.",
+    "Isolation harness boots source-template copies. Maven verify checks assembled contents; do not claim this session booted a downloaded artifact.",
+    "B32 evidence is upstream accepted evidence, not a fresh cross-repository acceptance run here."
+  ],
+  "phaseCHandoff": "Customer tenant routing/runtime enforcement and on-prem identity/binding/CLI remain Phase C. AWS KMS and Jenkins image build remain recorded upstream gaps; local issuer scope does not imply KMS delivery.",
+  "shipVerdict": "BLOCKED: restore supported checkout/build infrastructure and Docker, rerun Java21 full required gates and affected isolation check, then open/update exactly codex/multi-tenancy -> master. Human approval required; autoMerge remains false."
+}
