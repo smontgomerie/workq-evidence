@@ -1,0 +1,1718 @@
+{
+  "schemaVersion": 1,
+  "namespace": "u03-apply-manifest",
+  "mode": "dry-run",
+  "fixtureOnly": true,
+  "plan": {
+    "schemaVersion": 1,
+    "namespace": "u03",
+    "archiveCounts": {
+      "lab-baseline-snapshot": 1,
+      "lab-comparison": 2,
+      "lab-experiment": 1,
+      "lab-experiment-case": 3,
+      "lab-judge-call": 3,
+      "lab-media": 8,
+      "lab-person": 2,
+      "lab-person-revision": 3,
+      "lab-review-revision": 3,
+      "lab-run": 5,
+      "lab-suite": 1,
+      "lab-suite-case": 2,
+      "lab-workflow-version": 2
+    },
+    "sourceCounts": {
+      "persons": 2,
+      "personRevisions": 3,
+      "mediaAssets": 8,
+      "workflowVersions": 2,
+      "runs": 5,
+      "comparisons": 2,
+      "reviewRevisions": 3,
+      "judgeCalls": 3,
+      "suites": 1,
+      "suiteCases": 2,
+      "baselines": 1,
+      "experiments": 1,
+      "experimentCases": 3
+    },
+    "mediaInventory": [
+      {
+        "mediaAssetId": 101,
+        "kind": "reference",
+        "sha256": "5e8d973d26addf3d3224f73d4d23033dbf346f3dc4a3533dd083873d23b61f3d",
+        "label": null
+      },
+      {
+        "mediaAssetId": 102,
+        "kind": "reference",
+        "sha256": "6cc4eb3d46df033dc61cef3d2246033db8ee8f3d4e353f3d32ab9b3d44771f3d",
+        "label": null
+      },
+      {
+        "mediaAssetId": 201,
+        "kind": "output",
+        "sha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+        "label": null
+      },
+      {
+        "mediaAssetId": 202,
+        "kind": "output",
+        "sha256": "64fd973dd71fdf3dc669b73dab5acb3df240d73dd00f173d61feef3d580cc33d",
+        "label": null
+      },
+      {
+        "mediaAssetId": 207,
+        "kind": "output",
+        "sha256": "56ba533d9d6f273d56515b3d3ca2c73dc0e5d73d75cbf73d8a1ca33d336aeb3d",
+        "label": null
+      },
+      {
+        "mediaAssetId": 208,
+        "kind": "output",
+        "sha256": "9f869f3d517c3f3df0e13b3dc5281b3d57e34f3dc93b873d7e2d1f3d5f102f3d",
+        "label": null
+      },
+      {
+        "mediaAssetId": 210,
+        "kind": "output",
+        "sha256": "12fb6b3dcf18f33d9d64833d11397f3db17e333d6f6bfb3dab88a33de3536b3d",
+        "label": null
+      },
+      {
+        "mediaAssetId": 211,
+        "kind": "output",
+        "sha256": "b604ff3da4f7033d8bd7ef3d9883233d0d2edb3d5fe8573d88b6673dcdca133d",
+        "label": null
+      }
+    ],
+    "quarantined": [
+      {
+        "code": "case-refs-unresolved",
+        "legacyRef": "lab-person-revision:12",
+        "detail": "person revision 12 carries 1 references (need 2-3)"
+      },
+      {
+        "code": "media-missing",
+        "legacyRef": "lab-person-revision:12",
+        "detail": "no registry asset with sha256 10067f3db7d0133d…"
+      },
+      {
+        "code": "media-hash-mismatch",
+        "legacyRef": "lab-run:51:bust",
+        "detail": "registry asset 208 no longer holds the claimed content (f465df3d3d5bf73d…); blob corrupt or re-minted — output quarantined"
+      },
+      {
+        "code": "media-missing",
+        "legacyRef": "lab-run:53:canonical",
+        "detail": "no registry asset with sha256 f9c7e73def35233d…"
+      },
+      {
+        "code": "media-missing",
+        "legacyRef": "lab-run:54:canonical",
+        "detail": "no registry asset with sha256 5946833d68443f3d…"
+      },
+      {
+        "code": "case-refs-unresolved",
+        "legacyRef": "lab-run:54",
+        "detail": "run 54 imports against person revision 12, which is not importable"
+      }
+    ],
+    "evidenceNotes": [
+      "judge call 90 used hosted provider 'openai' (model 'gpt-image-judge'); imported as evidence only — no hosted call was made by this import",
+      "judge call 92 (blocked) — no exact hosted approval; recorded evidence-only, no assessment row written"
+    ],
+    "rubrics": [
+      {
+        "requestId": "92f2d810-1a82-43b0-8538-3bc29672b9f0",
+        "subjectKey": "lab-human-review",
+        "version": 1,
+        "payload": {
+          "name": "lab-human-review",
+          "dimensions": [
+            {
+              "id": "likeness",
+              "name": "Likeness",
+              "target": "character",
+              "scale": {
+                "min": 1,
+                "max": 5,
+                "step": 1
+              }
+            },
+            {
+              "id": "style",
+              "name": "Style",
+              "target": "character",
+              "scale": {
+                "min": 1,
+                "max": 5,
+                "step": 1
+              }
+            },
+            {
+              "id": "eyes",
+              "name": "Eyes",
+              "target": "character",
+              "scale": {
+                "min": 1,
+                "max": 5,
+                "step": 1
+              }
+            },
+            {
+              "id": "anatomy",
+              "name": "Anatomy",
+              "target": "character",
+              "scale": {
+                "min": 1,
+                "max": 5,
+                "step": 1
+              }
+            },
+            {
+              "id": "viewConsistency",
+              "name": "View consistency",
+              "target": "character",
+              "scale": {
+                "min": 1,
+                "max": 5,
+                "step": 1
+              }
+            }
+          ]
+        }
+      },
+      {
+        "requestId": "589b0016-2b69-44ac-8b1f-06800d462317",
+        "subjectKey": "lab-identity-assessment",
+        "version": 1,
+        "payload": {
+          "name": "lab-identity-assessment",
+          "dimensions": [
+            {
+              "id": "likeness",
+              "name": "Likeness",
+              "target": "character",
+              "scale": {
+                "min": 1,
+                "max": 5,
+                "step": 1
+              }
+            },
+            {
+              "id": "identityPreservation",
+              "name": "Identity preservation",
+              "target": "character",
+              "scale": {
+                "min": 1,
+                "max": 5,
+                "step": 1
+              }
+            },
+            {
+              "id": "style",
+              "name": "Style",
+              "target": "character",
+              "scale": {
+                "min": 1,
+                "max": 5,
+                "step": 1
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "workflowRevisions": [
+      {
+        "requestId": "01dbadef-b26c-4717-890c-0a48a6892ae2",
+        "subjectKey": "workflow:lab:7",
+        "version": 1,
+        "payload": {
+          "stage": "character-creation",
+          "adapterId": "comfyui-local",
+          "adapterRevision": "qwen3.8-27b@rev-9",
+          "config": {
+            "legacyStatus": "active",
+            "stages": [
+              "canonical",
+              "side",
+              "bust"
+            ]
+          },
+          "modelFingerprints": [
+            {
+              "name": "qwen3.8-27b",
+              "revision": "rev-9",
+              "hash": null
+            }
+          ],
+          "codeFingerprint": "qwen3.8-27b@rev-9",
+          "recipeProvenance": "evidence-only"
+        },
+        "legacySource": {
+          "namespace": "lab-workflow-version",
+          "legacyRef": "7"
+        }
+      },
+      {
+        "requestId": "14356b78-6d37-497e-8d45-46d1acd72578",
+        "subjectKey": "workflow:lab:8",
+        "version": 1,
+        "payload": {
+          "stage": "character-creation",
+          "adapterId": "krea",
+          "adapterRevision": "krea@2",
+          "config": {
+            "legacyStatus": "deprecated",
+            "stages": [
+              "canonical"
+            ]
+          },
+          "modelFingerprints": [
+            {
+              "name": "krea2",
+              "revision": "rev-2",
+              "hash": null
+            }
+          ],
+          "codeFingerprint": "krea@2",
+          "recipeProvenance": "evidence-only"
+        },
+        "legacySource": {
+          "namespace": "lab-workflow-version",
+          "legacyRef": "8"
+        }
+      }
+    ],
+    "caseRevisions": [
+      {
+        "requestId": "3201d566-97ab-4850-8e84-acedccaddbaf",
+        "subjectKey": "character-creation:person:1",
+        "version": 1,
+        "legacySource": {
+          "namespace": "lab-person-revision",
+          "legacyRef": "11"
+        },
+        "taskIntent": "Generate the canonical character image for Ada (revision 1)",
+        "input": {
+          "stage": "character-creation",
+          "references": [
+            {
+              "mediaAssetId": 101,
+              "sha256": "5e8d973d26addf3d3224f73d4d23033dbf346f3dc4a3533dd083873d23b61f3d"
+            },
+            {
+              "mediaAssetId": 102,
+              "sha256": "6cc4eb3d46df033dc61cef3d2246033db8ee8f3d4e353f3d32ab9b3d44771f3d"
+            }
+          ],
+          "consentRecordId": "lab-consent:11",
+          "expectedTraits": "blue eyes, silver hair"
+        },
+        "owner": {
+          "owner": "person-revision",
+          "personRevisionId": 11
+        },
+        "consent": {
+          "actorUserId": 2,
+          "actorRole": "admin",
+          "contentConfirmed": true,
+          "confirmedAt": "2026-05-01T10:00:00.000Z"
+        },
+        "importable": true
+      },
+      {
+        "requestId": "b3df65d4-09a5-40e0-8753-248cb420c423",
+        "subjectKey": "character-creation:person:2",
+        "version": 1,
+        "legacySource": {
+          "namespace": "lab-person-revision",
+          "legacyRef": "13"
+        },
+        "taskIntent": "Generate the canonical character image for Ben (revision 1)",
+        "input": {
+          "stage": "character-creation",
+          "references": [
+            {
+              "mediaAssetId": 101,
+              "sha256": "5e8d973d26addf3d3224f73d4d23033dbf346f3dc4a3533dd083873d23b61f3d"
+            },
+            {
+              "mediaAssetId": 102,
+              "sha256": "6cc4eb3d46df033dc61cef3d2246033db8ee8f3d4e353f3d32ab9b3d44771f3d"
+            }
+          ],
+          "consentRecordId": "lab-consent:13",
+          "expectedTraits": "red shirt"
+        },
+        "owner": {
+          "owner": "person-revision",
+          "personRevisionId": 13
+        },
+        "consent": {
+          "actorUserId": 2,
+          "actorRole": "admin",
+          "contentConfirmed": true,
+          "confirmedAt": "2026-05-01T10:00:00.000Z"
+        },
+        "importable": true
+      },
+      {
+        "requestId": "99c00d0d-f254-4b2f-82ac-3c4161df32da",
+        "subjectKey": "suite-case:8001",
+        "version": 1,
+        "legacySource": {
+          "namespace": "lab-suite-case",
+          "legacyRef": "8001"
+        },
+        "taskIntent": "Ada silver hair",
+        "input": {
+          "stage": "character-creation",
+          "references": [
+            {
+              "mediaAssetId": 101,
+              "sha256": "5e8d973d26addf3d3224f73d4d23033dbf346f3dc4a3533dd083873d23b61f3d"
+            },
+            {
+              "mediaAssetId": 102,
+              "sha256": "6cc4eb3d46df033dc61cef3d2246033db8ee8f3d4e353f3d32ab9b3d44771f3d"
+            }
+          ],
+          "consentRecordId": "lab-consent:11",
+          "expectedTraits": "blue eyes, silver hair"
+        },
+        "expectedOutcome": "accepted baseline output",
+        "tags": [
+          "ada"
+        ],
+        "owner": {
+          "owner": "suite-case",
+          "suiteCaseId": 8001
+        },
+        "consent": {
+          "actorUserId": 2,
+          "actorRole": "admin",
+          "contentConfirmed": true,
+          "confirmedAt": "2026-05-01T10:00:00.000Z"
+        },
+        "importable": true
+      },
+      {
+        "requestId": "27ce8ae4-1d4a-4854-882a-4c1ce14ee6cb",
+        "subjectKey": "suite-case:8002",
+        "version": 1,
+        "legacySource": {
+          "namespace": "lab-suite-case",
+          "legacyRef": "8002"
+        },
+        "taskIntent": "Ben red shirt",
+        "input": {
+          "stage": "character-creation",
+          "references": [
+            {
+              "mediaAssetId": 101,
+              "sha256": "5e8d973d26addf3d3224f73d4d23033dbf346f3dc4a3533dd083873d23b61f3d"
+            },
+            {
+              "mediaAssetId": 102,
+              "sha256": "6cc4eb3d46df033dc61cef3d2246033db8ee8f3d4e353f3d32ab9b3d44771f3d"
+            }
+          ],
+          "consentRecordId": "lab-consent:13",
+          "expectedTraits": "red shirt"
+        },
+        "expectedOutcome": "rejected baseline output",
+        "tags": [
+          "ben"
+        ],
+        "owner": {
+          "owner": "suite-case",
+          "suiteCaseId": 8002
+        },
+        "consent": {
+          "actorUserId": 2,
+          "actorRole": "admin",
+          "contentConfirmed": true,
+          "confirmedAt": "2026-05-01T10:00:00.000Z"
+        },
+        "importable": true
+      }
+    ],
+    "datasetRevisions": [
+      {
+        "requestId": "a46ce41d-048c-41d5-8514-e699a638467d",
+        "subjectKey": "dataset:lab-suite:80",
+        "version": 1,
+        "payload": {
+          "name": "May screening",
+          "sourceGroupIdentity": "lab-suite:80",
+          "sourceGroups": {
+            "suite-case:8001": "lab-suite-case:case-a",
+            "suite-case:8002": "lab-suite-case:case-b"
+          }
+        },
+        "caseSubjectKeys": [
+          "suite-case:8001",
+          "suite-case:8002"
+        ],
+        "legacySource": {
+          "namespace": "lab-suite",
+          "legacyRef": "80"
+        }
+      }
+    ],
+    "suiteRevisions": [
+      {
+        "requestId": "ff9a30e1-9fbf-456c-865a-2fa84a0295aa",
+        "subjectKey": "suite:lab:80",
+        "version": 1,
+        "name": "May screening",
+        "datasetRequestId": "a46ce41d-048c-41d5-8514-e699a638467d",
+        "checks": [],
+        "protectedExampleRevisionIds": [],
+        "notes": "{\"legacyStatus\":\"active\",\"caseSourceKeys\":[\"case-a\",\"case-b\"]}",
+        "legacySource": {
+          "namespace": "lab-suite",
+          "legacyRef": "80"
+        }
+      }
+    ],
+    "baselineRevisions": [
+      {
+        "requestId": "7576d0ce-ece0-4686-858e-2e1ded47f8c6",
+        "subjectKey": "baseline:lab:90",
+        "version": 1,
+        "name": "May baseline",
+        "datasetRequestId": "a46ce41d-048c-41d5-8514-e699a638467d",
+        "bindings": [
+          {
+            "caseSubjectKey": "suite-case:8001",
+            "outputSha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+            "label": "accepted (accept)"
+          }
+        ],
+        "notes": "{\"exclusions\":[\"excluded case-b (no-rated-evidence)\"]}",
+        "legacySource": {
+          "namespace": "lab-baseline-snapshot",
+          "legacyRef": "90"
+        }
+      }
+    ],
+    "exampleRevisions": [
+      {
+        "requestId": "3e7b403b-ef27-4a56-8d89-dc158c882a20",
+        "subjectKey": "example:lab-run:50",
+        "version": 1,
+        "runId": 50,
+        "caseSubjectKey": "character-creation:person:1",
+        "caseVersion": 1,
+        "outcome": "success",
+        "outputs": [
+          {
+            "mediaAssetId": 201,
+            "sha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+            "outputIndex": 0
+          },
+          {
+            "mediaAssetId": 202,
+            "sha256": "64fd973dd71fdf3dc669b73dab5acb3df240d73dd00f173d61feef3d580cc33d",
+            "outputIndex": 1
+          }
+        ],
+        "recipe": {
+          "workflowSubjectKey": "workflow:lab:7",
+          "recipeProvenance": "evidence-only"
+        },
+        "assessments": [
+          {
+            "outputSha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+            "expectationContextHash": "d260f35b1df048c469d760d70d9013392dfe49b9c55092974cfab0e803fcfbee",
+            "assessor": {
+              "kind": "human",
+              "id": "1001"
+            },
+            "target": "character",
+            "characterTargetId": 1,
+            "scores": [
+              {
+                "dimensionId": "anatomy",
+                "value": 5,
+                "partial": true
+              },
+              {
+                "dimensionId": "likeness",
+                "value": 4,
+                "partial": true
+              },
+              {
+                "dimensionId": "style",
+                "value": 4,
+                "partial": true
+              },
+              {
+                "dimensionId": "viewConsistency",
+                "value": 3,
+                "partial": true
+              }
+            ],
+            "verdict": "accept",
+            "source": "imported"
+          },
+          {
+            "outputSha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+            "expectationContextHash": "38e8213fca81d347318e6197531fdb51bae52ca27d6a93f0a4740517d45a1dc2",
+            "assessor": {
+              "kind": "human",
+              "id": "1002"
+            },
+            "target": "character",
+            "characterTargetId": 1,
+            "scores": [
+              {
+                "dimensionId": "anatomy",
+                "value": 1
+              },
+              {
+                "dimensionId": "eyes",
+                "value": 2
+              },
+              {
+                "dimensionId": "likeness",
+                "value": 2
+              },
+              {
+                "dimensionId": "style",
+                "value": 2
+              },
+              {
+                "dimensionId": "viewConsistency",
+                "value": 2
+              }
+            ],
+            "verdict": "reject",
+            "notes": "{\"feedback\":\"eyes drift between views\",\"defectTags\":[\"eyes\"]}",
+            "source": "imported"
+          },
+          {
+            "outputSha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+            "expectationContextHash": "c6ba713ae52e2a044e361e2895ce922efb5dec84092028d8fa7563775766c0ba",
+            "assessor": {
+              "kind": "human",
+              "id": "1001"
+            },
+            "target": "character",
+            "characterTargetId": 1,
+            "scores": [
+              {
+                "dimensionId": "anatomy",
+                "value": 5
+              },
+              {
+                "dimensionId": "eyes",
+                "value": 5
+              },
+              {
+                "dimensionId": "likeness",
+                "value": 5
+              },
+              {
+                "dimensionId": "style",
+                "value": 5
+              },
+              {
+                "dimensionId": "viewConsistency",
+                "value": 5
+              }
+            ],
+            "verdict": "accept",
+            "notes": "{\"preferredCanonicalRunId\":51}",
+            "source": "imported"
+          },
+          {
+            "outputSha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+            "expectationContextHash": "4d281608b3bd1c73f1ecfc0e44071d5ce45c0021ed24dc7d9d0760bd9a6818da",
+            "assessor": {
+              "kind": "llm",
+              "id": "openai:gpt-image-judge"
+            },
+            "target": "character",
+            "characterTargetId": 1,
+            "scores": [
+              {
+                "dimensionId": "identityPreservation",
+                "value": 4
+              },
+              {
+                "dimensionId": "likeness",
+                "value": 4
+              },
+              {
+                "dimensionId": "style",
+                "value": 5
+              }
+            ],
+            "verdict": "accept",
+            "notes": "{\"checkVersion\":\"judge-2026.05\",\"originalAssessments\":{\"likeness\":{\"score\":4,\"verdict\":\"accept\",\"reason\":\"close match\"},\"identityPreservation\":{\"score\":4,\"verdict\":\"accept\",\"reason\":\"stable\"},\"style\":{\"score\":5,\"verdict\":\"accept\",\"reason\":\"on style\"}},\"originalDimensions\":{\"likeness\":{\"verdict\":\"accept\",\"reason\":\"close match\"},\"identityPreservation\":{\"verdict\":\"accept\",\"reason\":\"stable\"},\"style\":{\"verdict\":\"accept\",\"reason\":\"on style\"}},\"axisReasons\":{\"likeness\":\"close match\",\"identityPreservation\":\"stable\",\"style\":\"on style\"},\"judgeCostUsd\":null}",
+            "source": "imported"
+          },
+          {
+            "outputSha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+            "expectationContextHash": "32d153a128c6ce4712f0042f5d42a883f471695f204abd728108f1eb68d8ae64",
+            "assessor": {
+              "kind": "local",
+              "id": "local:qwen-judge"
+            },
+            "target": "character",
+            "characterTargetId": 1,
+            "scores": [
+              {
+                "dimensionId": "identityPreservation",
+                "value": 4
+              },
+              {
+                "dimensionId": "likeness",
+                "value": 5
+              },
+              {
+                "dimensionId": "style",
+                "value": 4
+              }
+            ],
+            "verdict": "accept",
+            "notes": "{\"checkVersion\":\"judge-2026.05\",\"originalAssessments\":{\"likeness\":{\"score\":5,\"verdict\":\"accept\",\"reason\":\"match\"},\"identityPreservation\":{\"score\":4,\"verdict\":\"accept\",\"reason\":\"stable\"},\"style\":{\"score\":4,\"verdict\":\"accept\",\"reason\":\"on style\"}},\"originalDimensions\":{\"likeness\":{\"verdict\":\"accept\",\"reason\":\"match\"},\"identityPreservation\":{\"verdict\":\"accept\",\"reason\":\"stable\"},\"style\":{\"verdict\":\"accept\",\"reason\":\"on style\"}},\"axisReasons\":{\"likeness\":\"match\",\"identityPreservation\":\"stable\",\"style\":\"on style\"},\"judgeCostUsd\":null}",
+            "source": "imported"
+          }
+        ],
+        "legacySource": {
+          "namespace": "lab-run",
+          "legacyRef": "50"
+        }
+      },
+      {
+        "requestId": "db354cbb-4e19-426c-8000-3d4988544c51",
+        "subjectKey": "example:lab-run:51",
+        "version": 1,
+        "runId": 51,
+        "caseSubjectKey": "character-creation:person:1",
+        "caseVersion": 1,
+        "outcome": "success",
+        "outputs": [
+          {
+            "mediaAssetId": 201,
+            "sha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+            "outputIndex": 0
+          }
+        ],
+        "recipe": {
+          "workflowSubjectKey": "workflow:lab:7",
+          "recipeProvenance": "evidence-only"
+        },
+        "assessments": [
+          {
+            "outputSha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+            "expectationContextHash": "d260f35b1df048c469d760d70d9013392dfe49b9c55092974cfab0e803fcfbee",
+            "assessor": {
+              "kind": "human",
+              "id": "1001"
+            },
+            "target": "character",
+            "characterTargetId": 1,
+            "scores": [
+              {
+                "dimensionId": "anatomy",
+                "value": 5,
+                "partial": true
+              },
+              {
+                "dimensionId": "likeness",
+                "value": 4,
+                "partial": true
+              },
+              {
+                "dimensionId": "style",
+                "value": 4,
+                "partial": true
+              },
+              {
+                "dimensionId": "viewConsistency",
+                "value": 3,
+                "partial": true
+              }
+            ],
+            "verdict": "accept",
+            "source": "imported"
+          },
+          {
+            "outputSha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+            "expectationContextHash": "38e8213fca81d347318e6197531fdb51bae52ca27d6a93f0a4740517d45a1dc2",
+            "assessor": {
+              "kind": "human",
+              "id": "1002"
+            },
+            "target": "character",
+            "characterTargetId": 1,
+            "scores": [
+              {
+                "dimensionId": "anatomy",
+                "value": 1
+              },
+              {
+                "dimensionId": "eyes",
+                "value": 2
+              },
+              {
+                "dimensionId": "likeness",
+                "value": 2
+              },
+              {
+                "dimensionId": "style",
+                "value": 2
+              },
+              {
+                "dimensionId": "viewConsistency",
+                "value": 2
+              }
+            ],
+            "verdict": "reject",
+            "notes": "{\"feedback\":\"eyes drift between views\",\"defectTags\":[\"eyes\"]}",
+            "source": "imported"
+          },
+          {
+            "outputSha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+            "expectationContextHash": "c6ba713ae52e2a044e361e2895ce922efb5dec84092028d8fa7563775766c0ba",
+            "assessor": {
+              "kind": "human",
+              "id": "1001"
+            },
+            "target": "character",
+            "characterTargetId": 1,
+            "scores": [
+              {
+                "dimensionId": "anatomy",
+                "value": 5
+              },
+              {
+                "dimensionId": "eyes",
+                "value": 5
+              },
+              {
+                "dimensionId": "likeness",
+                "value": 5
+              },
+              {
+                "dimensionId": "style",
+                "value": 5
+              },
+              {
+                "dimensionId": "viewConsistency",
+                "value": 5
+              }
+            ],
+            "verdict": "accept",
+            "notes": "{\"preferredCanonicalRunId\":51}",
+            "source": "imported"
+          },
+          {
+            "outputSha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+            "expectationContextHash": "4d281608b3bd1c73f1ecfc0e44071d5ce45c0021ed24dc7d9d0760bd9a6818da",
+            "assessor": {
+              "kind": "llm",
+              "id": "openai:gpt-image-judge"
+            },
+            "target": "character",
+            "characterTargetId": 1,
+            "scores": [
+              {
+                "dimensionId": "identityPreservation",
+                "value": 4
+              },
+              {
+                "dimensionId": "likeness",
+                "value": 4
+              },
+              {
+                "dimensionId": "style",
+                "value": 5
+              }
+            ],
+            "verdict": "accept",
+            "notes": "{\"checkVersion\":\"judge-2026.05\",\"originalAssessments\":{\"likeness\":{\"score\":4,\"verdict\":\"accept\",\"reason\":\"close match\"},\"identityPreservation\":{\"score\":4,\"verdict\":\"accept\",\"reason\":\"stable\"},\"style\":{\"score\":5,\"verdict\":\"accept\",\"reason\":\"on style\"}},\"originalDimensions\":{\"likeness\":{\"verdict\":\"accept\",\"reason\":\"close match\"},\"identityPreservation\":{\"verdict\":\"accept\",\"reason\":\"stable\"},\"style\":{\"verdict\":\"accept\",\"reason\":\"on style\"}},\"axisReasons\":{\"likeness\":\"close match\",\"identityPreservation\":\"stable\",\"style\":\"on style\"},\"judgeCostUsd\":null}",
+            "source": "imported"
+          },
+          {
+            "outputSha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+            "expectationContextHash": "32d153a128c6ce4712f0042f5d42a883f471695f204abd728108f1eb68d8ae64",
+            "assessor": {
+              "kind": "local",
+              "id": "local:qwen-judge"
+            },
+            "target": "character",
+            "characterTargetId": 1,
+            "scores": [
+              {
+                "dimensionId": "identityPreservation",
+                "value": 4
+              },
+              {
+                "dimensionId": "likeness",
+                "value": 5
+              },
+              {
+                "dimensionId": "style",
+                "value": 4
+              }
+            ],
+            "verdict": "accept",
+            "notes": "{\"checkVersion\":\"judge-2026.05\",\"originalAssessments\":{\"likeness\":{\"score\":5,\"verdict\":\"accept\",\"reason\":\"match\"},\"identityPreservation\":{\"score\":4,\"verdict\":\"accept\",\"reason\":\"stable\"},\"style\":{\"score\":4,\"verdict\":\"accept\",\"reason\":\"on style\"}},\"originalDimensions\":{\"likeness\":{\"verdict\":\"accept\",\"reason\":\"match\"},\"identityPreservation\":{\"verdict\":\"accept\",\"reason\":\"stable\"},\"style\":{\"verdict\":\"accept\",\"reason\":\"on style\"}},\"axisReasons\":{\"likeness\":\"match\",\"identityPreservation\":\"stable\",\"style\":\"on style\"},\"judgeCostUsd\":null}",
+            "source": "imported"
+          }
+        ],
+        "legacySource": {
+          "namespace": "lab-run",
+          "legacyRef": "51"
+        }
+      },
+      {
+        "requestId": "cb5c9e20-5ef9-45bd-8937-25902174a8b2",
+        "subjectKey": "example:lab-run:52",
+        "version": 1,
+        "runId": 52,
+        "caseSubjectKey": "character-creation:person:2",
+        "caseVersion": 1,
+        "outcome": "failure",
+        "outputs": [],
+        "recipe": {
+          "workflowSubjectKey": "workflow:lab:7",
+          "recipeProvenance": "evidence-only"
+        },
+        "assessments": [],
+        "legacySource": {
+          "namespace": "lab-run",
+          "legacyRef": "52"
+        }
+      },
+      {
+        "requestId": "117a239e-2f01-4252-88d6-5dfb640c6bf2",
+        "subjectKey": "example:lab-run:53",
+        "version": 1,
+        "runId": 53,
+        "caseSubjectKey": "character-creation:person:2",
+        "caseVersion": 1,
+        "outcome": "success",
+        "outputs": [
+          {
+            "mediaAssetId": 207,
+            "sha256": "56ba533d9d6f273d56515b3d3ca2c73dc0e5d73d75cbf73d8a1ca33d336aeb3d",
+            "outputIndex": 1
+          }
+        ],
+        "recipe": {
+          "workflowSubjectKey": "workflow:lab:7",
+          "recipeProvenance": "evidence-only"
+        },
+        "assessments": [],
+        "legacySource": {
+          "namespace": "lab-run",
+          "legacyRef": "53"
+        }
+      }
+    ],
+    "experiments": [
+      {
+        "requestId": "6348ec3a-e91b-4561-8421-c63f9c6798c2",
+        "name": "legacy experiment 95",
+        "datasetRequestId": "a46ce41d-048c-41d5-8514-e699a638467d",
+        "baselineRequestId": "7576d0ce-ece0-4686-858e-2e1ded47f8c6",
+        "variants": [
+          {
+            "label": "baseline",
+            "workflowSubjectKey": "workflow:lab:7"
+          },
+          {
+            "label": "candidate",
+            "workflowSubjectKey": "workflow:lab:7"
+          }
+        ],
+        "seeds": [
+          0,
+          100,
+          200
+        ],
+        "design": {
+          "type": "screening",
+          "notes": "imported legacy experiment 95 (mode saved-baseline, candidate version 7)"
+        },
+        "evaluationPolicy": {
+          "blind": true,
+          "assessorKinds": [
+            "human",
+            "llm",
+            "local"
+          ]
+        },
+        "costConsent": {
+          "hosted": false
+        },
+        "status": "finished",
+        "trials": [
+          {
+            "experimentId": 95,
+            "suiteCaseId": 8001,
+            "armLabel": "candidate",
+            "caseSubjectKey": "suite-case:8001",
+            "caseVersion": 1,
+            "workflowSubjectKey": "workflow:lab:7",
+            "seed": 100,
+            "payloadHash": "9111453d2a5e1443198f092d5fb2357a0a526d3ce0560e28aa3681b7637d4374",
+            "status": "succeeded",
+            "execution": {
+              "status": "succeeded",
+              "result": {
+                "sourceRunId": 50,
+                "seedKnown": true,
+                "historyKnown": false,
+                "workflowSubjectKey": "workflow:lab:7",
+                "note": "legacy execution fingerprints are evidence-only; exact replay is not claimed"
+              },
+              "error": null
+            },
+            "outputs": [
+              {
+                "mediaAssetId": 201,
+                "sha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+                "outputIndex": 0
+              },
+              {
+                "mediaAssetId": 202,
+                "sha256": "64fd973dd71fdf3dc669b73dab5acb3df240d73dd00f173d61feef3d580cc33d",
+                "outputIndex": 1
+              }
+            ]
+          },
+          {
+            "experimentId": 95,
+            "suiteCaseId": 8001,
+            "armLabel": "baseline",
+            "caseSubjectKey": "suite-case:8001",
+            "caseVersion": 1,
+            "workflowSubjectKey": "workflow:lab:7",
+            "seed": 200,
+            "payloadHash": "9cb01bbda11bb616966983bce31c803868fc4a3b311000da70c2c9df41322e75",
+            "status": "succeeded",
+            "execution": {
+              "status": "succeeded",
+              "result": {
+                "sourceRunId": 51,
+                "seedKnown": true,
+                "historyKnown": false,
+                "workflowSubjectKey": "workflow:lab:7",
+                "note": "legacy execution fingerprints are evidence-only; exact replay is not claimed"
+              },
+              "error": null
+            },
+            "outputs": [
+              {
+                "mediaAssetId": 201,
+                "sha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+                "outputIndex": 0
+              }
+            ]
+          },
+          {
+            "experimentId": 95,
+            "suiteCaseId": 8002,
+            "armLabel": "candidate",
+            "caseSubjectKey": "suite-case:8002",
+            "caseVersion": 1,
+            "workflowSubjectKey": "workflow:lab:7",
+            "seed": 0,
+            "payloadHash": "9a72b563304086b314ed5d373480707efbcdb27ace4b39389bc49be740b91590",
+            "status": "failed",
+            "execution": {
+              "status": "failed",
+              "result": {
+                "sourceRunId": 52,
+                "seedKnown": false,
+                "historyKnown": false,
+                "workflowSubjectKey": "workflow:lab:7",
+                "note": "legacy execution fingerprints are evidence-only; exact replay is not claimed"
+              },
+              "error": "comfyui session timeout"
+            },
+            "outputs": []
+          }
+        ],
+        "legacySource": {
+          "namespace": "lab-experiment",
+          "legacyRef": "95"
+        }
+      }
+    ],
+    "assessments": [
+      {
+        "record": {
+          "outputSha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+          "expectationContextHash": "d260f35b1df048c469d760d70d9013392dfe49b9c55092974cfab0e803fcfbee",
+          "assessor": {
+            "kind": "human",
+            "id": "1001"
+          },
+          "target": "character",
+          "characterTargetId": 1,
+          "scores": [
+            {
+              "dimensionId": "anatomy",
+              "value": 5,
+              "partial": true
+            },
+            {
+              "dimensionId": "likeness",
+              "value": 4,
+              "partial": true
+            },
+            {
+              "dimensionId": "style",
+              "value": 4,
+              "partial": true
+            },
+            {
+              "dimensionId": "viewConsistency",
+              "value": 3,
+              "partial": true
+            }
+          ],
+          "verdict": "accept",
+          "source": "imported"
+        },
+        "rubricSubjectKey": "lab-human-review",
+        "reuseKey": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d:d260f35b1df048c469d760d70d9013392dfe49b9c55092974cfab0e803fcfbee:human:1001:imported"
+      },
+      {
+        "record": {
+          "outputSha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+          "expectationContextHash": "38e8213fca81d347318e6197531fdb51bae52ca27d6a93f0a4740517d45a1dc2",
+          "assessor": {
+            "kind": "human",
+            "id": "1002"
+          },
+          "target": "character",
+          "characterTargetId": 1,
+          "scores": [
+            {
+              "dimensionId": "anatomy",
+              "value": 1
+            },
+            {
+              "dimensionId": "eyes",
+              "value": 2
+            },
+            {
+              "dimensionId": "likeness",
+              "value": 2
+            },
+            {
+              "dimensionId": "style",
+              "value": 2
+            },
+            {
+              "dimensionId": "viewConsistency",
+              "value": 2
+            }
+          ],
+          "verdict": "reject",
+          "notes": "{\"feedback\":\"eyes drift between views\",\"defectTags\":[\"eyes\"]}",
+          "source": "imported"
+        },
+        "rubricSubjectKey": "lab-human-review",
+        "reuseKey": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d:38e8213fca81d347318e6197531fdb51bae52ca27d6a93f0a4740517d45a1dc2:human:1002:imported"
+      },
+      {
+        "record": {
+          "outputSha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+          "expectationContextHash": "c6ba713ae52e2a044e361e2895ce922efb5dec84092028d8fa7563775766c0ba",
+          "assessor": {
+            "kind": "human",
+            "id": "1001"
+          },
+          "target": "character",
+          "characterTargetId": 1,
+          "scores": [
+            {
+              "dimensionId": "anatomy",
+              "value": 5
+            },
+            {
+              "dimensionId": "eyes",
+              "value": 5
+            },
+            {
+              "dimensionId": "likeness",
+              "value": 5
+            },
+            {
+              "dimensionId": "style",
+              "value": 5
+            },
+            {
+              "dimensionId": "viewConsistency",
+              "value": 5
+            }
+          ],
+          "verdict": "accept",
+          "notes": "{\"preferredCanonicalRunId\":51}",
+          "source": "imported"
+        },
+        "rubricSubjectKey": "lab-human-review",
+        "reuseKey": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d:c6ba713ae52e2a044e361e2895ce922efb5dec84092028d8fa7563775766c0ba:human:1001:imported"
+      },
+      {
+        "record": {
+          "outputSha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+          "expectationContextHash": "4d281608b3bd1c73f1ecfc0e44071d5ce45c0021ed24dc7d9d0760bd9a6818da",
+          "assessor": {
+            "kind": "llm",
+            "id": "openai:gpt-image-judge"
+          },
+          "target": "character",
+          "characterTargetId": 1,
+          "scores": [
+            {
+              "dimensionId": "identityPreservation",
+              "value": 4
+            },
+            {
+              "dimensionId": "likeness",
+              "value": 4
+            },
+            {
+              "dimensionId": "style",
+              "value": 5
+            }
+          ],
+          "verdict": "accept",
+          "notes": "{\"checkVersion\":\"judge-2026.05\",\"originalAssessments\":{\"likeness\":{\"score\":4,\"verdict\":\"accept\",\"reason\":\"close match\"},\"identityPreservation\":{\"score\":4,\"verdict\":\"accept\",\"reason\":\"stable\"},\"style\":{\"score\":5,\"verdict\":\"accept\",\"reason\":\"on style\"}},\"originalDimensions\":{\"likeness\":{\"verdict\":\"accept\",\"reason\":\"close match\"},\"identityPreservation\":{\"verdict\":\"accept\",\"reason\":\"stable\"},\"style\":{\"verdict\":\"accept\",\"reason\":\"on style\"}},\"axisReasons\":{\"likeness\":\"close match\",\"identityPreservation\":\"stable\",\"style\":\"on style\"},\"judgeCostUsd\":null}",
+          "source": "imported"
+        },
+        "rubricSubjectKey": "lab-identity-assessment",
+        "reuseKey": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d:4d281608b3bd1c73f1ecfc0e44071d5ce45c0021ed24dc7d9d0760bd9a6818da:llm:openai:gpt-image-judge:imported"
+      },
+      {
+        "record": {
+          "outputSha256": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d",
+          "expectationContextHash": "32d153a128c6ce4712f0042f5d42a883f471695f204abd728108f1eb68d8ae64",
+          "assessor": {
+            "kind": "local",
+            "id": "local:qwen-judge"
+          },
+          "target": "character",
+          "characterTargetId": 1,
+          "scores": [
+            {
+              "dimensionId": "identityPreservation",
+              "value": 4
+            },
+            {
+              "dimensionId": "likeness",
+              "value": 5
+            },
+            {
+              "dimensionId": "style",
+              "value": 4
+            }
+          ],
+          "verdict": "accept",
+          "notes": "{\"checkVersion\":\"judge-2026.05\",\"originalAssessments\":{\"likeness\":{\"score\":5,\"verdict\":\"accept\",\"reason\":\"match\"},\"identityPreservation\":{\"score\":4,\"verdict\":\"accept\",\"reason\":\"stable\"},\"style\":{\"score\":4,\"verdict\":\"accept\",\"reason\":\"on style\"}},\"originalDimensions\":{\"likeness\":{\"verdict\":\"accept\",\"reason\":\"match\"},\"identityPreservation\":{\"verdict\":\"accept\",\"reason\":\"stable\"},\"style\":{\"verdict\":\"accept\",\"reason\":\"on style\"}},\"axisReasons\":{\"likeness\":\"match\",\"identityPreservation\":\"stable\",\"style\":\"on style\"},\"judgeCostUsd\":null}",
+          "source": "imported"
+        },
+        "rubricSubjectKey": "lab-identity-assessment",
+        "reuseKey": "7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d:32d153a128c6ce4712f0042f5d42a883f471695f204abd728108f1eb68d8ae64:local:local:qwen-judge:imported"
+      }
+    ],
+    "legacyMappings": [
+      {
+        "legacyNamespace": "lab-person-revision",
+        "legacyRef": "11",
+        "workbenchRef": "revision:case:character-creation:person:1:v1"
+      },
+      {
+        "legacyNamespace": "lab-person-revision",
+        "legacyRef": "13",
+        "workbenchRef": "revision:case:character-creation:person:2:v1"
+      },
+      {
+        "legacyNamespace": "lab-suite-case",
+        "legacyRef": "8001",
+        "workbenchRef": "revision:case:suite-case:8001:v1"
+      },
+      {
+        "legacyNamespace": "lab-suite-case",
+        "legacyRef": "8002",
+        "workbenchRef": "revision:case:suite-case:8002:v1"
+      },
+      {
+        "legacyNamespace": "lab-run",
+        "legacyRef": "50",
+        "workbenchRef": "revision:example:example:lab-run:50:v1"
+      },
+      {
+        "legacyNamespace": "lab-run",
+        "legacyRef": "51",
+        "workbenchRef": "revision:example:example:lab-run:51:v1"
+      },
+      {
+        "legacyNamespace": "lab-run",
+        "legacyRef": "52",
+        "workbenchRef": "revision:example:example:lab-run:52:v1"
+      },
+      {
+        "legacyNamespace": "lab-run",
+        "legacyRef": "53",
+        "workbenchRef": "revision:example:example:lab-run:53:v1"
+      },
+      {
+        "legacyNamespace": "lab-workflow-version",
+        "legacyRef": "7",
+        "workbenchRef": "revision:workflow:workflow:lab:7:v1"
+      },
+      {
+        "legacyNamespace": "lab-workflow-version",
+        "legacyRef": "8",
+        "workbenchRef": "revision:workflow:workflow:lab:8:v1"
+      },
+      {
+        "legacyNamespace": "lab-suite",
+        "legacyRef": "80",
+        "workbenchRef": "revision:suite:suite:lab:80:v1"
+      },
+      {
+        "legacyNamespace": "lab-baseline-snapshot",
+        "legacyRef": "90",
+        "workbenchRef": "revision:baseline:baseline:lab:90:v1"
+      },
+      {
+        "legacyNamespace": "lab-experiment",
+        "legacyRef": "95",
+        "workbenchRef": "experiment-request:6348ec3a-e91b-4561-8421-c63f9c6798c2",
+        "notes": "resolves through the deterministic experiment request id"
+      },
+      {
+        "legacyNamespace": "lab-comparison",
+        "legacyRef": "60",
+        "workbenchRef": "revision:example:example:lab-run:50:v1"
+      },
+      {
+        "legacyNamespace": "lab-comparison",
+        "legacyRef": "61",
+        "workbenchRef": "revision:example:example:lab-run:51:v1"
+      },
+      {
+        "legacyNamespace": "lab-judge-call",
+        "legacyRef": "90",
+        "workbenchRef": "assessment:judge-call-90",
+        "notes": "symbolic: judge call assessments are keyed by output + context hash"
+      },
+      {
+        "legacyNamespace": "lab-judge-call",
+        "legacyRef": "91",
+        "workbenchRef": "assessment:judge-call-91",
+        "notes": "symbolic: judge call assessments are keyed by output + context hash"
+      },
+      {
+        "legacyNamespace": "lab-media",
+        "legacyRef": "201",
+        "workbenchRef": "media:201"
+      },
+      {
+        "legacyNamespace": "lab-media",
+        "legacyRef": "202",
+        "workbenchRef": "media:202"
+      },
+      {
+        "legacyNamespace": "lab-media",
+        "legacyRef": "207",
+        "workbenchRef": "media:207"
+      },
+      {
+        "legacyNamespace": "lab-media",
+        "legacyRef": "208",
+        "workbenchRef": "media:208"
+      },
+      {
+        "legacyNamespace": "lab-media",
+        "legacyRef": "210",
+        "workbenchRef": "media:210"
+      },
+      {
+        "legacyNamespace": "lab-media",
+        "legacyRef": "211",
+        "workbenchRef": "media:211"
+      },
+      {
+        "legacyNamespace": "u03-archive:baseline-snapshot",
+        "legacyRef": "90",
+        "workbenchRef": "archive:b8ad1fd6d7890dfc0994c1a42f13d88d862d8cecd3504f9cd260962c41ec7450",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-baseline-snapshot\",\"legacyRef\":\"90\",\"sourceHash\":\"b8ad1fd6d7890dfc0994c1a42f13d88d862d8cecd3504f9cd260962c41ec7450\",\"payload\":{\"id\":90,\"suiteId\":80,\"name\":\"May baseline\",\"coverage\":[{\"suiteCaseId\":8001,\"sourceKey\":\"case-a\",\"status\":\"covered\",\"binding\":{\"suiteCaseId\":8001,\"artifact\":{\"runId\":50,\"stageKey\":\"canonical\",\"sha256\":\"7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d\"},\"workflowVersionId\":7,\"seed\":100,\"expectedTraits\":\"blue eyes, silver hair\",\"ratingsVerdict\":\"accept\"}},{\"suiteCaseId\":8002,\"sourceKey\":\"case-b\",\"status\":\"excluded\",\"reason\":\"no-rated-evidence\"}]}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:comparison",
+        "legacyRef": "60",
+        "workbenchRef": "archive:fb8c6d61751a48f051bcd2848fbd4de09ca14b2bd7f80957e838ed8b5db1ea05",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-comparison\",\"legacyRef\":\"60\",\"sourceHash\":\"fb8c6d61751a48f051bcd2848fbd4de09ca14b2bd7f80957e838ed8b5db1ea05\",\"payload\":{\"id\":60,\"runIds\":[50],\"note\":\"first pass on Ada\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:comparison",
+        "legacyRef": "61",
+        "workbenchRef": "archive:a3b58d770e40c0aa24fbd61d951c54bcb3123b5062f9e741c450827a95c2c0ec",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-comparison\",\"legacyRef\":\"61\",\"sourceHash\":\"a3b58d770e40c0aa24fbd61d951c54bcb3123b5062f9e741c450827a95c2c0ec\",\"payload\":{\"id\":61,\"runIds\":[51],\"note\":\"replay of the canonical\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:experiment",
+        "legacyRef": "95",
+        "workbenchRef": "archive:85a69c805c185ff6460f23db8c608150e2f48539bb8b420798402668dc50a4b6",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-experiment\",\"legacyRef\":\"95\",\"sourceHash\":\"85a69c805c185ff6460f23db8c608150e2f48539bb8b420798402668dc50a4b6\",\"payload\":{\"id\":95,\"suiteId\":80,\"baselineSnapshotId\":90,\"candidateVersionId\":7,\"mode\":\"saved-baseline\",\"seedOverrides\":null,\"status\":\"completed\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:experiment-case",
+        "legacyRef": "1001",
+        "workbenchRef": "archive:ce03485f05ebb57ed7e8a75ffe231efd17886e2fbe8d3f44a334528c7b9ed40f",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-experiment-case\",\"legacyRef\":\"1001\",\"sourceHash\":\"ce03485f05ebb57ed7e8a75ffe231efd17886e2fbe8d3f44a334528c7b9ed40f\",\"payload\":{\"id\":1001,\"experimentId\":95,\"suiteCaseId\":8001,\"armLabel\":\"candidate\",\"runId\":50}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:experiment-case",
+        "legacyRef": "1002",
+        "workbenchRef": "archive:8ac6691de006b3105f08ea74d41f43c4a3f7abadbbd1a2e10ec1e56e383484b4",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-experiment-case\",\"legacyRef\":\"1002\",\"sourceHash\":\"8ac6691de006b3105f08ea74d41f43c4a3f7abadbbd1a2e10ec1e56e383484b4\",\"payload\":{\"id\":1002,\"experimentId\":95,\"suiteCaseId\":8001,\"armLabel\":\"baseline\",\"runId\":51}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:experiment-case",
+        "legacyRef": "1003",
+        "workbenchRef": "archive:729c5031024fdf012c305bf9a66d3c5bbcc671e5136ded143d697130b49d1316",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-experiment-case\",\"legacyRef\":\"1003\",\"sourceHash\":\"729c5031024fdf012c305bf9a66d3c5bbcc671e5136ded143d697130b49d1316\",\"payload\":{\"id\":1003,\"experimentId\":95,\"suiteCaseId\":8002,\"armLabel\":\"candidate\",\"runId\":52}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:judge-call",
+        "legacyRef": "90",
+        "workbenchRef": "archive:c8061279b51ab8337e9fc06ce01c6c511553b7ee3017deac90758ad969cc6ac2",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-judge-call\",\"legacyRef\":\"90\",\"sourceHash\":\"c8061279b51ab8337e9fc06ce01c6c511553b7ee3017deac90758ad969cc6ac2\",\"payload\":{\"id\":90,\"comparisonId\":60,\"status\":\"succeeded\",\"provider\":\"openai\",\"model\":\"gpt-image-judge\",\"imageCount\":2,\"candidateShas\":[\"7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d\",\"64fd973dd71fdf3dc669b73dab5acb3df240d73dd00f173d61feef3d580cc33d\"],\"advisory\":{\"checkVersion\":\"judge-2026.05\",\"dimensions\":{\"likeness\":{\"verdict\":\"accept\",\"reason\":\"close match\"},\"identityPreservation\":{\"verdict\":\"accept\",\"reason\":\"stable\"},\"style\":{\"verdict\":\"accept\",\"reason\":\"on style\"}},\"runs\":[{\"runId\":50,\"assessments\":{\"likeness\":{\"score\":4,\"verdict\":\"accept\",\"reason\":\"close match\"},\"identityPreservation\":{\"score\":4,\"verdict\":\"accept\",\"reason\":\"stable\"},\"style\":{\"score\":5,\"verdict\":\"accept\",\"reason\":\"on style\"}}}]}}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:judge-call",
+        "legacyRef": "91",
+        "workbenchRef": "archive:86d6d612c5efa2529b78a6d6337ffd532494c1c3bfce8da95ba29adab2d3d643",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-judge-call\",\"legacyRef\":\"91\",\"sourceHash\":\"86d6d612c5efa2529b78a6d6337ffd532494c1c3bfce8da95ba29adab2d3d643\",\"payload\":{\"id\":91,\"comparisonId\":61,\"status\":\"succeeded\",\"provider\":\"local\",\"model\":\"qwen-judge\",\"imageCount\":1,\"candidateShas\":[\"7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d\"],\"advisory\":{\"checkVersion\":\"judge-2026.05\",\"dimensions\":{\"likeness\":{\"verdict\":\"accept\",\"reason\":\"match\"},\"identityPreservation\":{\"verdict\":\"accept\",\"reason\":\"stable\"},\"style\":{\"verdict\":\"accept\",\"reason\":\"on style\"}},\"runs\":[{\"runId\":51,\"assessments\":{\"likeness\":{\"score\":5,\"verdict\":\"accept\",\"reason\":\"match\"},\"identityPreservation\":{\"score\":4,\"verdict\":\"accept\",\"reason\":\"stable\"},\"style\":{\"score\":4,\"verdict\":\"accept\",\"reason\":\"on style\"}}}]}}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:judge-call",
+        "legacyRef": "92",
+        "workbenchRef": "archive:5b1773e648ec702b96b04d04603223e83faa74f4755cdb8fbfe55f4fbc999210",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-judge-call\",\"legacyRef\":\"92\",\"sourceHash\":\"5b1773e648ec702b96b04d04603223e83faa74f4755cdb8fbfe55f4fbc999210\",\"payload\":{\"id\":92,\"comparisonId\":60,\"status\":\"blocked\",\"provider\":\"openai\",\"model\":\"gpt-image-judge\",\"imageCount\":1,\"blockReason\":\"no exact hosted approval\",\"advisory\":null}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:media",
+        "legacyRef": "101",
+        "workbenchRef": "archive:67a526535799e1dcde8920b9d586df1ccd4033f72341ade5f811eb81741dfa23",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-media\",\"legacyRef\":\"101\",\"sourceHash\":\"67a526535799e1dcde8920b9d586df1ccd4033f72341ade5f811eb81741dfa23\",\"payload\":{\"id\":101,\"kind\":\"reference\",\"sha256\":\"5e8d973d26addf3d3224f73d4d23033dbf346f3dc4a3533dd083873d23b61f3d\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:media",
+        "legacyRef": "102",
+        "workbenchRef": "archive:2efa8e3f1814b02c2cf1e9c9d2f06c7f4ac2732ef503b61b3ec2a4d9b9ca2f6c",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-media\",\"legacyRef\":\"102\",\"sourceHash\":\"2efa8e3f1814b02c2cf1e9c9d2f06c7f4ac2732ef503b61b3ec2a4d9b9ca2f6c\",\"payload\":{\"id\":102,\"kind\":\"reference\",\"sha256\":\"6cc4eb3d46df033dc61cef3d2246033db8ee8f3d4e353f3d32ab9b3d44771f3d\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:media",
+        "legacyRef": "201",
+        "workbenchRef": "archive:9a20aa9a2393d3b07b84d5af5c44472a2fe6eb8142c1c761d3158a4785978fb8",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-media\",\"legacyRef\":\"201\",\"sourceHash\":\"9a20aa9a2393d3b07b84d5af5c44472a2fe6eb8142c1c761d3158a4785978fb8\",\"payload\":{\"id\":201,\"kind\":\"output\",\"sha256\":\"7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:media",
+        "legacyRef": "202",
+        "workbenchRef": "archive:177775a81d0124d21ef744091eb3312e8dfd4d6cd0709a1fbc037ba71fbfbf3a",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-media\",\"legacyRef\":\"202\",\"sourceHash\":\"177775a81d0124d21ef744091eb3312e8dfd4d6cd0709a1fbc037ba71fbfbf3a\",\"payload\":{\"id\":202,\"kind\":\"output\",\"sha256\":\"64fd973dd71fdf3dc669b73dab5acb3df240d73dd00f173d61feef3d580cc33d\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:media",
+        "legacyRef": "207",
+        "workbenchRef": "archive:750c20abf596de0ca2d7527b1bc522294a72a9ffb1c368efce5c0183a5099dc8",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-media\",\"legacyRef\":\"207\",\"sourceHash\":\"750c20abf596de0ca2d7527b1bc522294a72a9ffb1c368efce5c0183a5099dc8\",\"payload\":{\"id\":207,\"kind\":\"output\",\"sha256\":\"56ba533d9d6f273d56515b3d3ca2c73dc0e5d73d75cbf73d8a1ca33d336aeb3d\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:media",
+        "legacyRef": "208",
+        "workbenchRef": "archive:ca1b6ad121933cd8e5f1e69c5b8f329b4f5d12498b206d5cc9f8461d7ce5029e",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-media\",\"legacyRef\":\"208\",\"sourceHash\":\"ca1b6ad121933cd8e5f1e69c5b8f329b4f5d12498b206d5cc9f8461d7ce5029e\",\"payload\":{\"id\":208,\"kind\":\"output\",\"sha256\":\"9f869f3d517c3f3df0e13b3dc5281b3d57e34f3dc93b873d7e2d1f3d5f102f3d\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:media",
+        "legacyRef": "210",
+        "workbenchRef": "archive:80a394af32e0f76647ad0f0c1300e380c2e0e1d58597f80282a7deec4130d560",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-media\",\"legacyRef\":\"210\",\"sourceHash\":\"80a394af32e0f76647ad0f0c1300e380c2e0e1d58597f80282a7deec4130d560\",\"payload\":{\"id\":210,\"kind\":\"output\",\"sha256\":\"12fb6b3dcf18f33d9d64833d11397f3db17e333d6f6bfb3dab88a33de3536b3d\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:media",
+        "legacyRef": "211",
+        "workbenchRef": "archive:b88d6a217d85dacc5a61bf7630b40635c8b564374b40935c79aef9dc31393b88",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-media\",\"legacyRef\":\"211\",\"sourceHash\":\"b88d6a217d85dacc5a61bf7630b40635c8b564374b40935c79aef9dc31393b88\",\"payload\":{\"id\":211,\"kind\":\"output\",\"sha256\":\"b604ff3da4f7033d8bd7ef3d9883233d0d2edb3d5fe8573d88b6673dcdca133d\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:person",
+        "legacyRef": "1",
+        "workbenchRef": "archive:0106ad2fd2a6257782201fd44b2a1d810d444c0a1769c4f85c7ca23572ea34b3",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-person\",\"legacyRef\":\"1\",\"sourceHash\":\"0106ad2fd2a6257782201fd44b2a1d810d444c0a1769c4f85c7ca23572ea34b3\",\"payload\":{\"id\":1,\"ownerUserId\":1,\"name\":\"Ada\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:person",
+        "legacyRef": "2",
+        "workbenchRef": "archive:961165bec43cc9b617ea1b3d0555b97fbe57c9bcde9334d8874c6637db45697b",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-person\",\"legacyRef\":\"2\",\"sourceHash\":\"961165bec43cc9b617ea1b3d0555b97fbe57c9bcde9334d8874c6637db45697b\",\"payload\":{\"id\":2,\"ownerUserId\":1,\"name\":\"Ben\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:person-revision",
+        "legacyRef": "11",
+        "workbenchRef": "archive:9041be58311005d968d8f4dc04e87e53150838564f6817464aefc00e1cbb345e",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-person-revision\",\"legacyRef\":\"11\",\"sourceHash\":\"9041be58311005d968d8f4dc04e87e53150838564f6817464aefc00e1cbb345e\",\"payload\":{\"id\":11,\"personId\":1,\"version\":1,\"references\":[{\"assetId\":101,\"order\":0,\"sha256\":\"5e8d973d26addf3d3224f73d4d23033dbf346f3dc4a3533dd083873d23b61f3d\"},{\"assetId\":102,\"order\":1,\"sha256\":\"6cc4eb3d46df033dc61cef3d2246033db8ee8f3d4e353f3d32ab9b3d44771f3d\"}],\"consent\":{\"actorUserId\":2,\"actorRole\":\"admin\",\"contentConfirmed\":true,\"confirmedAt\":\"2026-05-01T10:00:00.000Z\"},\"expectedTraits\":\"blue eyes, silver hair\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:person-revision",
+        "legacyRef": "12",
+        "workbenchRef": "archive:8c2899dbec5783995ebff124d88a48dcf16d2fa75db7982ed229eed98bc797ac",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-person-revision\",\"legacyRef\":\"12\",\"sourceHash\":\"8c2899dbec5783995ebff124d88a48dcf16d2fa75db7982ed229eed98bc797ac\",\"payload\":{\"id\":12,\"personId\":1,\"version\":2,\"references\":[{\"assetId\":103,\"order\":0,\"sha256\":\"10067f3db7d0133d61604f3d776d673d55c5b33dc5874b3da521073db84daf3d\"}],\"consent\":{\"actorUserId\":2,\"actorRole\":\"admin\",\"contentConfirmed\":true,\"confirmedAt\":\"2026-05-01T10:00:00.000Z\"},\"expectedTraits\":\"new haircut\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:person-revision",
+        "legacyRef": "13",
+        "workbenchRef": "archive:428f890c1668d4da60ec4bd7ef0bece98330dc95ef6c8f913418041992cc93c2",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-person-revision\",\"legacyRef\":\"13\",\"sourceHash\":\"428f890c1668d4da60ec4bd7ef0bece98330dc95ef6c8f913418041992cc93c2\",\"payload\":{\"id\":13,\"personId\":2,\"version\":1,\"references\":[{\"assetId\":101,\"order\":0,\"sha256\":\"5e8d973d26addf3d3224f73d4d23033dbf346f3dc4a3533dd083873d23b61f3d\"},{\"assetId\":102,\"order\":1,\"sha256\":\"6cc4eb3d46df033dc61cef3d2246033db8ee8f3d4e353f3d32ab9b3d44771f3d\"}],\"consent\":{\"actorUserId\":2,\"actorRole\":\"admin\",\"contentConfirmed\":true,\"confirmedAt\":\"2026-05-01T10:00:00.000Z\"},\"expectedTraits\":\"red shirt\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:review-revision",
+        "legacyRef": "701",
+        "workbenchRef": "archive:b18adfad992e3a72cabd2cbc3d95c7ec5ac3d9126c80855e281b049cfe8a611d",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-review-revision\",\"legacyRef\":\"701\",\"sourceHash\":\"b18adfad992e3a72cabd2cbc3d95c7ec5ac3d9126c80855e281b049cfe8a611d\",\"payload\":{\"id\":701,\"comparisonId\":60,\"version\":1,\"reviewerUserId\":1001,\"verdicts\":{\"50\":\"accept\"},\"scores\":{\"50\":{\"likeness\":4,\"style\":4,\"eyes\":null,\"anatomy\":5,\"viewConsistency\":3}}}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:review-revision",
+        "legacyRef": "702",
+        "workbenchRef": "archive:95115a5e4b2823d410dd6cdb5238dcbf574b48ad41a9bc2cd9077359bc8629b3",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-review-revision\",\"legacyRef\":\"702\",\"sourceHash\":\"95115a5e4b2823d410dd6cdb5238dcbf574b48ad41a9bc2cd9077359bc8629b3\",\"payload\":{\"id\":702,\"comparisonId\":60,\"version\":2,\"reviewerUserId\":1002,\"verdicts\":{\"50\":\"reject\"},\"scores\":{\"50\":{\"likeness\":2,\"style\":2,\"eyes\":2,\"anatomy\":1,\"viewConsistency\":2}},\"feedback\":\"eyes drift between views\",\"defectTags\":[\"eyes\"]}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:review-revision",
+        "legacyRef": "703",
+        "workbenchRef": "archive:82d21b483c448df7477cd637aef677627ac0f6500b4b8f09e010f2bd8a461bcf",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-review-revision\",\"legacyRef\":\"703\",\"sourceHash\":\"82d21b483c448df7477cd637aef677627ac0f6500b4b8f09e010f2bd8a461bcf\",\"payload\":{\"id\":703,\"comparisonId\":61,\"version\":1,\"reviewerUserId\":1001,\"verdicts\":{\"51\":\"accept\"},\"scores\":{\"51\":{\"likeness\":5,\"style\":5,\"eyes\":5,\"anatomy\":5,\"viewConsistency\":5}},\"preferredCanonicalRunId\":51}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:run",
+        "legacyRef": "50",
+        "workbenchRef": "archive:652ceb655ee6d94f77e5dec648f82dc3a9652598267dca596cd310ffc89d8309",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-run\",\"legacyRef\":\"50\",\"sourceHash\":\"652ceb655ee6d94f77e5dec648f82dc3a9652598267dca596cd310ffc89d8309\",\"payload\":{\"id\":50,\"personRevisionId\":11,\"workflowVersionId\":7,\"status\":\"succeeded\",\"stages\":[{\"key\":\"canonical\",\"status\":\"succeeded\",\"artifact\":{\"stageKey\":\"canonical\",\"sha256\":\"7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d\",\"seed\":100}},{\"key\":\"side\",\"status\":\"succeeded\",\"artifact\":{\"stageKey\":\"side\",\"sha256\":\"64fd973dd71fdf3dc669b73dab5acb3df240d73dd00f173d61feef3d580cc33d\",\"seed\":100}}]}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:run",
+        "legacyRef": "51",
+        "workbenchRef": "archive:a22372604a3f1b4e267a6e7b75df3256ba242951ec37a1dfce0cd583fd90734d",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-run\",\"legacyRef\":\"51\",\"sourceHash\":\"a22372604a3f1b4e267a6e7b75df3256ba242951ec37a1dfce0cd583fd90734d\",\"payload\":{\"id\":51,\"personRevisionId\":11,\"workflowVersionId\":7,\"status\":\"succeeded\",\"stages\":[{\"key\":\"canonical\",\"status\":\"succeeded\",\"artifact\":{\"stageKey\":\"canonical\",\"sha256\":\"7b34eb3dc9e9033d5b0eaf3d4507ab3d1aa60b3d7c628f3dd756bf3d9080ab3d\",\"seed\":200}},{\"key\":\"bust\",\"status\":\"succeeded\",\"artifact\":{\"stageKey\":\"bust\",\"sha256\":\"f465df3d3d5bf73df23aa33d86ac2b3d5d633b3d8cf2db3d1ecbd73de8fe373d\",\"seed\":200,\"assetId\":208}}]}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:run",
+        "legacyRef": "52",
+        "workbenchRef": "archive:fba80de21f2c4cff752470a23f9a396b04865e0d39137b68c1ffa940d1507ad3",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-run\",\"legacyRef\":\"52\",\"sourceHash\":\"fba80de21f2c4cff752470a23f9a396b04865e0d39137b68c1ffa940d1507ad3\",\"payload\":{\"id\":52,\"personRevisionId\":13,\"workflowVersionId\":7,\"status\":\"failed_retryable\",\"error\":\"comfyui session timeout\",\"stages\":[{\"key\":\"canonical\",\"status\":\"failed\",\"artifact\":null}]}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:run",
+        "legacyRef": "53",
+        "workbenchRef": "archive:5676eb7deae41dd105a6a1deb39999cd0eb0aa11be0699eb07ce61aaa35e4068",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-run\",\"legacyRef\":\"53\",\"sourceHash\":\"5676eb7deae41dd105a6a1deb39999cd0eb0aa11be0699eb07ce61aaa35e4068\",\"payload\":{\"id\":53,\"personRevisionId\":13,\"workflowVersionId\":7,\"status\":\"succeeded\",\"stages\":[{\"key\":\"canonical\",\"status\":\"succeeded\",\"artifact\":{\"stageKey\":\"canonical\",\"sha256\":\"f9c7e73def35233d31bb9b3d7fcd1f3dfe9c2f3dce9d3b3d57b09b3d876dff3d\",\"seed\":300}},{\"key\":\"side\",\"status\":\"succeeded\",\"artifact\":{\"stageKey\":\"side\",\"sha256\":\"56ba533d9d6f273d56515b3d3ca2c73dc0e5d73d75cbf73d8a1ca33d336aeb3d\",\"seed\":300}}]}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:run",
+        "legacyRef": "54",
+        "workbenchRef": "archive:448ed474b9f2382e4343d6836c4a82993a661a323b06d239ce81be6d89217b12",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-run\",\"legacyRef\":\"54\",\"sourceHash\":\"448ed474b9f2382e4343d6836c4a82993a661a323b06d239ce81be6d89217b12\",\"payload\":{\"id\":54,\"personRevisionId\":12,\"workflowVersionId\":7,\"status\":\"succeeded\",\"stages\":[{\"key\":\"canonical\",\"status\":\"succeeded\",\"artifact\":{\"stageKey\":\"canonical\",\"sha256\":\"5946833d68443f3d641a3b3d737a7b3dd4a5933d3454df3d0f96973d6eca3f3d\",\"seed\":400,\"assetId\":212}}]}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:suite",
+        "legacyRef": "80",
+        "workbenchRef": "archive:1f209782fb44aeeb6b4132539350559b4f30a96f275bea15c47bd6cfa76324cb",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-suite\",\"legacyRef\":\"80\",\"sourceHash\":\"1f209782fb44aeeb6b4132539350559b4f30a96f275bea15c47bd6cfa76324cb\",\"payload\":{\"id\":80,\"name\":\"May screening\",\"status\":\"active\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:suite-case",
+        "legacyRef": "8001",
+        "workbenchRef": "archive:0ef7536108feb44e0c15a052cdc340a897f7bc4555883661d083d727f1e4ca17",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-suite-case\",\"legacyRef\":\"8001\",\"sourceHash\":\"0ef7536108feb44e0c15a052cdc340a897f7bc4555883661d083d727f1e4ca17\",\"payload\":{\"id\":8001,\"suiteId\":80,\"sourceKey\":\"case-a\",\"title\":\"Ada silver hair\",\"expectedVerdict\":\"accept\",\"retired\":false,\"snapshot\":{\"personRevisionId\":11,\"workflowVersionId\":7,\"expectedTraits\":\"blue eyes, silver hair\",\"tags\":[\"ada\"]}}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:suite-case",
+        "legacyRef": "8002",
+        "workbenchRef": "archive:47d6786bea1983121801cbd8a49dd6851329ff03a5e08386af3adc77b34caa9a",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-suite-case\",\"legacyRef\":\"8002\",\"sourceHash\":\"47d6786bea1983121801cbd8a49dd6851329ff03a5e08386af3adc77b34caa9a\",\"payload\":{\"id\":8002,\"suiteId\":80,\"sourceKey\":\"case-b\",\"title\":\"Ben red shirt\",\"expectedVerdict\":\"reject\",\"retired\":false,\"snapshot\":{\"personRevisionId\":13,\"workflowVersionId\":7,\"expectedTraits\":\"red shirt\",\"tags\":[\"ben\"]}}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:workflow-version",
+        "legacyRef": "7",
+        "workbenchRef": "archive:ae07c23d98f8b61029b5e0338ce8e1c9c993c74eb02370486522710621598589",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-workflow-version\",\"legacyRef\":\"7\",\"sourceHash\":\"ae07c23d98f8b61029b5e0338ce8e1c9c993c74eb02370486522710621598589\",\"payload\":{\"id\":7,\"adapter\":\"comfyui-local\",\"adapterRevision\":\"qwen3.8-27b@rev-9\",\"stages\":[\"canonical\",\"side\",\"bust\"],\"manifest\":{\"provider\":\"local\",\"model\":\"qwen3.8-27b\",\"revision\":\"rev-9\"},\"status\":\"active\"}}"
+      },
+      {
+        "legacyNamespace": "u03-archive:workflow-version",
+        "legacyRef": "8",
+        "workbenchRef": "archive:56ac8c9ac03009202c03d7adf3a5aec6c4f9e8b647cb81d22da872bbc19fe98c",
+        "notes": "{\"schemaVersion\":1,\"provenance\":\"evidence-only\",\"namespace\":\"lab-workflow-version\",\"legacyRef\":\"8\",\"sourceHash\":\"56ac8c9ac03009202c03d7adf3a5aec6c4f9e8b647cb81d22da872bbc19fe98c\",\"payload\":{\"id\":8,\"adapter\":\"krea\",\"adapterRevision\":\"krea@2\",\"stages\":[\"canonical\"],\"manifest\":{\"provider\":\"hosted\",\"model\":\"krea2\",\"revision\":\"rev-2\"},\"status\":\"deprecated\"}}"
+      }
+    ]
+  },
+  "fixtureApplyReceipt": {
+    "created": {
+      "revisions": 15,
+      "experiments": 1,
+      "trials": 3,
+      "executions": 3,
+      "outputBindings": 3,
+      "assessments": 5,
+      "legacyMappings": 59
+    },
+    "replayed": {
+      "revisions": 0,
+      "experiments": 0,
+      "trials": 0,
+      "executions": 0,
+      "outputBindings": 0,
+      "assessments": 0,
+      "legacyMappings": 0
+    },
+    "quarantined": [
+      {
+        "code": "case-refs-unresolved",
+        "legacyRef": "lab-person-revision:12",
+        "detail": "person revision 12 carries 1 references (need 2-3)"
+      },
+      {
+        "code": "media-missing",
+        "legacyRef": "lab-person-revision:12",
+        "detail": "no registry asset with sha256 10067f3db7d0133d…"
+      },
+      {
+        "code": "media-hash-mismatch",
+        "legacyRef": "lab-run:51:bust",
+        "detail": "registry asset 208 no longer holds the claimed content (f465df3d3d5bf73d…); blob corrupt or re-minted — output quarantined"
+      },
+      {
+        "code": "media-missing",
+        "legacyRef": "lab-run:53:canonical",
+        "detail": "no registry asset with sha256 f9c7e73def35233d…"
+      },
+      {
+        "code": "media-missing",
+        "legacyRef": "lab-run:54:canonical",
+        "detail": "no registry asset with sha256 5946833d68443f3d…"
+      },
+      {
+        "code": "case-refs-unresolved",
+        "legacyRef": "lab-run:54",
+        "detail": "run 54 imports against person revision 12, which is not importable"
+      }
+    ],
+    "zeroWrite": false,
+    "revisionContentHashes": {
+      "lab-human-review:v1": "a09fd394ca2c4a3babf28fe89e97bf16bcba293fe0971d3d625848399345f7c0",
+      "lab-identity-assessment:v1": "14bb08a8f815e25b279ca18127abd05b1fda61e16ac6fdd920e100d1711a754c",
+      "workflow:lab:7:v1": "c017a2c45d5e52d1867de11a8f274b2a3ab86363a5cf7bc7031c562bb768413e",
+      "workflow:lab:8:v1": "516a3c3cb9485980ed4717fd0645963909d20950787286f74e3fb6b38ac4d218",
+      "character-creation:person:1:v1": "bf54db06abde3411852b269e3627e3c8de228a8261d6f8057e9398e6ebcf2195",
+      "character-creation:person:2:v1": "834e2503324fd18146f0737635b2fdfc938124a9ae9d16597466bd7292c4c186",
+      "suite-case:8001:v1": "b2dd4e4f20d9880da4bdc05762f00735a85ffe5bbb1a57c927616d55e880ad96",
+      "suite-case:8002:v1": "2ad076122d6562768171bf4aec25eb61221682c403528e927f9dcfb45ebab50e",
+      "dataset:lab-suite:80:v1": "db52a394849ddb0a269a84e2d2838b15f8aee3c4dd626f1a4bf6738cec114d74",
+      "suite:lab:80:v1": "a2407053e849d8a228ddd443fcc5d00c6ce3e4162086643e9f3a944d3a85b87a",
+      "baseline:lab:90:v1": "0161d006dbe61fd4c6d290e62eb2143b05d18f25fab35795ba05a80361425510",
+      "example:lab-run:50:v1": "3c40c3ab0e8a81563c03197cfde62e1001bf433c9ec2791d7eb406803be22b78",
+      "example:lab-run:51:v1": "ca9d2ef08adc668af5a42cbc2e9fe1537ca12f91848e949e5236da98e127577c",
+      "example:lab-run:52:v1": "db95d11dda38a5ea95d2092aff434e672acc715f13fa2c1631d8ac1fa058950e",
+      "example:lab-run:53:v1": "5bf1b2b53da61b644f093af5a5125753144642f4008eac60f2d1290f577c8571"
+    },
+    "evidenceNotes": [
+      "judge call 90 used hosted provider 'openai' (model 'gpt-image-judge'); imported as evidence only — no hosted call was made by this import",
+      "judge call 92 (blocked) — no exact hosted approval; recorded evidence-only, no assessment row written"
+    ]
+  },
+  "fixtureRepeatReceipt": {
+    "created": {
+      "revisions": 0,
+      "experiments": 0,
+      "trials": 0,
+      "executions": 0,
+      "outputBindings": 0,
+      "assessments": 0,
+      "legacyMappings": 0
+    },
+    "replayed": {
+      "revisions": 15,
+      "experiments": 1,
+      "trials": 3,
+      "executions": 3,
+      "outputBindings": 3,
+      "assessments": 5,
+      "legacyMappings": 59
+    },
+    "quarantined": [
+      {
+        "code": "case-refs-unresolved",
+        "legacyRef": "lab-person-revision:12",
+        "detail": "person revision 12 carries 1 references (need 2-3)"
+      },
+      {
+        "code": "media-missing",
+        "legacyRef": "lab-person-revision:12",
+        "detail": "no registry asset with sha256 10067f3db7d0133d…"
+      },
+      {
+        "code": "media-hash-mismatch",
+        "legacyRef": "lab-run:51:bust",
+        "detail": "registry asset 208 no longer holds the claimed content (f465df3d3d5bf73d…); blob corrupt or re-minted — output quarantined"
+      },
+      {
+        "code": "media-missing",
+        "legacyRef": "lab-run:53:canonical",
+        "detail": "no registry asset with sha256 f9c7e73def35233d…"
+      },
+      {
+        "code": "media-missing",
+        "legacyRef": "lab-run:54:canonical",
+        "detail": "no registry asset with sha256 5946833d68443f3d…"
+      },
+      {
+        "code": "case-refs-unresolved",
+        "legacyRef": "lab-run:54",
+        "detail": "run 54 imports against person revision 12, which is not importable"
+      }
+    ],
+    "zeroWrite": true,
+    "revisionContentHashes": {
+      "lab-human-review:v1": "a09fd394ca2c4a3babf28fe89e97bf16bcba293fe0971d3d625848399345f7c0",
+      "lab-identity-assessment:v1": "14bb08a8f815e25b279ca18127abd05b1fda61e16ac6fdd920e100d1711a754c",
+      "workflow:lab:7:v1": "c017a2c45d5e52d1867de11a8f274b2a3ab86363a5cf7bc7031c562bb768413e",
+      "workflow:lab:8:v1": "516a3c3cb9485980ed4717fd0645963909d20950787286f74e3fb6b38ac4d218",
+      "character-creation:person:1:v1": "bf54db06abde3411852b269e3627e3c8de228a8261d6f8057e9398e6ebcf2195",
+      "character-creation:person:2:v1": "834e2503324fd18146f0737635b2fdfc938124a9ae9d16597466bd7292c4c186",
+      "suite-case:8001:v1": "b2dd4e4f20d9880da4bdc05762f00735a85ffe5bbb1a57c927616d55e880ad96",
+      "suite-case:8002:v1": "2ad076122d6562768171bf4aec25eb61221682c403528e927f9dcfb45ebab50e",
+      "dataset:lab-suite:80:v1": "db52a394849ddb0a269a84e2d2838b15f8aee3c4dd626f1a4bf6738cec114d74",
+      "suite:lab:80:v1": "a2407053e849d8a228ddd443fcc5d00c6ce3e4162086643e9f3a944d3a85b87a",
+      "baseline:lab:90:v1": "0161d006dbe61fd4c6d290e62eb2143b05d18f25fab35795ba05a80361425510",
+      "example:lab-run:50:v1": "3c40c3ab0e8a81563c03197cfde62e1001bf433c9ec2791d7eb406803be22b78",
+      "example:lab-run:51:v1": "ca9d2ef08adc668af5a42cbc2e9fe1537ca12f91848e949e5236da98e127577c",
+      "example:lab-run:52:v1": "db95d11dda38a5ea95d2092aff434e672acc715f13fa2c1631d8ac1fa058950e",
+      "example:lab-run:53:v1": "5bf1b2b53da61b644f093af5a5125753144642f4008eac60f2d1290f577c8571"
+    },
+    "evidenceNotes": [
+      "judge call 90 used hosted provider 'openai' (model 'gpt-image-judge'); imported as evidence only — no hosted call was made by this import",
+      "judge call 92 (blocked) — no exact hosted approval; recorded evidence-only, no assessment row written"
+    ]
+  }
+}
