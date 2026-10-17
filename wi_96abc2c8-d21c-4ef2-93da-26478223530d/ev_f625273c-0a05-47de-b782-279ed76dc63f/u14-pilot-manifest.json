@@ -1,0 +1,1350 @@
+{
+  "manifestVersion": 1,
+  "generatedBy": "u14-pilot-prep",
+  "planRef": "docs/agent-work/character-lab/UNIFIED-IMAGE-LAB-PLAN.md §First New Experiment",
+  "profile": {
+    "arm": "qwen21",
+    "steps": 25,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "cfg": 1
+  },
+  "variants": [
+    {
+      "label": "baseline",
+      "intentMode": "baseline"
+    },
+    {
+      "label": "action-only",
+      "intentMode": "action-only"
+    },
+    {
+      "label": "wardrobe-only",
+      "intentMode": "wardrobe-only"
+    },
+    {
+      "label": "combined",
+      "intentMode": "combined"
+    }
+  ],
+  "scenarios": [
+    {
+      "key": "book1203-p2",
+      "kind": "book-page",
+      "legacySource": {
+        "namespace": "book-page",
+        "legacyRef": "1203-p2"
+      },
+      "seed": 1009,
+      "evidenceNote": "Guard: first brushing candidate was human-acceptable despite the strict judge; an incoherent later duplicate is negative evidence (audit calls 474-478). No intent — the untouched baseline arm is the thing being preserved."
+    },
+    {
+      "key": "book1203-p5",
+      "kind": "book-page",
+      "legacySource": {
+        "namespace": "book-page",
+        "legacyRef": "1203-p5"
+      },
+      "seed": 1009,
+      "proposedIntent": {
+        "action": {
+          "description": "Cayden appears exactly once in the scene.",
+          "characters": [
+            "Cayden"
+          ],
+          "provenance": "docs/agent-work/character-lab/UNIFIED-IMAGE-LAB-PLAN.md §First New Experiment: book 1203 page 5 duplicated Cayden; caption overlap is a separate facet."
+        }
+      },
+      "evidenceNote": "Page 5 duplicated Cayden; caption layout tracked separately."
+    },
+    {
+      "key": "book1203-p6",
+      "kind": "book-page",
+      "legacySource": {
+        "namespace": "book-page",
+        "legacyRef": "1203-p6"
+      },
+      "seed": 1009,
+      "proposedIntent": {
+        "action": {
+          "description": "Mama is reading the book.",
+          "characters": [
+            "Mama"
+          ],
+          "provenance": "docs/agent-work/character-lab/UNIFIED-IMAGE-LAB-PLAN.md §First New Experiment: pages 6/7 reused the page-5 composition and Mama was not reading."
+        }
+      },
+      "evidenceNote": "Page 6 reused the page-5 composition; Mama was not reading."
+    },
+    {
+      "key": "book1203-p7",
+      "kind": "book-page",
+      "legacySource": {
+        "namespace": "book-page",
+        "legacyRef": "1203-p7"
+      },
+      "seed": 1009,
+      "proposedIntent": {
+        "action": {
+          "description": "Mama is reading the book.",
+          "characters": [
+            "Mama"
+          ],
+          "provenance": "docs/agent-work/character-lab/UNIFIED-IMAGE-LAB-PLAN.md §First New Experiment: pages 6/7 reused the page-5 composition and Mama was not reading."
+        }
+      },
+      "evidenceNote": "Page 7 reused the page-5 composition; Mama was not reading."
+    },
+    {
+      "key": "book1203-p13",
+      "kind": "book-page",
+      "legacySource": {
+        "namespace": "book-page",
+        "legacyRef": "1203-p13"
+      },
+      "seed": 1009,
+      "evidenceNote": "Guard: rejection was confirmed without a more specific human reason. Kept as negative evidence; no intent is invented for it."
+    },
+    {
+      "key": "book1203-p14",
+      "kind": "book-page",
+      "legacySource": {
+        "namespace": "book-page",
+        "legacyRef": "1203-p14"
+      },
+      "seed": 1009,
+      "proposedIntent": {
+        "wardrobe": {
+          "description": "asleep in bed, without shoes",
+          "overrideReferenceClothing": true,
+          "characters": [
+            "Cayden"
+          ],
+          "provenance": "docs/agent-work/character-lab/UNIFIED-IMAGE-LAB-PLAN.md §First New Experiment: page 14 shoes while sleeping needs revision despite the automated acceptance. Case-local positive state, not a global prohibition."
+        }
+      },
+      "evidenceNote": "Shoes while sleeping needs revision despite automated acceptance."
+    },
+    {
+      "key": "qwen-670",
+      "kind": "qwen-control",
+      "legacySource": {
+        "namespace": "scene-task",
+        "legacyRef": "670"
+      },
+      "seed": 0,
+      "evidenceNote": "Qwen control: camping trio Kathy/Cayden/Grandpa, seed 0."
+    },
+    {
+      "key": "qwen-690",
+      "kind": "qwen-control",
+      "legacySource": {
+        "namespace": "scene-task",
+        "legacyRef": "690"
+      },
+      "seed": 1009,
+      "evidenceNote": "Qwen control: Kenna/Damien walk, seed 1009."
+    },
+    {
+      "key": "qwen-694",
+      "kind": "qwen-control",
+      "legacySource": {
+        "namespace": "scene-task",
+        "legacyRef": "694"
+      },
+      "seed": 1009,
+      "evidenceNote": "Qwen control: Ayla/Ho ball passing, seed 1009."
+    },
+    {
+      "key": "qwen-702",
+      "kind": "qwen-control",
+      "legacySource": {
+        "namespace": "scene-task",
+        "legacyRef": "702"
+      },
+      "seed": 1009,
+      "evidenceNote": "Qwen control: Randy/Siana seated reading, seed 1009."
+    },
+    {
+      "key": "facial-hair-230",
+      "kind": "facial-hair-guard",
+      "legacySource": {
+        "namespace": "scene-task",
+        "legacyRef": "230"
+      },
+      "seed": 0,
+      "legacyKleinBridge": true,
+      "evidenceNote": "Scott close-up, seed 0, human 5/accept. Legacy Klein guard: genuine facial hair preserved; original Klein outputs retained as evidence."
+    },
+    {
+      "key": "facial-hair-242",
+      "kind": "facial-hair-guard",
+      "legacySource": {
+        "namespace": "scene-task",
+        "legacyRef": "242"
+      },
+      "seed": 0,
+      "legacyKleinBridge": true,
+      "evidenceNote": "Cayden close-up, seed 0, human 5/accept. Legacy Klein guard: genuine facial hair preserved; original Klein outputs retained as evidence."
+    },
+    {
+      "key": "facial-hair-304",
+      "kind": "facial-hair-guard",
+      "legacySource": {
+        "namespace": "scene-task",
+        "legacyRef": "304"
+      },
+      "seed": 0,
+      "legacyKleinBridge": true,
+      "evidenceNote": "Ian full-body, seed 0, human 5/\"great\" accept. Legacy Klein guard: genuine facial hair preserved; original Klein outputs retained as evidence."
+    },
+    {
+      "key": "scale-566",
+      "kind": "scale-guard",
+      "legacySource": {
+        "namespace": "scene-task",
+        "legacyRef": "566"
+      },
+      "seed": 0,
+      "legacyKleinBridge": true,
+      "proposedIntent": {
+        "wardrobe": {
+          "description": "Lisa keeps her own clothing instead of copying Ho's wardrobe.",
+          "overrideReferenceClothing": true,
+          "characters": [
+            "Lisa"
+          ],
+          "provenance": "CHECKPOINT-2026-10-11.md: Ho/Lisa seed 0 still makes Lisa too short and copies Ho's clothes; seed 42 succeeded. Task 566 stays a permanent failure case — test that the gain survives without clothing transfer."
+        }
+      },
+      "evidenceNote": "Documented failure at seed 0 (Lisa too short, Ho's clothes copied); seed 42 succeeded. Kept as a permanent failure case."
+    },
+    {
+      "key": "scale-570",
+      "kind": "scale-guard",
+      "legacySource": {
+        "namespace": "scene-task",
+        "legacyRef": "570"
+      },
+      "seed": null,
+      "evidenceNote": "Siana/Weston passed at both documented seeds, but the pilot spec records no per-case seed for 570. Held — a seed is never invented."
+    },
+    {
+      "key": "scale-574",
+      "kind": "scale-guard",
+      "legacySource": {
+        "namespace": "scene-task",
+        "legacyRef": "574"
+      },
+      "seed": null,
+      "evidenceNote": "Ian 185.42 cm / Nayeli 91.44 cm passed, but the pilot spec records no per-case seed for 574. Held — a seed is never invented."
+    }
+  ],
+  "experiments": [
+    {
+      "requestId": "e615ff36-b32a-e739-f488-f41cfeee651a",
+      "name": "U14 four-way intent pilot — seed 0 (5 cases x 4 arms)",
+      "datasetRevisionId": null,
+      "workflowRevisionIds": {
+        "baseline": null,
+        "action-only": null,
+        "wardrobe-only": null,
+        "combined": null
+      },
+      "seeds": [
+        0
+      ],
+      "scenarioKeys": [
+        "qwen-670",
+        "facial-hair-230",
+        "facial-hair-242",
+        "facial-hair-304",
+        "scale-566"
+      ],
+      "trialCount": 20,
+      "design": {
+        "type": "factorial",
+        "factors": [
+          {
+            "label": "action",
+            "levels": [
+              "off",
+              "on"
+            ]
+          },
+          {
+            "label": "wardrobe",
+            "levels": [
+              "off",
+              "on"
+            ]
+          }
+        ],
+        "notes": "One seed group; arms differ only in compiled scene intent."
+      },
+      "evaluationPolicy": {
+        "blind": true,
+        "assessorKinds": [
+          "human"
+        ],
+        "requiredDimensions": [
+          "character-preservation",
+          "scale",
+          "wardrobe",
+          "sequence-consistency"
+        ]
+      }
+    },
+    {
+      "requestId": "a8e27f88-863b-489d-b31f-dd2604c6dbe0",
+      "name": "U14 four-way intent pilot — seed 1009 (9 cases x 4 arms)",
+      "datasetRevisionId": null,
+      "workflowRevisionIds": {
+        "baseline": null,
+        "action-only": null,
+        "wardrobe-only": null,
+        "combined": null
+      },
+      "seeds": [
+        1009
+      ],
+      "scenarioKeys": [
+        "book1203-p2",
+        "book1203-p5",
+        "book1203-p6",
+        "book1203-p7",
+        "book1203-p13",
+        "book1203-p14",
+        "qwen-690",
+        "qwen-694",
+        "qwen-702"
+      ],
+      "trialCount": 36,
+      "design": {
+        "type": "factorial",
+        "factors": [
+          {
+            "label": "action",
+            "levels": [
+              "off",
+              "on"
+            ]
+          },
+          {
+            "label": "wardrobe",
+            "levels": [
+              "off",
+              "on"
+            ]
+          }
+        ],
+        "notes": "One seed group; arms differ only in compiled scene intent."
+      },
+      "evaluationPolicy": {
+        "blind": true,
+        "assessorKinds": [
+          "human"
+        ],
+        "requiredDimensions": [
+          "character-preservation",
+          "scale",
+          "wardrobe",
+          "sequence-consistency"
+        ]
+      }
+    }
+  ],
+  "scenarioStatus": [
+    {
+      "scenarioKey": "book1203-p2",
+      "status": "held",
+      "holdReasons": [
+        "legacy-source-unresolved",
+        "scene-input-unresolved",
+        "case-provenance-unresolved"
+      ]
+    },
+    {
+      "scenarioKey": "book1203-p5",
+      "status": "held",
+      "holdReasons": [
+        "legacy-source-unresolved",
+        "scene-input-unresolved",
+        "case-provenance-unresolved",
+        "intent-review-required"
+      ]
+    },
+    {
+      "scenarioKey": "book1203-p6",
+      "status": "held",
+      "holdReasons": [
+        "legacy-source-unresolved",
+        "scene-input-unresolved",
+        "case-provenance-unresolved",
+        "intent-review-required"
+      ]
+    },
+    {
+      "scenarioKey": "book1203-p7",
+      "status": "held",
+      "holdReasons": [
+        "legacy-source-unresolved",
+        "scene-input-unresolved",
+        "case-provenance-unresolved",
+        "intent-review-required"
+      ]
+    },
+    {
+      "scenarioKey": "book1203-p13",
+      "status": "held",
+      "holdReasons": [
+        "legacy-source-unresolved",
+        "scene-input-unresolved",
+        "case-provenance-unresolved"
+      ]
+    },
+    {
+      "scenarioKey": "book1203-p14",
+      "status": "held",
+      "holdReasons": [
+        "legacy-source-unresolved",
+        "scene-input-unresolved",
+        "case-provenance-unresolved",
+        "intent-review-required"
+      ]
+    },
+    {
+      "scenarioKey": "qwen-670",
+      "status": "held",
+      "holdReasons": [
+        "legacy-source-unresolved",
+        "scene-input-unresolved",
+        "case-provenance-unresolved"
+      ]
+    },
+    {
+      "scenarioKey": "qwen-690",
+      "status": "held",
+      "holdReasons": [
+        "legacy-source-unresolved",
+        "scene-input-unresolved",
+        "case-provenance-unresolved"
+      ]
+    },
+    {
+      "scenarioKey": "qwen-694",
+      "status": "held",
+      "holdReasons": [
+        "legacy-source-unresolved",
+        "scene-input-unresolved",
+        "case-provenance-unresolved"
+      ]
+    },
+    {
+      "scenarioKey": "qwen-702",
+      "status": "held",
+      "holdReasons": [
+        "legacy-source-unresolved",
+        "scene-input-unresolved",
+        "case-provenance-unresolved"
+      ]
+    },
+    {
+      "scenarioKey": "facial-hair-230",
+      "status": "held",
+      "holdReasons": [
+        "legacy-source-unresolved",
+        "scene-input-unresolved",
+        "case-provenance-unresolved"
+      ]
+    },
+    {
+      "scenarioKey": "facial-hair-242",
+      "status": "held",
+      "holdReasons": [
+        "legacy-source-unresolved",
+        "scene-input-unresolved",
+        "case-provenance-unresolved"
+      ]
+    },
+    {
+      "scenarioKey": "facial-hair-304",
+      "status": "held",
+      "holdReasons": [
+        "legacy-source-unresolved",
+        "scene-input-unresolved",
+        "case-provenance-unresolved"
+      ]
+    },
+    {
+      "scenarioKey": "scale-566",
+      "status": "held",
+      "holdReasons": [
+        "legacy-source-unresolved",
+        "scene-input-unresolved",
+        "case-provenance-unresolved",
+        "intent-review-required"
+      ]
+    },
+    {
+      "scenarioKey": "scale-570",
+      "status": "held",
+      "holdReasons": [
+        "seed-unresolved",
+        "legacy-source-unresolved",
+        "scene-input-unresolved",
+        "case-provenance-unresolved"
+      ]
+    },
+    {
+      "scenarioKey": "scale-574",
+      "status": "held",
+      "holdReasons": [
+        "seed-unresolved",
+        "legacy-source-unresolved",
+        "scene-input-unresolved",
+        "case-provenance-unresolved"
+      ]
+    }
+  ],
+  "slots": {
+    "total": 64,
+    "ready": 0,
+    "held": 64,
+    "perExperiment": [
+      {
+        "seed": 0,
+        "scenarios": 5,
+        "trials": 20
+      },
+      {
+        "seed": 1009,
+        "scenarios": 9,
+        "trials": 36
+      }
+    ],
+    "noOpTrials": 0,
+    "distinctPayloads": 0
+  },
+  "armPreviews": [
+    {
+      "scenarioKey": "book1203-p2",
+      "variantLabel": "baseline",
+      "intentMode": "baseline",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "book1203-p2",
+      "variantLabel": "action-only",
+      "intentMode": "action-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "book1203-p2",
+      "variantLabel": "wardrobe-only",
+      "intentMode": "wardrobe-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "book1203-p2",
+      "variantLabel": "combined",
+      "intentMode": "combined",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "book1203-p5",
+      "variantLabel": "baseline",
+      "intentMode": "baseline",
+      "intentStatus": "proposal",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "book1203-p5",
+      "variantLabel": "action-only",
+      "intentMode": "action-only",
+      "intentStatus": "proposal",
+      "noOp": false,
+      "promptFragment": "Action for this case (Cayden): Cayden appears exactly once in the scene.",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": "Action for this case (Cayden): Cayden appears exactly once in the scene.",
+      "intentSha256": "17a487d84ffbd1c8da2d1ffb3ad36a2960a7ab46ee71c564c552902f5d22b33d"
+    },
+    {
+      "scenarioKey": "book1203-p5",
+      "variantLabel": "wardrobe-only",
+      "intentMode": "wardrobe-only",
+      "intentStatus": "proposal",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "book1203-p5",
+      "variantLabel": "combined",
+      "intentMode": "combined",
+      "intentStatus": "proposal",
+      "noOp": false,
+      "promptFragment": "Action for this case (Cayden): Cayden appears exactly once in the scene.",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": "Action for this case (Cayden): Cayden appears exactly once in the scene.",
+      "intentSha256": "17a487d84ffbd1c8da2d1ffb3ad36a2960a7ab46ee71c564c552902f5d22b33d"
+    },
+    {
+      "scenarioKey": "book1203-p6",
+      "variantLabel": "baseline",
+      "intentMode": "baseline",
+      "intentStatus": "proposal",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "book1203-p6",
+      "variantLabel": "action-only",
+      "intentMode": "action-only",
+      "intentStatus": "proposal",
+      "noOp": false,
+      "promptFragment": "Action for this case (Mama): Mama is reading the book.",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": "Action for this case (Mama): Mama is reading the book.",
+      "intentSha256": "576dd9aa5b28655db964c504752384d15d612ce9deb87420a326e5b9e7e78858"
+    },
+    {
+      "scenarioKey": "book1203-p6",
+      "variantLabel": "wardrobe-only",
+      "intentMode": "wardrobe-only",
+      "intentStatus": "proposal",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "book1203-p6",
+      "variantLabel": "combined",
+      "intentMode": "combined",
+      "intentStatus": "proposal",
+      "noOp": false,
+      "promptFragment": "Action for this case (Mama): Mama is reading the book.",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": "Action for this case (Mama): Mama is reading the book.",
+      "intentSha256": "576dd9aa5b28655db964c504752384d15d612ce9deb87420a326e5b9e7e78858"
+    },
+    {
+      "scenarioKey": "book1203-p7",
+      "variantLabel": "baseline",
+      "intentMode": "baseline",
+      "intentStatus": "proposal",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "book1203-p7",
+      "variantLabel": "action-only",
+      "intentMode": "action-only",
+      "intentStatus": "proposal",
+      "noOp": false,
+      "promptFragment": "Action for this case (Mama): Mama is reading the book.",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": "Action for this case (Mama): Mama is reading the book.",
+      "intentSha256": "576dd9aa5b28655db964c504752384d15d612ce9deb87420a326e5b9e7e78858"
+    },
+    {
+      "scenarioKey": "book1203-p7",
+      "variantLabel": "wardrobe-only",
+      "intentMode": "wardrobe-only",
+      "intentStatus": "proposal",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "book1203-p7",
+      "variantLabel": "combined",
+      "intentMode": "combined",
+      "intentStatus": "proposal",
+      "noOp": false,
+      "promptFragment": "Action for this case (Mama): Mama is reading the book.",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": "Action for this case (Mama): Mama is reading the book.",
+      "intentSha256": "576dd9aa5b28655db964c504752384d15d612ce9deb87420a326e5b9e7e78858"
+    },
+    {
+      "scenarioKey": "book1203-p13",
+      "variantLabel": "baseline",
+      "intentMode": "baseline",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "book1203-p13",
+      "variantLabel": "action-only",
+      "intentMode": "action-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "book1203-p13",
+      "variantLabel": "wardrobe-only",
+      "intentMode": "wardrobe-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "book1203-p13",
+      "variantLabel": "combined",
+      "intentMode": "combined",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "book1203-p14",
+      "variantLabel": "baseline",
+      "intentMode": "baseline",
+      "intentStatus": "proposal",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "book1203-p14",
+      "variantLabel": "action-only",
+      "intentMode": "action-only",
+      "intentStatus": "proposal",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "book1203-p14",
+      "variantLabel": "wardrobe-only",
+      "intentMode": "wardrobe-only",
+      "intentStatus": "proposal",
+      "noOp": false,
+      "promptFragment": "Wardrobe for this case (Cayden): asleep in bed, without shoes. This reviewed override replaces the reference clothing for the affected characters.",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": "Wardrobe for this case (Cayden): asleep in bed, without shoes. This reviewed override replaces the reference clothing for the affected characters.",
+      "intentSha256": "fa6bf52ad5945d25b4fe5c93a0bf42425533e4d98c14d92ca61f78e16e2bc865"
+    },
+    {
+      "scenarioKey": "book1203-p14",
+      "variantLabel": "combined",
+      "intentMode": "combined",
+      "intentStatus": "proposal",
+      "noOp": false,
+      "promptFragment": "Wardrobe for this case (Cayden): asleep in bed, without shoes. This reviewed override replaces the reference clothing for the affected characters.",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": "Wardrobe for this case (Cayden): asleep in bed, without shoes. This reviewed override replaces the reference clothing for the affected characters.",
+      "intentSha256": "fa6bf52ad5945d25b4fe5c93a0bf42425533e4d98c14d92ca61f78e16e2bc865"
+    },
+    {
+      "scenarioKey": "qwen-670",
+      "variantLabel": "baseline",
+      "intentMode": "baseline",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "qwen-670",
+      "variantLabel": "action-only",
+      "intentMode": "action-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "qwen-670",
+      "variantLabel": "wardrobe-only",
+      "intentMode": "wardrobe-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "qwen-670",
+      "variantLabel": "combined",
+      "intentMode": "combined",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "qwen-690",
+      "variantLabel": "baseline",
+      "intentMode": "baseline",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "qwen-690",
+      "variantLabel": "action-only",
+      "intentMode": "action-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "qwen-690",
+      "variantLabel": "wardrobe-only",
+      "intentMode": "wardrobe-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "qwen-690",
+      "variantLabel": "combined",
+      "intentMode": "combined",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "qwen-694",
+      "variantLabel": "baseline",
+      "intentMode": "baseline",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "qwen-694",
+      "variantLabel": "action-only",
+      "intentMode": "action-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "qwen-694",
+      "variantLabel": "wardrobe-only",
+      "intentMode": "wardrobe-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "qwen-694",
+      "variantLabel": "combined",
+      "intentMode": "combined",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "qwen-702",
+      "variantLabel": "baseline",
+      "intentMode": "baseline",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "qwen-702",
+      "variantLabel": "action-only",
+      "intentMode": "action-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "qwen-702",
+      "variantLabel": "wardrobe-only",
+      "intentMode": "wardrobe-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "qwen-702",
+      "variantLabel": "combined",
+      "intentMode": "combined",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "facial-hair-230",
+      "variantLabel": "baseline",
+      "intentMode": "baseline",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "facial-hair-230",
+      "variantLabel": "action-only",
+      "intentMode": "action-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "facial-hair-230",
+      "variantLabel": "wardrobe-only",
+      "intentMode": "wardrobe-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "facial-hair-230",
+      "variantLabel": "combined",
+      "intentMode": "combined",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "facial-hair-242",
+      "variantLabel": "baseline",
+      "intentMode": "baseline",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "facial-hair-242",
+      "variantLabel": "action-only",
+      "intentMode": "action-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "facial-hair-242",
+      "variantLabel": "wardrobe-only",
+      "intentMode": "wardrobe-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "facial-hair-242",
+      "variantLabel": "combined",
+      "intentMode": "combined",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "facial-hair-304",
+      "variantLabel": "baseline",
+      "intentMode": "baseline",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "facial-hair-304",
+      "variantLabel": "action-only",
+      "intentMode": "action-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "facial-hair-304",
+      "variantLabel": "wardrobe-only",
+      "intentMode": "wardrobe-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "facial-hair-304",
+      "variantLabel": "combined",
+      "intentMode": "combined",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "scale-566",
+      "variantLabel": "baseline",
+      "intentMode": "baseline",
+      "intentStatus": "proposal",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "scale-566",
+      "variantLabel": "action-only",
+      "intentMode": "action-only",
+      "intentStatus": "proposal",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "scale-566",
+      "variantLabel": "wardrobe-only",
+      "intentMode": "wardrobe-only",
+      "intentStatus": "proposal",
+      "noOp": false,
+      "promptFragment": "Wardrobe for this case (Lisa): Lisa keeps her own clothing instead of copying Ho's wardrobe. This reviewed override replaces the reference clothing for the affected characters.",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": "Wardrobe for this case (Lisa): Lisa keeps her own clothing instead of copying Ho's wardrobe. This reviewed override replaces the reference clothing for the affected characters.",
+      "intentSha256": "67137dd7e7849b8ac8ccb1bb0258948ad4c2b972b83bc0baa2d9b554e580c5a9"
+    },
+    {
+      "scenarioKey": "scale-566",
+      "variantLabel": "combined",
+      "intentMode": "combined",
+      "intentStatus": "proposal",
+      "noOp": false,
+      "promptFragment": "Wardrobe for this case (Lisa): Lisa keeps her own clothing instead of copying Ho's wardrobe. This reviewed override replaces the reference clothing for the affected characters.",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": "Wardrobe for this case (Lisa): Lisa keeps her own clothing instead of copying Ho's wardrobe. This reviewed override replaces the reference clothing for the affected characters.",
+      "intentSha256": "67137dd7e7849b8ac8ccb1bb0258948ad4c2b972b83bc0baa2d9b554e580c5a9"
+    },
+    {
+      "scenarioKey": "scale-570",
+      "variantLabel": "baseline",
+      "intentMode": "baseline",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "scale-570",
+      "variantLabel": "action-only",
+      "intentMode": "action-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "scale-570",
+      "variantLabel": "wardrobe-only",
+      "intentMode": "wardrobe-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "scale-570",
+      "variantLabel": "combined",
+      "intentMode": "combined",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "scale-574",
+      "variantLabel": "baseline",
+      "intentMode": "baseline",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "scale-574",
+      "variantLabel": "action-only",
+      "intentMode": "action-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "scale-574",
+      "variantLabel": "wardrobe-only",
+      "intentMode": "wardrobe-only",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    },
+    {
+      "scenarioKey": "scale-574",
+      "variantLabel": "combined",
+      "intentMode": "combined",
+      "intentStatus": "none",
+      "noOp": true,
+      "promptFragment": "",
+      "insertionPoint": "commonRequirements",
+      "diffFromBaseline": null,
+      "intentSha256": null
+    }
+  ],
+  "resolvedInputs": [
+    {
+      "scenarioKey": "book1203-p2",
+      "input": null
+    },
+    {
+      "scenarioKey": "book1203-p5",
+      "input": null
+    },
+    {
+      "scenarioKey": "book1203-p6",
+      "input": null
+    },
+    {
+      "scenarioKey": "book1203-p7",
+      "input": null
+    },
+    {
+      "scenarioKey": "book1203-p13",
+      "input": null
+    },
+    {
+      "scenarioKey": "book1203-p14",
+      "input": null
+    },
+    {
+      "scenarioKey": "qwen-670",
+      "input": null
+    },
+    {
+      "scenarioKey": "qwen-690",
+      "input": null
+    },
+    {
+      "scenarioKey": "qwen-694",
+      "input": null
+    },
+    {
+      "scenarioKey": "qwen-702",
+      "input": null
+    },
+    {
+      "scenarioKey": "facial-hair-230",
+      "input": null
+    },
+    {
+      "scenarioKey": "facial-hair-242",
+      "input": null
+    },
+    {
+      "scenarioKey": "facial-hair-304",
+      "input": null
+    },
+    {
+      "scenarioKey": "scale-566",
+      "input": null
+    },
+    {
+      "scenarioKey": "scale-570",
+      "input": null
+    },
+    {
+      "scenarioKey": "scale-574",
+      "input": null
+    }
+  ],
+  "inputDiffAcrossArms": {
+    "diff": "none",
+    "note": "Assets, reference order, profile and per-case seed are identical across arms; only the compiled intent fragment differs."
+  },
+  "costScope": {
+    "hosted": false,
+    "provider": null,
+    "callLimit": 0,
+    "costCapUsd": 0,
+    "pool": "local-gpu",
+    "concurrency": 1,
+    "note": "0 logical outputs on the local GPU pool; no hosted generation or hosted judging. Hosted judging, if ever run, needs its own exact-payload approval through the U09 manifest flow."
+  },
+  "evaluation": {
+    "blind": true,
+    "assessorKinds": [
+      "human"
+    ],
+    "judge": "One frozen, calibrated context-aware judge revision, identical across all arms. Judge/rubric revision ids are frozen at registration; a hosted judge run requires a NEW exact-payload approval — past approvals never authorize a new batch.",
+    "rubric": "Frozen rubric revision, shared by all arms.",
+    "sequencePanel": {
+      "pages": [
+        5,
+        6,
+        7
+      ],
+      "scoring": "independent",
+      "note": "The pages-5-to-7 sequence panel is a separate assessment context (sequence consistency), scored independently — never a replacement for the per-page blind scores."
+    }
+  },
+  "protectedCorpus": {
+    "phase": "design-only",
+    "seeds": [
+      4093,
+      8191
+    ],
+    "trigger": "Only after the screening and the sequence panel point at a promising variant: confirm it against the baseline across the compatible Qwen corpus and the guards at seeds 4093 and 8191.",
+    "lossesEndpoint": "GET /api/character-lab/workbench/assessments/experiments/:id/protected-losses?suiteRevisionId=<suite revision>",
+    "reporting": "Every protected loss is reported individually (U09 protected-loss views) — never hidden in an average."
+  },
+  "noGo": {
+    "generateImages": false,
+    "hostedJudgeCalls": false,
+    "identicalPayloadReuse": "Explicit only, and only after all 64 logical slots are built; no-op arms make identical payloads visible in this manifest rather than inferred.",
+    "productionBookMutations": false,
+    "automaticWorkflowPromotion": false,
+    "liveComfyUiSmoke": "Reserved for U16 (cursor): one local live smoke per stage, never part of this prep."
+  },
+  "manifestSha256": "637b6016977cf015785e3ee02f053e867bd94929e080a26346a63e04e6a481ad"
+}
